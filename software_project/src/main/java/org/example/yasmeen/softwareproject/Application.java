@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package yasmeen.softwareproject;
+package org.example.yasmeen.softwareproject;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -41,12 +41,12 @@ public class Application {
  public static ArrayList<User>users;
  public static ArrayList<Product>products;
  public static ArrayList<orders>sales;
-  public static logup loguppage;
-  public static login loginpage;
-  public static Owner ownerpage;
-  public static Admin1 adminpage;
-
-  public static Suppliersframe supplierspage;
+//  public static logup loguppage;
+//  public static login loginpage;
+//  public static Owner ownerpage;
+//  public static Admin1  adminpage;
+//
+//  public static Suppliersframe supplierspage;
 
  public Application(){
 
@@ -71,11 +71,11 @@ public class Application {
      sales.add(new orders(products.get(1).getname(), 12, 12, status));
       sales.add(new orders(products.get(1).getname(), 14, 14, status));
        sales.add(new orders(products.get(1).getname(), 13, 13, status));
-     loguppage=new logup();
-     loginpage=new login();
-     ownerpage=new Owner();
-     adminpage=new Admin1();
-     supplierspage=new Suppliersframe();
+//     loguppage=new logup();
+//     loginpage=new login();
+//     ownerpage=new Owner();
+//     adminpage=new Admin1();
+//     supplierspage=new Suppliersframe();
 
 
  }
@@ -289,25 +289,25 @@ public static void updatepassword(int newpassword){
         if(Application.type2.equals("Owner")){
         Owners.add(new Owneraccount(name, age, email, phone, password));
          JOptionPane.showMessageDialog(null,"Welcome to our store Owner "+name);
-           loginpage.removecontents();
+//           loginpage.removecontents();
     }
     else if(Application.type2.equals("Admin")){
         Admins.add(new Admin(name, age, email, phone, password));
 
 
          JOptionPane.showMessageDialog(null,"Welcome to our store Admin "+name);
-          loginpage.removecontents();
+//          loginpage.removecontents();
     }
     else if(Application.type2.equals("Supplier")){
         suppliers.add(new Suppliers(name, age, email, phone, password));
 
          JOptionPane.showMessageDialog(null,"Welcome to our store Supplier "+name);
-          loginpage.removecontents();
+//          loginpage.removecontents();
     }else{
       users.add(new User(name, age, email, phone, password));
 
        JOptionPane.showMessageDialog(null,"Welcome to our store User "+name);
-        loginpage.removecontents();
+//        loginpage.removecontents();
     }
 
     }

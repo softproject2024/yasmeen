@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package yasmeen.softwareproject;
+package org.example.yasmeen.softwareproject;
 
 /**
  *
@@ -11,7 +11,5 @@ package yasmeen.softwareproject;
 
 public class Mavenproject2 {
 
-    public static void main(String[] args) {
-        new Application();
-      Application.supplierspage.setVisible(true);}
+
 }

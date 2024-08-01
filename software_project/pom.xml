@@ -13,7 +13,13 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-<dependencies>
+    <dependencies>
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.4.12</version>
+    </dependency>
+
     <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-picocontainer</artifactId>
@@ -25,6 +31,25 @@
         <version>7.3.4</version>
     </dependency>
     <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>1.6.2</version> <!-- Check for the latest version -->
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-core</artifactId>
         <version>7.3.4</version>
@@ -33,6 +58,12 @@
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-junit</artifactId>
         <version>7.3.4</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.14.0</version>
         <scope>test</scope>
     </dependency>
 </dependencies>

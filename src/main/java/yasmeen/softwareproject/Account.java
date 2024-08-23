@@ -19,7 +19,7 @@ public Account(String name,int age,String email,int phone,String type,int passwo
  this.phone=phone;
  this.name= name;
  this.type= type;
- messages=new ArrayList<String>();
+ messages=new ArrayList<>();
  this.password=password;
 
 }

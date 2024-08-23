@@ -561,10 +561,10 @@ publicuser.setpassword(newpassword);
             }
         }
     }
-  public static void sendEmail(String fromEmail, String toEmail, String messageContent, String password) {
+  public static void sendEmail(String fromEmail, String toEmail, String messageContent) {
         String host = "smtp.gmail.com";
         final String username = fromEmail;
-
+String password="nhdo kelh sbgl qynb";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");

@@ -273,7 +273,7 @@ public class logup extends javax.swing.JFrame {
                 Application.type2= jTextField3.getText();
                  SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
+                Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

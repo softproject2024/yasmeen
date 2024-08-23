@@ -397,7 +397,7 @@ if(!Application.storeowners.isEmpty()){
             for(int i = 0; i<Application.storeowners.size(); i++){
                 if(Application.storeowners.get(i).getname().equals(Application.suppliername)){
                     String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h );
                     
                     Application.storeowners.get(i).messages.add(h);
                     JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
@@ -413,7 +413,7 @@ if(!Application.storeowners.isEmpty()){
           if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
+                Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone" );
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

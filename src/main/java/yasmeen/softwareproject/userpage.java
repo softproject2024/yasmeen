@@ -36,8 +36,8 @@ class ImagePanel extends JPanel {
 
 public class userpage extends javax.swing.JFrame {
 public static int index1;
-    public static final String emailfrom="s12112895@stu.najah.edu";
-    public static final String style="Stylus BT";
+    public static final String EMAIL_FROM ="s12112895@stu.najah.edu";
+    public static final String STYLE ="Stylus BT";
     
     public userpage() {
         initComponents();
@@ -156,7 +156,7 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel14.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel3.setFont(new java.awt.Font(style, Font.BOLD, 24));  
+        jLabel3.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Welcome Back Yasmeen");
 
@@ -498,7 +498,7 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
+        jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));
         jLabel12.setText("Choose a Supplier or Owner");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -525,7 +525,7 @@ Application.populateAndSetupList(jlist1, items);
 
         jScrollPane6.setViewportView(jlist1);
 
-        jButton8.setFont(new java.awt.Font(style, Font.BOLD, 24));  
+        jButton8.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
@@ -570,20 +570,20 @@ Application.populateAndSetupList(jlist1, items);
 
         jTabbedPane12.addTab("Feedback", jPanel5);
 
-        jLabel7.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
-        jLabel9.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jLabel9.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jPasswordField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
-        jLabel15.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
         jLabel15.setText("change password");
 
-        jButton7.setFont(new java.awt.Font(style, Font.BOLD, 24));  
+        jButton7.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
@@ -640,29 +640,29 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
+        jLabel2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
         jLabel2.setText("Change the Phone Number");
 
-        jLabel4.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
+        jLabel4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
         jLabel4.setText("Change the Name ");
 
-        jLabel6.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
+        jLabel6.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
         jLabel6.setText("Change the Age");
 
-        jTextField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jTextField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
 
-        jTextField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jTextField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
 
-        jTextField4.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
+        jTextField4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
-        jLabel10.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
+        jLabel10.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
         jLabel10.setText("Confirm the password");
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton9.setFont(new java.awt.Font(style, Font.BOLD, 24));  
+        jButton9.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
      
 
@@ -790,7 +790,7 @@ Application.populateAndSetupList(jlist1, items);
        }else{
               if(index1<=Application.storeowners.size()){
                   String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-          Application.sendEmail(emailfrom, Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+          Application.sendEmail(EMAIL_FROM, Application.storeowners.get(index1).getemail(), h);
               Application.storeowners.get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
               jTextArea1.setText("");
@@ -801,7 +801,7 @@ Application.populateAndSetupList(jlist1, items);
               else{
                   index1-=Application.storeowners.size();
                             String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                 Application.sendEmail(emailfrom, Application.suppliers.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+                 Application.sendEmail(EMAIL_FROM, Application.suppliers.get(index1).getemail(), h);
                     Application.suppliers.get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.suppliername);
               jTextArea1.setText("");
@@ -893,7 +893,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
           if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail(emailfrom, Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
+                Application.sendEmail(EMAIL_FROM, Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

@@ -30,6 +30,7 @@ public class Application {
     Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool","C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
  public static String type;
  public static int maxindex;
+ static String Invalid_Value="invalid value";
   public static String type2;
   public static String suppliername;
    public static String ownername;
@@ -388,12 +389,12 @@ if(publicuser.getpassword()==password){
 
     public static void purchase(String prodname,int qua){
      if(qua<0){
-         JOptionPane.showMessageDialog(null,"invalid value");
+         JOptionPane.showMessageDialog(null,Invalid_Value);
      }
     for (Product product : products) {
         if (product.getname().equals(prodname)) {
             if (product.getquantity() < qua) {
-                JOptionPane.showMessageDialog(null, "invalid value");
+                JOptionPane.showMessageDialog(null, Invalid_Value);
             } else {
 
                 int x = product.getquantity();
@@ -546,7 +547,7 @@ publicuser.setpassword(newpassword);
                     fileWriter.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null,Invalid_Value);
             }
         }
     }
@@ -577,7 +578,7 @@ publicuser.setpassword(newpassword);
             Transport.send(message);
           
         } catch (MessagingException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,Invalid_Value);
         }
     }
     public static boolean isNumber(String str) {

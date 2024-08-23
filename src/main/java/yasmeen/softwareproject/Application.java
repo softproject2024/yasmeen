@@ -54,17 +54,17 @@ public class Application {
    public static userpage userspage;
 
   public static Suppliersframe supplierspage;
-    public static final String ownermsg="Owner";
+    public static final String OWNER_MSG ="Owner";
     public static final String adminmsg="Admin";
     public static final String suppliermsg="Supplier";
-    public static final String usermsg="User";
+    public static final String USER_MSG="User";
     public static final String enter="Please enter a valid password";
     
 
  public Application(){
 
-     type=ownermsg;
-     type2=ownermsg;
+     type= OWNER_MSG;
+     type2= OWNER_MSG;
      status="Complete";
  
      posts= new ArrayList<>();
@@ -165,7 +165,7 @@ if(price<0||quantity<0){
 
  }
  public static void sendfeedback(String msg,Account a){
-     if(a.gettype().equals(ownermsg)){
+     if(a.gettype().equals(OWNER_MSG)){
          for (Owneraccount owner : storeowners) {
              if (a.getemail().equals(owner.getemail())) {
                  owner.messages.add(msg);
@@ -248,7 +248,7 @@ if(price<0||quantity<0){
 
          
          switch (Application.type) {
-             case ownermsg -> {
+             case OWNER_MSG -> {
                  for (int i = 0; i < Application.storeowners.size(); i++) {
 
                      if (email.equals(Application.storeowners.get(i).getemail())) {
@@ -307,7 +307,7 @@ if(price<0||quantity<0){
                      if (email.equals(Application.users.get(i).getemail())) {
 
 
-                         publicuser.type = usermsg;
+                         publicuser.type = USER_MSG;
 
 
                          return true;
@@ -441,7 +441,7 @@ if(publicuser.getpassword()==password){
 public static void updatepassword(int newpassword){
 publicuser.setpassword(newpassword);
     switch (type) {
-        case ownermsg -> {
+        case OWNER_MSG -> {
             for (Owneraccount owner : storeowners) {
                 if (publicuser.getemail().equals(owner.getemail())) {
                     owner.setpassword(newpassword);
@@ -462,7 +462,7 @@ publicuser.setpassword(newpassword);
                 }
             }
         }
-        case usermsg -> {
+        case USER_MSG -> {
             for (User user : users) {
                 if (publicuser.getemail().equals(user.getemail())) {
                     user.setpassword(newpassword);
@@ -479,7 +479,7 @@ publicuser.setpassword(newpassword);
      if(!isfoundmail(email)){
     if(isValidEmail(email)){
         switch (Application.type2) {
-            case ownermsg -> {
+            case OWNER_MSG -> {
                 storeowners.add(new Owneraccount(name, age, email, phone, password));
                 JOptionPane.showMessageDialog(null, "Welcome to our store Owner " + name);
                 loginpage.removecontents();
@@ -497,7 +497,7 @@ publicuser.setpassword(newpassword);
                 JOptionPane.showMessageDialog(null, "Welcome to our store Supplier " + name);
                 loginpage.removecontents();
             }
-            case usermsg -> {
+            case USER_MSG -> {
                 users.add(new User(name, age, email, phone, password));
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store User " + name);

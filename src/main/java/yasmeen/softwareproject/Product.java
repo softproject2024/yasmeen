@@ -20,8 +20,8 @@ public class Product {
         try {
             return DATE_FORMAT.parse(dateString);
         } catch (ParseException e) {
-            e.printStackTrace();  // Handle the exception as needed
-            return null;  // Return null or throw a custom exception based on your needs
+
+            return null;
         }
     }
 
@@ -31,7 +31,7 @@ public class Product {
     }
 
     private int price;
-    private String name;
+    private final String name;
     private Date expire;
     private int quantity;
     int discount;

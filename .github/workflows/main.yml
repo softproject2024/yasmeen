@@ -16,13 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Ensures full history is checked out, important for accurate analysis
+          fetch-depth: 0
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           java-version: 21
-          distribution: 'zulu'  # Zulu is a well-supported OpenJDK distribution
+          distribution: 'zulu'
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -46,15 +46,15 @@ jobs:
           -Dsonar.projectKey=softproject2024_yasmeen
 
       - name: Upload test results
-        if: always()  # Ensures this step runs even if previous steps fail
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: target/surefire-reports/
 
       - name: Upload Maven Debug Logs
-        if: always()  # Ensures this step runs even if previous steps fail
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: maven-logs
-          path: .m2/repository/
+          path: target/

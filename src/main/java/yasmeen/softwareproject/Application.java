@@ -108,6 +108,7 @@ publicuser=new Account("",1,"",1,"",1);
      someMethod();
 
  }
+
 public static String getallproducts(){
     StringBuilder h= new StringBuilder("There is no products in the store");
     if(!products.isEmpty()){

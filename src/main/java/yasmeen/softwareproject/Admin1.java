@@ -626,7 +626,7 @@ String p19="p19.png";
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
 
         Application.adminpage.setVisible(false);
-        Application.adminpage=new Admin1();
+       someMethod2();
         Application.loginpage.setVisible(true);
     }
 
@@ -660,7 +660,9 @@ String p19="p19.png";
             JOptionPane.showMessageDialog(null, "Please Enter valid old password");
         }
     }
-
+    public static void someMethod2() {
+        Application.adminpage = new Admin1();
+    }
     public static String getFilepath() {
 
         JFrame frame = new JFrame();
@@ -682,7 +684,10 @@ String p19="p19.png";
         }
     }
 
-    public javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel2;
+    public JLabel getl2() {
+        return jLabel2;
+    }
     public javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;

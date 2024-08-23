@@ -265,7 +265,7 @@ public class Login extends javax.swing.JFrame {
         for (int i = 0; i < Application.admins.size(); i++) {
             if (jTextField1.getText().equals(Application.admins.get(i).getemail())) {
                 if (getPasswordAsString(jPasswordField1).equals(Application.admins.get(i).getpassword()+"")) {
-                    Application.adminpage.jLabel2.setText("Welcome back " + Application.admins.get(i).getname());
+                    Application.adminpage.getl2().setText("Welcome back " + Application.admins.get(i).getname());
                     Application.adminpage.setVisible(true);
                     Application.loginpage.setVisible(false);
                          Application.adminpage.jTextField7.setText(Application.admins.get(i).getname());

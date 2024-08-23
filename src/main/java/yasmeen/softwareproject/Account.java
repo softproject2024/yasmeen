@@ -6,10 +6,7 @@ package yasmeen.softwareproject;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Hp
- */
+
 public class Account {
 protected int age;
 protected int password;
@@ -20,10 +17,10 @@ protected String type;
 protected ArrayList<String>messages;
 public Account(String name,int age,String email,int phone,String type,int password){
  this.age=age;
- this.email=new String(email);
+ this.email= email;
  this.phone=phone;
- this.name=new String (name);
- this.type=new String(type);
+ this.name= name;
+ this.type= type;
  messages=new ArrayList<>();
  this.password=password;
 

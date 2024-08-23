@@ -7,15 +7,15 @@ public class main {
   
     public static void main(String[] args) {
         new Application();
-      Application.Owners=new ArrayList<>();
-         Application.Admins=new ArrayList<>();
-          Application.posts=new ArrayList<>();
-           Application.suppliers=new ArrayList<>();
-            Application.users=new ArrayList<>();
-             Application.products=new ArrayList<>();
-              Application.sales=new ArrayList<>();
+//      Application.Owners=new ArrayList<>();
+//         Application.Admins=new ArrayList<>();
+//          Application.posts=new ArrayList<>();
+//           Application.suppliers=new ArrayList<>();
+//            Application.users=new ArrayList<>();
+//             Application.products=new ArrayList<>();
+//              Application.sales=new ArrayList<>();
            
-Application.loginpage.setVisible(false);
+Application.loginpage.setVisible(true);
        
     }
 }

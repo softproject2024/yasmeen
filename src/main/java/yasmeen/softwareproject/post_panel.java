@@ -4,14 +4,9 @@
  */
 package yasmeen.softwareproject;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.image.BufferedImage;
@@ -19,14 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -104,16 +91,14 @@ public static int rate=1;
             }
         }
         // Add the last line if it's not empty
-        if (currentLine.length() > 0) {
+        if (!currentLine.isEmpty()) {
             lines.add(currentLine.toString().trim());
         }
         
         // Join the lines with HTML line breaks
         return "<html>"+String.join("<br>", lines)+"</html>";
     }
-private String path,des;
-
-
+private final String path;
 
 
     /**
@@ -122,7 +107,6 @@ private String path,des;
 int id;
     public post_panel(String name,String des,String path,int id) {
         this.path=path;
-        this.des=des;
         initComponents();
       this.id=id;
       
@@ -145,38 +129,30 @@ jLabel3.setText(divideText(jLabel3,des));
         jPanel1.add(r3);
         jPanel1.add(r4);
         jPanel1.add(r5);
-        r1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rate=1;
-                r1.setSelected(true);
-                 r2.setSelected(false);
-                  r3.setSelected(false);
-                   r4.setSelected(false);
-                    r5.setSelected(false);
-                    Application.posts.get(id).getRates().add(rate);
-                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
-                    
-                  
-                  }
-        });
-          r2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rate=2;
-                r1.setSelected(true);
-                 r2.setSelected(true);
-                  r3.setSelected(false);
-                   r4.setSelected(false);
-                    r5.setSelected(false);
-                 Application.posts.get(id).getRates().add(rate);
-                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
-                    
-                  }
-        });
-            r3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        r1.addActionListener(e -> {
+            rate=1;
+            r1.setSelected(true);
+             r2.setSelected(false);
+              r3.setSelected(false);
+               r4.setSelected(false);
+                r5.setSelected(false);
+                Application.posts.get(id).getRates().add(rate);
+                JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+
+
+              });
+          r2.addActionListener(e -> {
+              rate=2;
+              r1.setSelected(true);
+               r2.setSelected(true);
+                r3.setSelected(false);
+                 r4.setSelected(false);
+                  r5.setSelected(false);
+               Application.posts.get(id).getRates().add(rate);
+                  JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+
+                });
+            r3.addActionListener(e -> {
                 rate=3;
                 r1.setSelected(true);
                  r2.setSelected(true);
@@ -185,63 +161,48 @@ jLabel3.setText(divideText(jLabel3,des));
                     r5.setSelected(false);
                  Application.posts.get(id).getRates().add(rate);
                     JOptionPane.showMessageDialog(null, "Thanks for rating the post");
-                    
-                  }
-        });
-              r4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rate=4;
-                r1.setSelected(true);
-                 r2.setSelected(true);
-                  r3.setSelected(true);
-                   r4.setSelected(true);
-                    r5.setSelected(false);
-                 Application.posts.get(id).getRates().add(rate);
-                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
-                    
-                  }
-        });
-                r5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rate=5;
-                r1.setSelected(true);
-                 r2.setSelected(true);
-                  r3.setSelected(true);
-                   r4.setSelected(true);
-                    r5.setSelected(true);
-                 Application.posts.get(id).getRates().add(rate);
-                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
-                    
-                  }
-        });
+
+                  });
+              r4.addActionListener(e -> {
+                  rate=4;
+                  r1.setSelected(true);
+                   r2.setSelected(true);
+                    r3.setSelected(true);
+                     r4.setSelected(true);
+                      r5.setSelected(false);
+                   Application.posts.get(id).getRates().add(rate);
+                      JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+
+                    });
+                r5.addActionListener(e -> {
+                    rate=5;
+                    r1.setSelected(true);
+                     r2.setSelected(true);
+                      r3.setSelected(true);
+                       r4.setSelected(true);
+                        r5.setSelected(true);
+                     Application.posts.get(id).getRates().add(rate);
+                        JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+
+                      });
         
     }
-    public post_panel()
-    {
-         initComponents(); 
-    }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
+
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        JLabel jLabel4 = new JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new ImageLabelFactory().createImageLabel1(path);
+        jLabel2 = ImageLabelFactory.createImageLabel1(path);
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Name of product");
 
-        jLabel4.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
         jLabel4.setText("review");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -301,7 +262,6 @@ jLabel3.setText(divideText(jLabel3,des));
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

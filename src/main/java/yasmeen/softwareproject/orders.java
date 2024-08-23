@@ -1,25 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Hp
- */
+
 public class orders {
-private String productname;
-private int quantity;
-private int profit;
+private final String productname;
+    private final int profit;
 String status;
-public orders(String productname,int quantity,int profit,String status){
- this.productname=new String(productname);
+public orders(String productname, int profit, String status){
+ this.productname= productname;
  this.profit=profit;
- this.quantity=quantity;
- this.status=new String(status);
+    this.status= status;
 }
 public int getprofit(){
     return profit;
@@ -29,6 +21,6 @@ public String getname(){
 }
 public void updatestatus(String status){
     JOptionPane.showMessageDialog(null, "The New Status of the order is : "+status);
-    this.status=new String(status);
+    this.status= status;
 }
 }

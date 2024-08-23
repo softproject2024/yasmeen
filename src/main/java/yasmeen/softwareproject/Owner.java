@@ -842,11 +842,16 @@ jRadioButton3.setSelected(true);
             JOptionPane.showMessageDialog(rootPane, "Enter a valid age");}
 
         else {
-            Application.updateinformation(jTextField1.getText(), Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField2.getText()), Integer.parseInt(jPasswordField1.getText()));
+            Application.updateinformation(jTextField1.getText(), Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField2.getText()), Integer.parseInt(getPasswordAsString(jPasswordField1)));
         }
     }
 
-
+    public static String getPasswordAsString(JPasswordField passwordField) {
+        char[] passwordChars = passwordField.getPassword();
+        String passwordString = new String(passwordChars);
+        java.util.Arrays.fill(passwordChars, '\0');
+        return passwordString;
+    }
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
          

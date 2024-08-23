@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static yasmeen.softwareproject.Owner.createImageLabel1;
+import static yasmeen.softwareproject.Owner.getPasswordAsString;
+
 class ImagePanel extends JPanel {
 
    private final transient Image image;
@@ -779,7 +781,7 @@ Application.populateAndSetupList(jlist1, items);
             JOptionPane.showMessageDialog(rootPane, "Enter a valid age");}
 
         else {
-            Application.updateinformation(jTextField2.getText(), Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField3.getText()), Integer.parseInt(jPasswordField1.getText()));
+            Application.updateinformation(jTextField2.getText(), Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField3.getText()), Integer.parseInt(getPasswordAsString(jPasswordField1)));
         }
     }
 
@@ -890,14 +892,14 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
          
-          if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
+          if(getPasswordAsString(jPasswordField2).equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
                 Application.sendEmail(EMAIL_FROM, Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){
-                      Application.updatepassword(Integer.parseInt(jPasswordField3.getText()));
+                      Application.updatepassword(Integer.parseInt(getPasswordAsString(jPasswordField3)));
                        }else{
                  JOptionPane.showMessageDialog(null, "Wrong verificatio code");
                  }

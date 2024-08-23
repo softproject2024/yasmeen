@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JOptionPane;
 import static yasmeen.softwareproject.Application.isValidEmail;
+import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
 public class Login extends javax.swing.JFrame {
@@ -229,7 +230,7 @@ public class Login extends javax.swing.JFrame {
         
         for (int i = 0; i < Application.storeowners.size(); i++) {
             if (jTextField1.getText().equals(Application.storeowners.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.storeowners.get(i).getpassword()+"")) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.storeowners.get(i).getpassword()+"")) {
 
                     Application.ownerpage.setVisible(true);
                     Application.publicuser=Application.storeowners.get(i);
@@ -263,7 +264,7 @@ public class Login extends javax.swing.JFrame {
     } else if (jTextField3.getText().equals("Admin")) {
         for (int i = 0; i < Application.admins.size(); i++) {
             if (jTextField1.getText().equals(Application.admins.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.admins.get(i).getpassword()+"")) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.admins.get(i).getpassword()+"")) {
                     Application.adminpage.jLabel2.setText("Welcome back " + Application.admins.get(i).getname());
                     Application.adminpage.setVisible(true);
                     Application.loginpage.setVisible(false);
@@ -285,7 +286,7 @@ public class Login extends javax.swing.JFrame {
     else if (jTextField3.getText().equals("Supplier")) {
         for (int i = 0; i < Application.suppliers.size(); i++) {
             if (jTextField1.getText().equals(Application.suppliers.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.suppliers.get(i).getpassword()+"")) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.suppliers.get(i).getpassword()+"")) {
                     
                     Application.supplierspage.setVisible(true);
                     Application.loginpage.setVisible(false);
@@ -317,7 +318,7 @@ public class Login extends javax.swing.JFrame {
              Application.userspage=new UserPage();
         for (int i = 0; i < Application.users.size(); i++) {
             if (jTextField1.getText().equals(Application.users.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.users.get(i).getpassword()+"")) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.users.get(i).getpassword()+"")) {
                         Application.userspage.setVisible(true);
                     Application.loginpage.setVisible(false);
                     jTextField1.setText("");

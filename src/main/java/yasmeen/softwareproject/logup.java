@@ -8,6 +8,8 @@ import java.security.SecureRandom;
 
 import javax.swing.JOptionPane;
 
+import static yasmeen.softwareproject.Owner.getPasswordAsString;
+
 
 public class logup extends javax.swing.JFrame {
 
@@ -260,13 +262,13 @@ public class logup extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
-         if(Application.isValidEmail(jTextField2.getText())&&Application.isNumber(jPasswordField1.getText())&&Application.isNumber(jTextField4.getText())&&Application.isNumber(jTextField5.getText())){
+         if(Application.isValidEmail(jTextField2.getText())&&Application.isNumber(getPasswordAsString(jPasswordField1))&&Application.isNumber(jTextField4.getText())&&Application.isNumber(jTextField5.getText())){
             if(jTextField5.getText().length()!=10){
                 JOptionPane.showMessageDialog(rootPane, "Please enter a valid phone");
             }else if(jTextField4.getText().length()>=3){
                      JOptionPane.showMessageDialog(rootPane, "Please enter a valid age"); 
             }
-            else if(jPasswordField1.getText().length()<8){
+            else if(getPasswordAsString(jPasswordField1).length()<8){
               JOptionPane.showMessageDialog(rootPane, "Please enter a password to be maore that 7 numbers");   
             }
             else{
@@ -277,7 +279,7 @@ public class logup extends javax.swing.JFrame {
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){
-                      Application.logup(jTextField2.getText(),jTextField1.getText(),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField5.getText()),Integer.parseInt(jPasswordField1.getText()));
+                      Application.logup(jTextField2.getText(),jTextField1.getText(),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField5.getText()),Integer.parseInt(getPasswordAsString(jPasswordField1)));
             
                   }else{
                  JOptionPane.showMessageDialog(null, "Wrong verificatio code");

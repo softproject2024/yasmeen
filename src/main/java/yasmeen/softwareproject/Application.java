@@ -127,7 +127,7 @@ if(price<0||quantity<0){
              return;
          }
      }
-  String pa= Admin1.getFilePath();
+  String pa= Admin1.getFilepath();
   products.add(new Product(name,price,quantity,expire,discount,des,pa));
   JOptionPane.showMessageDialog(null,"The Product "+name+" is added as a new product to the store" );
  }

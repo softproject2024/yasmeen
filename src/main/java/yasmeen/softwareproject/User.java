@@ -4,10 +4,7 @@
  */
 package yasmeen.softwareproject;
 
-/**
- *
- * @author Hp
- */
+
 public class User extends Account{
     
     public User(String name, int age, String email, int phone,int password) {

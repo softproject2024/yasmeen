@@ -31,7 +31,7 @@ public class StarRadioButton extends JRadioButton {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-                // Draw a star shape
+
                 GeneralPath star = new GeneralPath();
                 double outerRadius = size / 2.0;
                 double innerRadius = outerRadius / 2.5;

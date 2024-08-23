@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import java.awt.FlowLayout;
@@ -21,34 +18,33 @@ class ImageLabelFactory1 {
         JLabel label = new JLabel();
 
         try {
-            // Load the image
+           
             BufferedImage image = ImageIO.read(new File(imagePath));
            
 
-            // Create an ImageIcon from the BufferedImage
             ImageIcon icon = new ImageIcon(image);
 
-            // Add a ComponentListener to handle resizing
+            
             label.addComponentListener(new ComponentAdapter() {
                 @Override
                 public void componentResized(ComponentEvent e) {
-                    // Scale the image to fit the label size
+                   
                     Image scaledImage = icon.getImage().getScaledInstance(
                        180,
                        180,
                         Image.SCALE_SMOOTH
                     );
 
-                    // Update the ImageIcon with the scaled image
+                 
                     label.setIcon(new ImageIcon(scaledImage));
                 }
             });
 
-            // Initial setup to handle the case when the label is displayed
+           
             label.setIcon(icon);
         } catch (IOException e) {
             e.printStackTrace();
-            // Optionally set a default image or an error message
+            
             label.setText("Image load error: " + e.getMessage());
         }
 
@@ -56,10 +52,7 @@ class ImageLabelFactory1 {
     }
 
 }
-/**
- *
- * @author Hp
- */
+
 public class card extends javax.swing.JPanel {
  private final String path;
 
@@ -67,9 +60,7 @@ public class card extends javax.swing.JPanel {
  private final String name;
  private final int price;
  
-    /**
-     * Creates new form card
-     */
+
     public card(int price,int quantity,String name,String path) {
         this.path=path;
         this.price=price;
@@ -144,10 +135,10 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jLabel2MouseClicked() {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
+    private void jLabel2MouseClicked() {
+         
         String h=JOptionPane.showInputDialog("How much quantity do you want to buy ?");
         if(!Application.isNumber(h)){
            JOptionPane.showMessageDialog(null, "invalid value");
@@ -173,13 +164,13 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
            }
         }
        
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }

@@ -246,20 +246,20 @@ public class logup extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jLabel9MouseClicked() {//GEN-FIRST:event_jLabel9MouseClicked
-        // TODO add your handling code here:
+    private void jLabel9MouseClicked() {
+         
         Application.loginpage.setVisible(true);
           Application.loguppage.setVisible(false);
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+         
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+         
          if(Application.isValidEmail(jTextField2.getText())&&Application.isNumber(jPasswordField1.getText())&&Application.isNumber(jTextField4.getText())&&Application.isNumber(jTextField5.getText())){
             if(jTextField5.getText().length()!=10){
                 JOptionPane.showMessageDialog(rootPane, "Please enter a valid phone");
@@ -299,5 +299,5 @@ public class logup extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    // End of variables declaration//GEN-END:variables
+
 }

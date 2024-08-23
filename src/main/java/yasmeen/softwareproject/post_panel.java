@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import javax.imageio.ImageIO;
@@ -15,54 +12,45 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Hp
- */
+
 
 public class post_panel extends javax.swing.JPanel {
     static class ImageLabelFactory {
 
-    /**
-     * Creates a JLabel with a scaled image to fit the label size.
-     *
-     * @param imagePath The path of the image file.
-     * @return A JLabel containing the scaled image.
-     */
     public static JLabel createImageLabel1(String imagePath) {
         JLabel label = new JLabel();
 
         try {
-            // Load the image
+         
             BufferedImage image = ImageIO.read(new File(imagePath));
             if (image == null) {
                 throw new IOException("Image could not be read from path: " + imagePath);
             }
 
-            // Create an ImageIcon from the BufferedImage
+          
             ImageIcon icon = new ImageIcon(image);
 
-            // Add a ComponentListener to handle resizing
+          
             label.addComponentListener(new ComponentAdapter() {
                 @Override
                 public void componentResized(ComponentEvent e) {
-                    // Scale the image to fit the label size
+                   
                     Image scaledImage = icon.getImage().getScaledInstance(
                           130,
                        130,
                         Image.SCALE_SMOOTH
                     );
 
-                    // Update the ImageIcon with the scaled image
+                  
                     label.setIcon(new ImageIcon(scaledImage));
                 }
             });
 
-            // Initial setup to handle the case when the label is displayed
+           
             label.setIcon(icon);
         } catch (IOException e) {
             e.printStackTrace();
-            // Optionally set a default image or an error message
+         
             label.setText("Image load error: " + e.getMessage());
         }
 
@@ -81,29 +69,27 @@ public static int rate=1;
         
         for (String word : words) {
          
-            // Check if adding this word would exceed the label's width
             if (fontMetrics.stringWidth(currentLine + word) < labelWidth) {
                 currentLine.append(word).append(" ");
             } else {
-                // If the current line is too wide, add it to the list and start a new line
+                
                 lines.add(currentLine.toString().trim());
                 currentLine = new StringBuilder(word + " ");
             }
         }
-        // Add the last line if it's not empty
+    
         if (!currentLine.isEmpty()) {
             lines.add(currentLine.toString().trim());
         }
         
-        // Join the lines with HTML line breaks
+      
+      
         return "<html>"+String.join("<br>", lines)+"</html>";
     }
 private final String path;
 
 
-    /**
-     * Creates new form post_panel
-     */
+  
 int id;
     public post_panel(String name,String des,String path,int id) {
         this.path=path;
@@ -116,7 +102,7 @@ jLabel1.setText(name);
 
 jLabel3.setText(divideText(jLabel3,des));
 
-//jLabel2=new ImageLabel(path);
+
         JRadioButton r1=new StarRadioButton("", 20);
         JRadioButton r2=new StarRadioButton("", 20);
         JRadioButton r3=new StarRadioButton("", 20);
@@ -189,8 +175,7 @@ jLabel3.setText(divideText(jLabel3,des));
     }
 
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -202,7 +187,7 @@ jLabel3.setText(divideText(jLabel3,des));
 
         jLabel1.setText("Name of product");
 
-        jLabel4.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel4.setText("review");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -255,13 +240,14 @@ jLabel3.setText(divideText(jLabel3,des));
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
+
 }

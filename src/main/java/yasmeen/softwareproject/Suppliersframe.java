@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import yasmeen.softwareproject.Owner.ImageButton;
@@ -16,9 +13,6 @@ import static yasmeen.softwareproject.userpage.index1;
 
 public class Suppliersframe extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Suppliersframe
-     */
     public Suppliersframe() {
         initComponents();
         setSize(718, 470);
@@ -42,93 +36,82 @@ if(!Application.Owners.isEmpty()){
     }
 
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+       private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        JPanel jPanel1 = new JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        JTabbedPane jTabbedPane1 = new JTabbedPane();
+        JPanel jPanel4 = new JPanel();
+        JLabel jLabel1 = new JLabel();
+        JLabel jLabel3 = new JLabel();
+        JLabel jLabel5 = new JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jLabel4 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
-        jLabel6 = new javax.swing.JLabel();
+        JLabel jLabel4 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+        JLabel jLabel6 = new JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton6 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
-        jPanel6 = new ghk(Color.white, Color.white);
-        jLabel7 = new javax.swing.JLabel();
+        JButton jButton6 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JPanel jPanel6 = new ghk(Color.white, Color.white);
+        JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
-        jLabel9 = new javax.swing.JLabel();
+        JLabel jLabel9 = new JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
-        jLabel14 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
-        jLabel15 = new javax.swing.JLabel();
-        jButton3 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
-        jPanel2 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        JLabel jLabel14 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+        JLabel jLabel15 = new JLabel();
+        JButton jButton3 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JPanel jPanel2 = new JPanel();
+        JPanel jPanel7 = new JPanel();
+        JScrollPane jScrollPane2 = new JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JPanel jPanel8 = new JPanel();
+        JLabel jLabel12 = new JLabel();
+        JScrollPane jScrollPane1 = new JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        JScrollPane jScrollPane3 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
-        jButton5 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
-        jButton14 = new ImageButton("C:\\Users\\nd\\\\\\\\Desktop\\\\\\\\248\\New folder\\p7.png");
+        JButton jButton5 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+
+        JButton jButton14 = new ImageButton("C:\\Users\\nd\\\\\\\\Desktop\\\\\\\\248\\New folder\\p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(227, 240, 231));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel1.setText("Change the Phone Number");
 
-        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel3.setText("Change the Name ");
 
-        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel5.setText("Change the Age");
 
-        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
 
-        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+
+        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+
+        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel6.setText("Confirm the password");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18)); // NOI18N
+        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font("Stylus BT", 1, 24)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Confirm");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton6MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton6MouseExited(evt);
-            }
-        });
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
+
+        jButton6.addActionListener(this::jButton6ActionPerformed);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -183,27 +166,23 @@ if(!Application.Owners.isEmpty()){
 
         jTabbedPane1.addTab("Account Management ", jPanel4);
 
-        jLabel7.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel15.setFont(new java.awt.Font("Stylus BT", 0, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel15.setText("change password");
 
-        jButton3.setFont(new java.awt.Font("Stylus BT", 1, 24)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Confirm");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -274,7 +253,7 @@ if(!Application.Owners.isEmpty()){
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font("Stylus BT", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -298,21 +277,13 @@ if(!Application.Owners.isEmpty()){
         jTextArea1.setText("Enter the message here");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jlist1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jlist1ValueChanged(evt);
-            }
-        });
+
         jScrollPane3.setViewportView(jlist1);
 
-        jButton5.setFont(new java.awt.Font("Stylus BT", 1, 24)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Confirm");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -354,11 +325,7 @@ if(!Application.Owners.isEmpty()){
 
         jTabbedPane1.addTab("Suppliers", jPanel2);
 
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
+        jButton14.addActionListener(this::jButton14ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -396,50 +363,34 @@ if(!Application.Owners.isEmpty()){
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         Application.supplierspage.setVisible(false);
         Application.supplierspage=new Suppliersframe();
         Application.loginpage.setVisible(true);
 
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6MouseEntered
-
-    private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6MouseExited
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+   
+   
+   
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         if(!Application.isNumber(jTextField3.getText())||jTextField3.getText().length()>=3){
             JOptionPane.showMessageDialog(rootPane, "Enter a valid age");}
-//        else if(jTextField2.getText().length()!=10||Application.isNumber(jTextField2.getText())){
-//            JOptionPane.showMessageDialog(rootPane, "Enter a valid Phone Number");}
+
         else {
             Application.updateinformation(jTextField1.getText(), Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField2.getText()), Integer.parseInt(jPasswordField1.getText()));
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }
 
-    private void jlist1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlist1ValueChanged
-        // TODO add your handling code here:
 
-    }//GEN-LAST:event_jlist1ValueChanged
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         if(Application.Owners.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "There are no owners to send messages");
         }else{
@@ -455,10 +406,10 @@ if(!Application.Owners.isEmpty()){
                 }
             }
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+         
           if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
@@ -474,77 +425,17 @@ if(!Application.Owners.isEmpty()){
    }else{
        JOptionPane.showMessageDialog(null, "Please Enter valid old password");
    }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Suppliersframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Suppliersframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Suppliersframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Suppliersframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Suppliersframe().setVisible(true);
-            }
-        });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     public javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     public javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextArea jTextArea2;
     public javax.swing.JTextField jTextField1;
     public javax.swing.JTextField jTextField2;
     public javax.swing.JTextField jTextField3;
     private javax.swing.JList<String> jlist1;
-    // End of variables declaration//GEN-END:variables
+    
 }

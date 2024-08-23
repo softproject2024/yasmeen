@@ -1,11 +1,14 @@
 
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 
+
 import yasmeen.softwareproject.*;
 
 
+import java.util.Objects;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
@@ -14,20 +17,23 @@ public class
 Testing {
     Application a=new Application();
     boolean flag;
-    private String oldName,newdate,olddate;
-    private String newName,msg;
+    private String oldName;
+    private String olddate;
+    private String newName;
 
 
- private long newAge,newPhoneNumber,newPassword;
- private int ind1,ind2,old1,old2;
+    private long newAge,newPhoneNumber,newPassword;
+ private int ind1,ind2;
 
-    private Product product;
+
     private int oldqua,oldvalue;
 
     @Given("I am an {string} and I want to add new products")
     public void i_am_an_and_i_want_to_add_new_products(String string) {
         // Write code here that turns the phrase above into concrete actions
+
         Application.publicuser=new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0);
+        assertEquals(string,Application.publicuser.gettype());
 
     }
 
@@ -91,13 +97,13 @@ Testing {
     @When("I update the expiry date of to \"{int}\\/{int}\\/{int}")
     public void i_update_the_expiry_date_of_to(Integer int1, Integer int2, Integer int3) {
         // Write code here that turns the phrase above into concrete actions
-        newdate=int1+"/"+int2+"/"+int3;
+        String newdate = int1 + "/" + int2 + "/" + int3;
 
         for (int i=0;i<Application.products.size();i++){
 
             if(Application.products.get(i).getname().equals(oldName)){
                 olddate=Application.products.get(i).getexpire();
-Application.updateproduct(i,Application.products.get(i).getprice(),newdate);
+Application.updateproduct(i,Application.products.get(i).getprice(), newdate);
 oldvalue=i;
             }
         }
@@ -146,11 +152,13 @@ oldvalue=i;
     public void i_remove_from_the_store(String string) {
         // Write code here that turns the phrase above into concrete actions
         oldName=string;
+
     }
 
     @Then("the number of products in the store should decrease by {int}")
     public void the_number_of_products_in_the_store_should_decrease_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
+        oldqua=Application.products.size();
         Application.removeproduct(oldName);
         flag=false;
         for (int i=0;i<Application.products.size();i++){
@@ -411,9 +419,10 @@ Application.updateinformation(string,Application.publicuser.getage(),Application
     }
 
     @Then("the Supplier's age should be updated to {int}")
-    public void the_supplier_s_age_should_be_updated_to(Integer int1) {
+    public void the_supplier_s_age_should_be_updated_to(int int1) {
         // Write code here that turns the phrase above into concrete actions
 assertNotEquals(oldqua,Application.publicuser.getage());
+
     }
 
 
@@ -435,7 +444,7 @@ assertNotEquals(oldqua,Application.publicuser.getage());
     @Then(": i must enter my email {string} and my password {int} as admin")
     public void i_must_enter_my_email_and_my_password_as_admin(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-      flag=Application.login(string,new String(int1+""));
+      flag=Application.login(string, int1 + "");
     }
 
     @Then(": the system must pass me as admin")
@@ -457,7 +466,7 @@ assertNotEquals(oldqua,Application.publicuser.getage());
     @Then(": i must enter my email {string} and my password {int} as owner")
     public void i_must_enter_my_email_and_my_password_as_owner(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        flag=Application.login(string,new String(int1+""));
+        flag=Application.login(string, int1 + "");
     }
 
     @Then(": the system must pass me as Owner")
@@ -477,7 +486,7 @@ assertNotEquals(oldqua,Application.publicuser.getage());
 
     @Then(": i must enter my email {string} and my password {int} as supplier")
     public void i_must_enter_my_email_and_my_password_as_supplier(String string, Integer int1) {
-        flag=Application.login(string,new String(int1+""));
+        flag=Application.login(string, int1 + "");
     }
 
     @Then(": the system must pass me as supplier")
@@ -498,7 +507,7 @@ assertNotEquals(oldqua,Application.publicuser.getage());
     @Then(": i must enter my email {string} and my password {int} as user")
     public void i_must_enter_my_email_and_my_password_as_user(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        flag=Application.login(string,new String(int1+""));
+        flag=Application.login(string, int1 + "");
     }
 
     @Then(": the system must pass me as user")
@@ -594,7 +603,7 @@ oldName=Application.getsalesmessage();
     @Then("the best selling profit will be displayes as this {string}")
     public void the_best_selling_profit_will_be_displayes_as_this(String string) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(string,Application.getmaxprofit().getname());
+        assertEquals(string, Objects.requireNonNull(Application.getmaxprofit()).getname());
     }
 
 
@@ -632,7 +641,7 @@ Application.type2=string;
     @Then("the Admin users must be increased by {int}")
     public void the_admin_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Application.Admins.size(),oldvalue+1);
+        assertEquals(Application.Admins.size(),oldvalue+int1);
     }
 
 
@@ -653,7 +662,7 @@ Application.type2=string;
     @Then("the Owner users must be increased by {int}")
     public void the_owner_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Application.Owners.size(),oldvalue+1);
+        assertEquals(Application.Owners.size(),oldvalue+int1);
     }
 
 
@@ -674,7 +683,7 @@ Application.type2=string;
     @Then("the Suppliers users must be increased by {int}")
     public void the_suppliers_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Application.suppliers.size(),oldvalue+1);
+        assertEquals(Application.suppliers.size(),oldvalue+int1);
     }
 
 
@@ -695,7 +704,7 @@ Application.type2=string;
     @Then("the User users must be increased by {int}")
     public void the_user_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Application.users.size(),oldvalue+1);
+        assertEquals(Application.users.size(),oldvalue+int1);
     }
 
 
@@ -726,26 +735,25 @@ Application.type2=string;
 
         oldvalue=oldqua=ind1=ind2=0;
         // Write code here that turns the phrase above into concrete actions
-     msg=string;
         for (int i=0;i<Application.Owners.size();i++){
             if(Application.Owners.get(i).getname().equals(oldName)){
                 oldvalue=Application.Owners.get(i).messages().size();
                 ind1=i;
-                Application.sendfeedback(msg,Application.Owners.get(i));
+                Application.sendfeedback(string,Application.Owners.get(i));
             }
         }
         for (int i=0;i<Application.suppliers.size();i++){
             if(Application.suppliers.get(i).getname().equals(newName)){
                 oldqua=Application.suppliers.get(i).messages().size();
                 ind2=i;
-                Application.sendfeedback(msg,Application.suppliers.get(i));
+                Application.sendfeedback(string,Application.suppliers.get(i));
             }
         }
     }
     @Then("the number of messages to each one must be increased by {int}")
     public void the_number_of_messages_to_each_one_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(oldvalue+1,Application.Owners.get(ind1).messages().size());
+        assertEquals(oldvalue+int1,Application.Owners.get(ind1).messages().size());
         assertEquals(oldqua+1,Application.suppliers.get(ind2).messages().size());
     }
 
@@ -755,13 +763,13 @@ Application.type2=string;
     public void i_am_a_and_i_want_to_evaluate_the_first_post_appear_to(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
      newAge=int1;
-     oldvalue=Application.posts.get(0).getRates().size();
-     Application.rate_post(int1,Application.posts.get(0));
+     oldvalue=Application.posts.getFirst().getRates().size();
+     Application.rate_post(int1,Application.posts.getFirst());
     }
     @Then(": the post evaluations mus be increased by {int}")
     public void the_post_evaluations_mus_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-    assertEquals(oldvalue+1,Application.posts.get(0).getRates().size());
+    assertEquals(oldvalue+int1,Application.posts.getFirst().getRates().size());
     }
 
 

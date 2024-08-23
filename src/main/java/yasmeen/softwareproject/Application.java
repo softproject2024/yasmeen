@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import java.awt.event.MouseAdapter;
@@ -72,7 +69,7 @@ public class Application {
      Owners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
      Owners.getFirst().messages.add("hi");
      suppliers=new ArrayList<>();
-//     suppliers.add(new Suppliers("yahya" +0, type, 0, 0));
+
       suppliers.add(new Suppliers("Yaqoot", 0, "a1@g.c", 0, 12121212));
 
 
@@ -196,7 +193,6 @@ if(price<0||quantity<0){
  public static Product getmaxprofit(){
 
   if(sales.isEmpty()){
-     // JOptionPane.showMessageDialog(null, "There is no sales happend in the store");
       return null;
   }
 
@@ -224,7 +220,7 @@ if(price<0||quantity<0){
  public static String getsalesmessage(){
       StringBuilder h= new StringBuilder("There is no sales happend in the store");
    if(sales.isEmpty()){
-     // JOptionPane.showMessageDialog(null, "There is no sales happend in the store");
+     
       return h.toString();
   } else{
       h = new StringBuilder("#. produc name   sale profit   sale status\n");
@@ -235,7 +231,7 @@ if(price<0||quantity<0){
    return h.toString();
  }
  public static boolean login(String email, String pass){
-     // TODO add your handling code here:
+      
 
      if (isValidEmail(email)) {
          boolean isValidUser = true;
@@ -509,13 +505,12 @@ publicuser.setpassword(newpassword);
         dateFormat.setLenient(false);
 
         try {
-            // Parse the date string
+
             Date date = dateFormat.parse(dateStr);
 
-            // Get the current date
             Date currentDate = new Date();
 
-            // Check if the date is in the future
+
             return date.after(currentDate);
         } catch (java.text.ParseException e) {
             return false;
@@ -533,7 +528,7 @@ publicuser.setpassword(newpassword);
           return false;
 
         } finally {
-            // Close the FileWriter to release system resources
+
             try {
                 if (fileWriter != null) {
                     fileWriter.close();

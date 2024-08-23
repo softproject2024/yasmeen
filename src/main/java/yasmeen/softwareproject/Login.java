@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package yasmeen.softwareproject;
 
 import java.awt.Dimension;
@@ -62,7 +59,7 @@ public class Login extends javax.swing.JFrame {
 
         jTextField1.setText("Type your name");
         jTextField1.setToolTipText("Type your name");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+
 
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Password");
@@ -208,20 +205,17 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jLabel9MouseClicked() {//GEN-FIRST:event_jLabel9MouseClicked
-        // TODO add your handling code here:
+    private void jLabel9MouseClicked() {
+         
        Application.loginpage.setVisible(false);
        Application.loguppage.setVisible(true);
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         Application.adminpage=new Admin1();
         Application.userspage=new userpage();
         Application.ownerpage=new Owner();
@@ -364,14 +358,14 @@ public class Login extends javax.swing.JFrame {
 }
     }
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
+         
     }
 
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
-    // End of variables declaration//GEN-END:variables
+
 
     void removecontents() {
         jTextField1.setText("");

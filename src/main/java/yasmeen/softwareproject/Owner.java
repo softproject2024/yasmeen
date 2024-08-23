@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import javax.swing.event.ListSelectionEvent;
+
 
 
  
@@ -40,26 +40,26 @@ class TransparentRadioButton extends JRadioButton {
 
     public TransparentRadioButton(String text) {
         super(text);
-        // Ensure the button has a transparent background
+
         setOpaque(false);
-        // Set the button's border to null to avoid any visible border
+
         setBorder(BorderFactory.createEmptyBorder());
-        // Optionally, set the button's content area filled state to false
+
         setContentAreaFilled(false);
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-        // Set the background color to be fully transparent
+
         g.setColor(new Color(0, 0, 0, 0));
         g.fillRect(0, 0, getWidth(), getHeight());
-        // Paint the radio button's content
+
         super.paintComponent(g);
     }
 
     @Override
     protected void paintBorder(Graphics g) {
-        // Avoid painting the border
+
     }
 }
 
@@ -84,7 +84,7 @@ public class Owner extends JFrame {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image != null) {
-            // Scale the image to fit the button
+
             int imageWidth = getWidth();
             int imageHeight = getHeight();
             g.drawImage(image, 0, 0, imageWidth, imageHeight, this);
@@ -97,51 +97,48 @@ public class Owner extends JFrame {
         JLabel label = new JLabel();
 
         try {
-            // Load the image
+
             BufferedImage image = ImageIO.read(new File(imagePath));
             if (image == null) {
                 throw new IOException("Image could not be read from path: " + imagePath);
             }
 
-            // Create an ImageIcon from the BufferedImage
+
             ImageIcon icon = new ImageIcon(image);
 
-            // Add a ComponentListener to handle resizing
+
             label.addComponentListener(new ComponentAdapter() {
                 @Override
                 public void componentResized(ComponentEvent e) {
-                    // Scale the image to fit the label size
+
                     Image scaledImage = icon.getImage().getScaledInstance(
                          280,
                        220,
                         Image.SCALE_SMOOTH
                     );
 
-                    // Update the ImageIcon with the scaled image
+
                     label.setIcon(new ImageIcon(scaledImage));
                 }
             });
 
-            // Initial setup to handle the case when the label is displayed
+
             label.setIcon(icon);
         } catch (IOException e) {
             e.printStackTrace();
-            // Optionally set a default image or an error message
+
             label.setText("Image load error: " + e.getMessage());
         }
 
         return label;
     }
 
-    /**
-     * Creates new form Owner
-     */
+
     public Owner() {
       
         
         initComponents();
         jRadioButton1.setSelected(true);
-//        jPanel8=new Application.ListDisplayPanel(m);
 jTextArea2.setEditable(false);
 if(Application.publicuser.messages.isEmpty()){
  jTextArea2.setText("There are no messages Received");
@@ -248,44 +245,37 @@ if(!Application.sales.isEmpty()){
 
         jPanel13.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jLabel2.setText("Welcome Back Yasmeen");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel1.setText("Change the Phone Number");
 
-        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel3.setText("Change the Name ");
 
-        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel5.setText("Change the Age");
 
-        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
 
-        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20)); // NOI18N
+
+        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+
+        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
         jLabel6.setText("Confirm the password");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18)); // NOI18N
+        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Confirm");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton6MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton6MouseExited();
-            }
-        });
+
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -343,25 +333,18 @@ if(!Application.sales.isEmpty()){
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel8.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel8.setText("Change the Status of items ");
 
-        jButton2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Confirm");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton2MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton2MouseExited();
-            }
-        });
+
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel13.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jLabel13.setText("Items that have been sold");
 
         jScrollPane5.setViewportView(jlist3);
@@ -405,15 +388,15 @@ if(!Application.sales.isEmpty()){
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jRadioButton1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18)); // NOI18N
+        jRadioButton1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jRadioButton1.setText("Complete");
         jRadioButton1.addActionListener(this::jRadioButton1ActionPerformed);
 
-        jRadioButton2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18)); // NOI18N
+        jRadioButton2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jRadioButton2.setText("Pending");
         jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
 
-        jRadioButton3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18)); // NOI18N
+        jRadioButton3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jRadioButton3.setText("Cash");
         jRadioButton3.addActionListener(this::jRadioButton3ActionPerformed);
 
@@ -487,7 +470,7 @@ if(!Application.sales.isEmpty()){
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -511,10 +494,10 @@ if(!Application.sales.isEmpty()){
         jTextArea1.setText("Enter the message here");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jlist1.addListSelectionListener(this::jlist1ValueChanged);
+
         jScrollPane3.setViewportView(jlist1);
 
-        jButton5.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Confirm");
         jButton5.addActionListener(this::jButton5ActionPerformed);
@@ -559,20 +542,20 @@ if(!Application.sales.isEmpty()){
 
         jTabbedPane11.addTab("Suppliers", jPanel2);
 
-        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
 
-        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel15.setText("change password");
 
-        jButton3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Confirm");
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -629,82 +612,40 @@ if(!Application.sales.isEmpty()){
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton7.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Add Product");
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton7MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton7MouseExited();
-            }
-        });
+
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
-        jButton8.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Update Product");
-        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton8MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton8MouseExited();
-            }
-        });
+
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
-        jButton9.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Monitor sales and profits");
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton9MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton9MouseExited();
-            }
-        });
+
         jButton9.addActionListener(this::jButton9ActionPerformed);
 
-        jButton10.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton10.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Remove Product");
-        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton10MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton10MouseExited();
-            }
-        });
+
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
-        jButton11.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton11.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Implement discount");
-        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton11MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton11MouseExited();
-            }
-        });
+
         jButton11.addActionListener(this::jButton11ActionPerformed);
 
-        jButton12.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24)); // NOI18N
+        jButton12.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("best-selling product");
-        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton12MouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton12MouseExited();
-            }
-        });
+
         jButton12.addActionListener(this::jButton12ActionPerformed);
 
         jLabel19.setText("best-selling product");
@@ -830,113 +771,85 @@ if(!Application.sales.isEmpty()){
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane,Application.getsalesmessage());
+    }
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         Application.ownerpage.setVisible(false);
              Application.ownerpage=new Owner();
         Application.loginpage.setVisible(true);
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+         
          Application.status="Pending";
          jRadioButton3.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton2.setSelected(true);
          
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }
 
-    private void jButton2MouseExited() {//GEN-FIRST:event_jButton2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseExited
 
-    private void jButton2MouseEntered() {//GEN-FIRST:event_jButton2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseEntered
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jlist1ValueChanged(ListSelectionEvent evt) {//GEN-FIRST:event_jlist1ValueChanged
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jlist1ValueChanged
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
+  
+  
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         Application.status="Complete";
         jRadioButton3.setSelected(false);
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(true);
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+         
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton3.setSelected(true);
          Application.status="Cash";
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        if(Application.sales.isEmpty()){
-          JOptionPane.showMessageDialog(rootPane, "There are no Orders happened");
-        }else{
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+        if (Application.sales.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "There are no Orders happened");
+        } else {
             Application.sales.get(Application.order).updatestatus(Application.status);
-             ArrayList<String> items2=new ArrayList<>();
-       for(int i=0;i<Application.sales.size();i++){
-          items2.add(Application.sales.get(i).getname()+"   "+Application.sales.get(i).status+"   "+Application.sales.get(i).getprofit());
-       }
-   
-Application.populateAndSetupList(jlist3, items2);
-if(!Application.sales.isEmpty()){
-      jlist3.setEnabled(true);
-    }  
+            ArrayList<String> items2 = new ArrayList<>();
+            for (int i = 0; i < Application.sales.size(); i++) {
+                items2.add(Application.sales.get(i).getname() + "   " + Application.sales.get(i).status + "   " + Application.sales.get(i).getprofit());
+            }
+
+            Application.populateAndSetupList(jlist3, items2);
+            if (!Application.sales.isEmpty()) {
+                jlist3.setEnabled(true);
+            }
 
         }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton6MouseEntered() {//GEN-FIRST:event_jButton6MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6MouseEntered
+    }
 
-    private void jButton6MouseExited() {//GEN-FIRST:event_jButton6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6MouseExited
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+         
           if(!Application.isNumber(jTextField3.getText())||jTextField3.getText().length()>=3){
             JOptionPane.showMessageDialog(rootPane, "Enter a valid age");}
-//                else if(jTextField2.getText().length()!=10||Application.isNumber(jTextField2.getText())){
-//                     JOptionPane.showMessageDialog(rootPane, "Enter a valid Phone Number");}
+
         else {
             Application.updateinformation(jTextField1.getText(), Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField2.getText()), Integer.parseInt(jPasswordField1.getText()));
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }
 
-    private void jButton7MouseEntered() {//GEN-FIRST:event_jButton7MouseEntered
-        // TODO add your handling code here:
-//        jButton3.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
-    }//GEN-LAST:event_jButton7MouseEntered
 
-    private void jButton7MouseExited() {//GEN-FIRST:event_jButton7MouseExited
-        // TODO add your handling code here:
-      //  jButton3.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton7MouseExited
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         String name,price,quantity,date,discount;
         boolean flag=true;
         name=JOptionPane.showInputDialog("What is the name of the new product ?");
@@ -960,16 +873,14 @@ if(!Application.sales.isEmpty()){
                         if(discount.isEmpty()){
                     
                             Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, 0,h);
-                            //                     JOptionPane.showMessageDialog(rootPane, "The product "+name+" is added with discount 0");
-                        }else{
+                               }else{
                             if(Application.isNumber(discount)){
                                 int dis=Integer.parseInt(discount);
                                 if(dis<0||dis>=100){
                                     JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
                                 }else{
                                     Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, Integer.parseInt(discount),h);
-                                    //                          JOptionPane.showMessageDialog(rootPane, "The product "+name+" is added with discount "+Integer.parseInt(discount));
-                                }
+                                   }
                             }
                         }
                     }else{
@@ -984,20 +895,12 @@ if(!Application.sales.isEmpty()){
 
         }
 
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }
 
-    private void jButton8MouseEntered() {//GEN-FIRST:event_jButton8MouseEntered
-        // TODO add your handling code here:
-      //  jButton8.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
-    }//GEN-LAST:event_jButton8MouseEntered
 
-    private void jButton8MouseExited() {//GEN-FIRST:event_jButton8MouseExited
-        // TODO add your handling code here:
-      //  jButton6.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton8MouseExited
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         String index=JOptionPane.showInputDialog(Application.getallproducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
@@ -1020,35 +923,15 @@ if(!Application.sales.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
         }
 
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9MouseEntered() {//GEN-FIRST:event_jButton9MouseEntered
-        // TODO add your handling code here:
-      //  jButton7.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
     }
 
-    private void jButton9MouseExited() {//GEN-FIRST:event_jButton9MouseExited
-        // TODO add your handling code here:
-       // jButton7.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton9MouseExited
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane,Application.getsalesmessage());
-    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton10MouseEntered() {//GEN-FIRST:event_jButton10MouseEntered
-        // TODO add your handling code here:
-//        jButton8.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
-    }//GEN-LAST:event_jButton10MouseEntered
 
-    private void jButton10MouseExited() {//GEN-FIRST:event_jButton10MouseExited
-        // TODO add your handling code here:
-     //   jButton8.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton10MouseExited
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         String index=JOptionPane.showInputDialog(Application.getallproducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
@@ -1061,20 +944,12 @@ if(!Application.sales.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
         }
 
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }
 
-    private void jButton11MouseEntered() {//GEN-FIRST:event_jButton11MouseEntered
-        // TODO add your handling code here:
-       // jButton9.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
-    }//GEN-LAST:event_jButton11MouseEntered
 
-    private void jButton11MouseExited() {//GEN-FIRST:event_jButton11MouseExited
-        // TODO add your handling code here:
-      //  jButton9.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton11MouseExited
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
+         
         String index=JOptionPane.showInputDialog(Application.getallproducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
@@ -1084,16 +959,14 @@ if(!Application.sales.isEmpty()){
                 String discount=JOptionPane.showInputDialog("How much is the new Discount for the Product ?");
                 if(discount.isEmpty()){
                     Application.implementdiscount(0, Application.products.get(x-1));
-                    //                     JOptionPane.showMessageDialog(rootPane, "The product "+name+" is added with discount 0");
-                }else{
+                    }else{
                     if(Application.isNumber(discount)){
                         int dis=Integer.parseInt(discount);
                         if(dis<0||dis>=100){
                             JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
                         }else{
                             Application.implementdiscount(dis, Application.products.get(x-1));
-                            //                          JOptionPane.showMessageDialog(rootPane, "The product "+name+" is added with discount "+Integer.parseInt(discount));
-                        }
+                            }
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "The Discount value is not valid");
                     }
@@ -1103,29 +976,21 @@ if(!Application.sales.isEmpty()){
         }else{
             JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
         }
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }
 
-    private void jButton12MouseEntered() {//GEN-FIRST:event_jButton12MouseEntered
-        // TODO add your handling code here:
-//        jButton10.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 30));
-    }//GEN-LAST:event_jButton12MouseEntered
 
-    private void jButton12MouseExited() {//GEN-FIRST:event_jButton12MouseExited
-        // TODO add your handling code here:
-      //  jButton10.setFont(new Font(jButton1.getFont().getFontName(), jButton1.getFont().getStyle(), 24));
-    }//GEN-LAST:event_jButton12MouseExited
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {
+         
        try{ JOptionPane.showMessageDialog(rootPane, "The Best Selling profit came from the Product : "+ Objects.requireNonNull(Objects.requireNonNull(Application.getmaxprofit())).getname().toUpperCase()+" with Profit : "+Application.maxindex);}
        catch (Exception e){
            JOptionPane.showMessageDialog(rootPane, "There is no sales happened in this store");
        }
 
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+         
             if(Application.suppliers.isEmpty()){
           JOptionPane.showMessageDialog(rootPane, "There are no suppliers to send messages");
        }else{
@@ -1141,10 +1006,10 @@ if(!Application.sales.isEmpty()){
            }
        } 
        }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+         
    if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
@@ -1177,5 +1042,5 @@ if(!Application.sales.isEmpty()){
     public javax.swing.JTextField jTextField3;
     private javax.swing.JList<String> jlist1;
     private javax.swing.JList<String> jlist3;
-    // End of variables declaration//GEN-END:variables
+   
 }

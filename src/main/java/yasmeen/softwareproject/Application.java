@@ -37,35 +37,187 @@ public class Application {
 
     Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey",path);
     Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool",path);
- public static String type;
- public static int maxindex;
- public static String invalidvalue ="invalid value";
-  public static String type2;
-  public static String suppliername;
-   public static String ownername;
-  public static int order;
-   public static String status;
-  
- public static Account publicuser;
- public static List<Admin> admins;
- public static List<Owneraccount> storeowners;
- public static List<Suppliers>suppliers;
- public static List<User>users;
- public static List<Product>products;
- public static List<orders>sales;
- public static List<post>posts;
-  public static logup loguppage;
-  public static Login loginpage;
-  public static Owner ownerpage;
-  public static Admin1 adminpage;
-   public static UserPage userspage;
+ private static String type;
 
-  public static Suppliersframe supplierspage;
-    public static final String OWNER_MSG ="Owner";
-    public static final String ADMIN_MSG="Admin";
-    public static final String SUPPLIER_MSG="Supplier";
-    public static final String USER_MSG="User";
-    public static final String ENTER_MSG="Please enter a valid password";
+    public static String getType() {
+        return type;
+    }
+
+    public static void setType(String type) {
+        Application.type = type;
+    }
+
+    private static int maxindex;
+
+    public static int getMaxindex() {
+        return maxindex;
+    }
+
+    public static void setMaxindex(int maxindex) {
+        Application.maxindex = maxindex;
+    }
+
+    private static String invalidvalue ="invalid value";
+
+    public static String getInvalidvalue() {
+        return invalidvalue;
+    }
+
+    private static String type2;
+
+    public static String getType2() {
+        return type2;
+    }
+
+    public static void setType2(String type2) {
+        Application.type2 = type2;
+    }
+
+    private static String suppliername;
+
+    public static String getSuppliername() {
+        return suppliername;
+    }
+
+    public static void setSuppliername(String suppliername) {
+        Application.suppliername = suppliername;
+    }
+
+    private static String ownername;
+
+    public static String getOwnername() {
+        return ownername;
+    }
+
+    public static void setOwnername(String ownername) {
+        Application.ownername = ownername;
+    }
+
+    private static int order;
+
+    public static int getOrder() {
+        return order;
+    }
+
+    private static String status;
+
+    public static String getStatus() {
+        return status;
+    }
+
+    public static void setStatus(String status) {
+        Application.status = status;
+    }
+
+    private static Account publicuser;
+
+    public static Account getPublicuser() {
+        return publicuser;
+    }
+
+    public static void setPublicuser(Account publicuser) {
+        Application.publicuser = publicuser;
+    }
+
+    private static List<Admin> admins;
+
+    public static List<Admin> getAdmins() {
+        return admins;
+    }
+
+    private static List<Owneraccount> storeowners;
+
+    public static List<Owneraccount> getStoreowners() {
+        return storeowners;
+    }
+
+    private static List<Suppliers>suppliers;
+
+    public static List<Suppliers> getSuppliers() {
+        return suppliers;
+    }
+
+    private static List<User>users;
+
+    public static List<User> getUsers() {
+        return users;
+    }
+
+    private static List<Product>products;
+
+    public static List<Product> getProducts() {
+        return products;
+    }
+
+    private static List<orders>sales;
+
+    public static List<orders> getSales() {
+        return sales;
+    }
+
+    private static List<post>posts;
+
+    public static List<post> getPosts() {
+        return posts;
+    }
+
+    private static logup loguppage;
+
+    public static logup getLoguppage() {
+        return loguppage;
+    }
+
+    private static Login loginpage;
+
+    public static Login getLoginpage() {
+        return loginpage;
+    }
+
+    private static Owner ownerpage;
+
+    public static Owner getOwnerpage() {
+        return ownerpage;
+    }
+
+    public static void setOwnerpage(Owner ownerpage) {
+        Application.ownerpage = ownerpage;
+    }
+
+    private static Admin1 adminpage;
+
+    public static void setAdminpage(Admin1 adminpage) {
+        Application.adminpage = adminpage;
+    }
+
+    public static Admin1 getAdminpage() {
+        return adminpage;
+    }
+
+    private static UserPage userspage;
+
+    public static void setUserspage(UserPage userspage) {
+        Application.userspage = userspage;
+    }
+
+    public static UserPage getUserspage() {
+        return userspage;
+    }
+
+    private static Suppliersframe supplierspage;
+
+    public static void setSupplierspage(Suppliersframe supplierspage) {
+        Application.supplierspage = supplierspage;
+    }
+
+    public static Suppliersframe getSupplierspage() {
+        return supplierspage;
+    }
+
+    private static final String OWNER_MSG ="Owner";
+    private static final String ADMIN_MSG="Admin";
+    private static final String SUPPLIER_MSG="Supplier";
+    private static final String USER_MSG="User";
+    private static final String ENTER_MSG="Please enter a valid password";
     
 
  public Application(){

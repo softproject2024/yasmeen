@@ -252,8 +252,8 @@ public class logup extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked() {
          
-        Application.loginpage.setVisible(true);
-          Application.loguppage.setVisible(false);
+        Application.getLoginpage().setVisible(true);
+          Application.getLoguppage().setVisible(false);
     }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,7 +272,7 @@ public class logup extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(rootPane, "Please enter a password to be maore that 7 numbers");   
             }
             else{
-                Application.type2= jTextField3.getText();
+                Application.setType2(jTextField3.getText());
                  SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
                 Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");

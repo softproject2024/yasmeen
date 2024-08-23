@@ -140,30 +140,30 @@ public class Owner extends JFrame {
         initComponents();
         jRadioButton1.setSelected(true);
 jTextArea2.setEditable(false);
-if(Application.publicuser.messages.isEmpty()){
+if(Application.getPublicuser().messages.isEmpty()){
  jTextArea2.setText("There are no messages Received");
 }else{
  jTextArea2.setText("");
- for(int i=0;i<Application.publicuser.messages.size();i++){
-   jTextArea2.append(Application.publicuser.messages.get(i)+"\n");
+ for(int i=0;i<Application.getPublicuser().messages.size();i++){
+   jTextArea2.append(Application.getPublicuser().messages.get(i)+"\n");
  }
 }
  ArrayList<String> items=new ArrayList<>();
-       for(int i=0;i<Application.suppliers.size();i++){
-          items.add(Application.suppliers.get(i).getname());
+       for(int i=0;i<Application.getSuppliers().size();i++){
+          items.add(Application.getSuppliers().get(i).getname());
        }
     
 Application.populateAndSetupList(jlist1, items);
-if(!Application.suppliers.isEmpty()){
+if(!Application.getSuppliers().isEmpty()){
       jlist1.setEnabled(true);
     }  
  ArrayList<String> items2=new ArrayList<>();
-       for(int i=0;i<Application.sales.size();i++){
-          items2.add(Application.sales.get(i).getname()+"                  "+Application.sales.get(i).status+"                  "+Application.sales.get(i).getprofit());
+       for(int i=0;i<Application.getSales().size();i++){
+          items2.add(Application.getSales().get(i).getname()+"                  "+Application.getSales().get(i).status+"                  "+Application.getSales().get(i).getprofit());
        }
     
 Application.populateAndSetupList(jlist3, items2);
-if(!Application.sales.isEmpty()){
+if(!Application.getSales().isEmpty()){
       jlist3.setEnabled(true);
     }  
 
@@ -540,7 +540,7 @@ if(!Application.sales.isEmpty()){
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane11.addTab("Suppliers", jPanel2);
+        jTabbedPane11.addTab("getSuppliers()", jPanel2);
 
         jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
@@ -626,7 +626,7 @@ if(!Application.sales.isEmpty()){
 
         jButton9.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Monitor sales and profits");
+        jButton9.setText("Monitor getSales() and profits");
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
 
@@ -654,7 +654,7 @@ if(!Application.sales.isEmpty()){
 
         jLabel21.setText("Add Product");
 
-        jLabel22.setText("Monitor sales and profits");
+        jLabel22.setText("Monitor getSales() and profits");
 
         jLabel23.setText("Implement discount");
 
@@ -774,20 +774,20 @@ if(!Application.sales.isEmpty()){
     }
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        JOptionPane.showMessageDialog(rootPane,Application.getsalesmessage());
+        //JOptionPane.showMessageDialog(rootPane,Application.getSales().message());
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.ownerpage.setVisible(false);
-             Application.ownerpage=new Owner();
-        Application.loginpage.setVisible(true);
+        Application.getOwnerpage().setVisible(false);
+             Application.setOwnerpage(new Owner());
+        Application.getLoginpage().setVisible(true);
         
     }
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
          
-         Application.status="Pending";
+         Application.setStatus("Pending");
          jRadioButton3.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton2.setSelected(true);
@@ -800,7 +800,7 @@ jRadioButton2.setSelected(true);
   
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.status="Complete";
+        Application.setStatus("Complete");
         jRadioButton3.setSelected(false);
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(true);
@@ -811,22 +811,22 @@ jRadioButton1.setSelected(true);
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton3.setSelected(true);
-         Application.status="Cash";
+         Application.setStatus("Cash");
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        if (Application.sales.isEmpty()) {
+        if (Application.getSales().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "There are no Orders happened");
         } else {
-            Application.sales.get(Application.order).updatestatus(Application.status);
+            Application.getSales().get(Application.getOrder()).updatestatus(Application.getStatus());
             ArrayList<String> items2 = new ArrayList<>();
-            for (int i = 0; i < Application.sales.size(); i++) {
-                items2.add(Application.sales.get(i).getname() + "   " + Application.sales.get(i).status + "   " + Application.sales.get(i).getprofit());
+            for (int i = 0; i < Application.getSales().size(); i++) {
+                items2.add(Application.getSales().get(i).getname() + "   " + Application.getSales().get(i).status + "   " + Application.getSales().get(i).getprofit());
             }
 
             Application.populateAndSetupList(jlist3, items2);
-            if (!Application.sales.isEmpty()) {
+            if (!Application.getSales().isEmpty()) {
                 jlist3.setEnabled(true);
             }
 
@@ -858,8 +858,8 @@ jRadioButton3.setSelected(true);
         String name,price,quantity,date,discount;
         boolean flag=true;
         name=JOptionPane.showInputDialog("What is the name of the new product ?");
-        for(int i=0;i<Application.products.size();i++){
-            if(name.equals(Application.products.get(i).getname())){
+        for(int i=0;i<Application.getProducts().size();i++){
+            if(name.equals(Application.getProducts().get(i).getname())){
                 flag=false;
                 JOptionPane.showMessageDialog(rootPane, "The Popduct is exist , If you want more of it please request it from a Supplier");
                 break;
@@ -906,10 +906,10 @@ jRadioButton3.setSelected(true);
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        String index=JOptionPane.showInputDialog(Application.getallproducts());
+        String index=JOptionPane.showInputDialog(Application.getProducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
-            if(x<0||x>Application.products.size()){
+            if(x<0||x>Application.getProducts().size()){
                 JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
             }else{
                 String str1=JOptionPane.showInputDialog("What is the new Price of the product ?");
@@ -937,13 +937,13 @@ jRadioButton3.setSelected(true);
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        String index=JOptionPane.showInputDialog(Application.getallproducts());
+        String index=JOptionPane.showInputDialog(Application.getProducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
-            if(x<0||x>Application.products.size()){
+            if(x<0||x>Application.getProducts().size()){
                 JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
             }else{
-                Application.removeproduct(Application.products.get(x-1).getname());
+                Application.removeproduct(Application.getProducts().get(x-1).getname());
             }
         }else{
             JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
@@ -955,22 +955,22 @@ jRadioButton3.setSelected(true);
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        String index=JOptionPane.showInputDialog(Application.getallproducts());
+        String index=JOptionPane.showInputDialog(Application.getProducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
-            if(x<0||x>Application.products.size()){
+            if(x<0||x>Application.getProducts().size()){
                 JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
             }else{
                 String discount=JOptionPane.showInputDialog("How much is the new Discount for the Product ?");
                 if(discount.isEmpty()){
-                    Application.implementdiscount(0, Application.products.get(x-1));
+                    Application.implementdiscount(0, Application.getProducts().get(x-1));
                     }else{
                     if(Application.isNumber(discount)){
                         int dis=Integer.parseInt(discount);
                         if(dis<0||dis>=100){
                             JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
                         }else{
-                            Application.implementdiscount(dis, Application.products.get(x-1));
+                            Application.implementdiscount(dis, Application.getProducts().get(x-1));
                             }
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "The Discount value is not valid");
@@ -987,25 +987,25 @@ jRadioButton3.setSelected(true);
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {
          
-       try{ JOptionPane.showMessageDialog(rootPane, "The Best Selling profit came from the Product : "+ Objects.requireNonNull(Objects.requireNonNull(Application.getmaxprofit())).getname().toUpperCase()+" with Profit : "+Application.maxindex);}
+       try{ JOptionPane.showMessageDialog(rootPane, "The Best Selling profit came from the Product : "+ Objects.requireNonNull(Objects.requireNonNull(Application.getmaxprofit())).getname().toUpperCase()+" with Profit : "+Application.getMaxindex());}
        catch (Exception e){
-           JOptionPane.showMessageDialog(rootPane, "There is no sales happened in this store");
+           JOptionPane.showMessageDialog(rootPane, "There is no getSales() happened in this store");
        }
 
     }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
          
-            if(Application.suppliers.isEmpty()){
-          JOptionPane.showMessageDialog(rootPane, "There are no suppliers to send messages");
+            if(Application.getSuppliers().isEmpty()){
+          JOptionPane.showMessageDialog(rootPane, "There are no getSuppliers() to send messages");
        }else{
-           for(int i=0;i<Application.suppliers.size();i++){
-           if(Application.suppliers.get(i).getname().equals(Application.suppliername)){
-               String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-              Application.suppliers.get(i).messages.add(h);
-                Application.sendEmail("s12112895@stu.najah.edu",  Application.suppliers.get(i).getemail(), h);
+           for(int i=0;i<Application.getSuppliers().size();i++){
+           if(Application.getSuppliers().get(i).getname().equals(Application.getSuppliername())){
+               String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
+              Application.getSuppliers().get(i).messages.add(h);
+                Application.sendEmail("s12112895@stu.najah.edu",  Application.getSuppliers().get(i).getemail(), h);
              
-              JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.suppliername);
+              JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.getSuppliername());
               jTextArea1.setText("");
              break;
            }
@@ -1015,10 +1015,10 @@ jRadioButton3.setSelected(true);
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
          
-   if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
+   if(jPasswordField2.getText().equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
+                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

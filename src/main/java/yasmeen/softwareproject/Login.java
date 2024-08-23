@@ -211,47 +211,47 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked() {
          
-       Application.loginpage.setVisible(false);
-       Application.loguppage.setVisible(true);
+       Application.getLoginpage().setVisible(false);
+       Application.getLoguppage().setVisible(true);
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.adminpage=new Admin1();
-        Application.userspage=new UserPage();
-        Application.ownerpage=new Owner();
-        Application.supplierspage=new Suppliersframe();
-      Application.type= jTextField3.getText();
+        Application.setAdminpage(new Admin1());
+        Application.setUserspage(new UserPage());
+        Application.setOwnerpage(new Owner());
+        Application.setSupplierspage((new Suppliersframe()));
+      Application.setType( jTextField3.getText());
             
         if (isValidEmail(jTextField1.getText())) {
     boolean isValidUser = false;
     
     if (jTextField3.getText().equals("Owner")) {
         
-        for (int i = 0; i < Application.storeowners.size(); i++) {
-            if (jTextField1.getText().equals(Application.storeowners.get(i).getemail())) {
-                if (getPasswordAsString(jPasswordField1).equals(Application.storeowners.get(i).getpassword()+"")) {
+        for (int i = 0; i < Application.getStoreowners().size(); i++) {
+            if (jTextField1.getText().equals(Application.getStoreowners().get(i).getemail())) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.getStoreowners().get(i).getpassword()+"")) {
 
-                    Application.ownerpage.setVisible(true);
-                    Application.publicuser=Application.storeowners.get(i);
-                    Application.ownerpage.jLabel2.setText("Welcome back " + Application.storeowners.get(i).getname());
-                    Application.ownerpage.jTextField1.setText(Application.storeowners.get(i).getname());
-                     Application.ownerpage.jTextField2.setText(Application.storeowners.get(i).getphone()+"");
-                      Application.ownerpage.jTextField3.setText(Application.storeowners.get(i).getage()+"");
-                      Application.ownerpage.jPasswordField1.setText("");
-                    Application.loginpage.setVisible(false);
+                    Application.getOwnerpage().setVisible(true);
+                    Application.setPublicuser(Application.getStoreowners().get(i));
+                    Application.getOwnerpage().jLabel2.setText("Welcome back " + Application.getStoreowners().get(i).getname());
+                    Application.getOwnerpage().jTextField1.setText(Application.getStoreowners().get(i).getname());
+                     Application.getOwnerpage().jTextField2.setText(Application.getStoreowners().get(i).getphone()+"");
+                      Application.getOwnerpage().jTextField3.setText(Application.getStoreowners().get(i).getage()+"");
+                      Application.getOwnerpage().jPasswordField1.setText("");
+                    Application.getLoginpage().setVisible(false);
                     jTextField1.setText("");
                     jPasswordField1.setText("");
 
                        StringBuilder h= new StringBuilder("There is no messages to this account");
-            for(int ip=0;ip<Application.publicuser.messages.size();ip++){
+            for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
-                h.append(Application.publicuser.messages.get(ip)).append("\n");
+                h.append(Application.getPublicuser().messages.get(ip)).append("\n");
                     }
 
 
-         Application.ownerpage.jTextArea2.setText(h.toString());
-         Application.ownerpage.jTextArea2.setEditable(false);
+         Application.getOwnerpage().jTextArea2.setText(h.toString());
+         Application.getOwnerpage().jTextArea2.setEditable(false);
                     isValidUser = true;
                     break;
                 } else {
@@ -262,18 +262,18 @@ public class Login extends javax.swing.JFrame {
             }
         }
     } else if (jTextField3.getText().equals("Admin")) {
-        for (int i = 0; i < Application.admins.size(); i++) {
-            if (jTextField1.getText().equals(Application.admins.get(i).getemail())) {
-                if (getPasswordAsString(jPasswordField1).equals(Application.admins.get(i).getpassword()+"")) {
-                    Application.adminpage.getl2().setText("Welcome back " + Application.admins.get(i).getname());
-                    Application.adminpage.setVisible(true);
-                    Application.loginpage.setVisible(false);
-                         Application.adminpage.getjTextField7().setText(Application.admins.get(i).getname());
-                    Application.adminpage.getjTextField9().setText(Application.admins.get(i).getage()+"");
-                            Application.adminpage.getjTextField8().setText(Application.admins.get(i).getphone()+"");
+        for (int i = 0; i < Application.getAdmins().size(); i++) {
+            if (jTextField1.getText().equals(Application.getAdmins().get(i).getemail())) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.getAdmins().get(i).getpassword()+"")) {
+                    Application.getAdminpage().getl2().setText("Welcome back " + Application.getAdmins().get(i).getname());
+                    Application.getAdminpage().setVisible(true);
+                    Application.getLoginpage().setVisible(false);
+                         Application.getAdminpage().getjTextField7().setText(Application.getAdmins().get(i).getname());
+                    Application.getAdminpage().getjTextField9().setText(Application.getAdmins().get(i).getage()+"");
+                            Application.getAdminpage().getjTextField8().setText(Application.getAdmins().get(i).getphone()+"");
                     jTextField1.setText("");
                     jPasswordField1.setText("");
-                    Application.publicuser=Application.admins.get(i);
+                    Application.setPublicuser(Application.getAdmins().get(i));
                     isValidUser = true;
                     break;
                 } else {
@@ -284,28 +284,28 @@ public class Login extends javax.swing.JFrame {
         }
     }
     else if (jTextField3.getText().equals("Supplier")) {
-        for (int i = 0; i < Application.suppliers.size(); i++) {
-            if (jTextField1.getText().equals(Application.suppliers.get(i).getemail())) {
-                if (getPasswordAsString(jPasswordField1).equals(Application.suppliers.get(i).getpassword()+"")) {
+        for (int i = 0; i < Application.getSuppliers().size(); i++) {
+            if (jTextField1.getText().equals(Application.getSuppliers().get(i).getemail())) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.getSuppliers().get(i).getpassword()+"")) {
                     
-                    Application.supplierspage.setVisible(true);
-                    Application.loginpage.setVisible(false);
+                    Application.getSupplierspage().setVisible(true);
+                    Application.getLoginpage().setVisible(false);
                     jTextField1.setText("");
-                    Application.publicuser=Application.suppliers.get(i);
+                    Application.setPublicuser(Application.getSuppliers().get(i));
                     jPasswordField1.setText("");
-                   Application.supplierspage.jTextField1.setText(Application.suppliers.get(i).getname());
-                     Application.supplierspage.jTextField2.setText(Application.suppliers.get(i).getphone()+"");
-                      Application.supplierspage.jTextField3.setText(Application.suppliers.get(i).getage()+"");
-                      Application.supplierspage.jPasswordField1.setText("");
-                    Application.supplierspage.jLabel2.setText("Welcome back " + Application.suppliers.get(i).getname());
+                   Application.getSupplierspage().jTextField1.setText(Application.getSuppliers().get(i).getname());
+                     Application.getSupplierspage().jTextField2.setText(Application.getSuppliers().get(i).getphone()+"");
+                      Application.getSupplierspage().jTextField3.setText(Application.getSuppliers().get(i).getage()+"");
+                      Application.getSupplierspage().jPasswordField1.setText("");
+                    Application.getSupplierspage().jLabel2.setText("Welcome back " + Application.getSuppliers().get(i).getname());
                        StringBuilder h= new StringBuilder("There is no messages to this account");
-            for(int ip=0;ip<Application.publicuser.messages.size();ip++){
+            for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
-                h.append(Application.publicuser.messages.get(ip)).append("\n");
+                h.append(Application.getPublicuser().messages.get(ip)).append("\n");
                     }
                
-         Application.supplierspage.jTextArea2.setText(h.toString());
-         Application.supplierspage.jTextArea2.setEditable(false);
+         Application.getSupplierspage().jTextArea2.setText(h.toString());
+         Application.getSupplierspage().jTextArea2.setEditable(false);
                     isValidUser = true;
                     break;
                 } else {
@@ -315,28 +315,28 @@ public class Login extends javax.swing.JFrame {
             }
         }
     } else if(jTextField3.getText().equals("User")) {
-             Application.userspage=new UserPage();
-        for (int i = 0; i < Application.users.size(); i++) {
-            if (jTextField1.getText().equals(Application.users.get(i).getemail())) {
-                if (getPasswordAsString(jPasswordField1).equals(Application.users.get(i).getpassword()+"")) {
-                        Application.userspage.setVisible(true);
-                    Application.loginpage.setVisible(false);
+             Application.setUserspage(new UserPage());
+        for (int i = 0; i < Application.getUsers().size(); i++) {
+            if (jTextField1.getText().equals(Application.getUsers().get(i).getemail())) {
+                if (getPasswordAsString(jPasswordField1).equals(Application.getUsers().get(i).getpassword()+"")) {
+                        Application.getUserspage().setVisible(true);
+                    Application.getLoginpage().setVisible(false);
                     jTextField1.setText("");
-                    Application.publicuser=Application.users.get(i);
+                    Application.setPublicuser(Application.getUsers().get(i));
                     jPasswordField1.setText("");
-                   Application.userspage.getjTextField2().setText(Application.users.get(i).getname());
-                     Application.userspage.getjTextField3().setText(Application.users.get(i).getphone()+"");
-                      Application.userspage.getjTextField4().setText(Application.users.get(i).getage()+"");
-                      Application.userspage.getjPasswordField1().setText("");
-                    Application.userspage.getl3().setText("Welcome back " + Application.users.get(i).getname());
+                   Application.getUserspage().getjTextField2().setText(Application.getUsers().get(i).getname());
+                     Application.getUserspage().getjTextField3().setText(Application.getUsers().get(i).getphone()+"");
+                      Application.getUserspage().getjTextField4().setText(Application.getUsers().get(i).getage()+"");
+                      Application.getUserspage().getjPasswordField1().setText("");
+                    Application.getUserspage().getl3().setText("Welcome back " + Application.getUsers().get(i).getname());
                        StringBuilder h= new StringBuilder("There is no messages to this account");
-            for(int ip=0;ip<Application.publicuser.messages.size();ip++){
+            for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
-                h.append(Application.publicuser.messages.get(ip)).append("\n");
+                h.append(Application.getPublicuser().messages.get(ip)).append("\n");
                     }
                
-         Application.userspage.getjTextArea2().setText(h.toString());
-         Application.userspage.getjTextArea2().setEditable(false);
+         Application.getUserspage().getjTextArea2().setText(h.toString());
+         Application.getUserspage().getjTextArea2().setEditable(false);
                     isValidUser = true;
                     break;
                 } else {

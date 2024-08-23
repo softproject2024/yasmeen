@@ -54,13 +54,13 @@ public static int getIndex1(){
         jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         setSize(this.getWidth()-10, this.getHeight());
         jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-       for(int i=0;i<Application.posts.size();i++){
-            jPanel7.add(new post_panel(Application.posts.get(i).prd,Application.posts.get(i).des,Application.posts.get(i).path,i));
+       for(int i=0;i<Application.getPosts().size();i++){
+            jPanel7.add(new post_panel(Application.getPosts().get(i).prd,Application.getPosts().get(i).des,Application.getPosts().get(i).path,i));
        }
        jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
              jPanel21.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-            for(int i=0;i<Application.products.size();i++){
-            jPanel21.add(new card(Application.products.get(i).getprice(),Application.products.get(i).getquantity(),Application.products.get(i).getname(),Application.products.get(i).getpath()));
+            for(int i=0;i<Application.getProducts().size();i++){
+            jPanel21.add(new card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
        }
           jPanel29.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
           jlist1.setEnabled(false);
@@ -68,12 +68,12 @@ public static int getIndex1(){
          jScrollPane5.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
             jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         ArrayList<String> items=new ArrayList<>();
-          for(int i = 0; i<Application.storeowners.size(); i++){
-          items.add(Application.storeowners.get(i).getname());
+          for(int i = 0; i<Application.getStoreowners().size(); i++){
+          items.add(Application.getStoreowners().get(i).getname());
             jlist1.setEnabled(true);
        }
-       for(int i=0;i<Application.suppliers.size();i++){
-          items.add(Application.suppliers.get(i).getname());
+       for(int i=0;i<Application.getSuppliers().size();i++){
+          items.add(Application.getSuppliers().get(i).getname());
             jlist1.setEnabled(true);
        }
       
@@ -775,9 +775,9 @@ Application.populateAndSetupList(jlist1, items);
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.userspage.setVisible(false);
-        Application.userspage=new UserPage();
-        Application.loginpage.setVisible(true);
+        Application.getUserspage().setVisible(false);
+        Application.setUserspage(new UserPage());
+        Application.getLoginpage().setVisible(true);
     }
 
 
@@ -796,25 +796,25 @@ Application.populateAndSetupList(jlist1, items);
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
          
-          if(Application.suppliers.isEmpty()&&Application.storeowners.isEmpty()){
+          if(Application.getSuppliers().isEmpty()&&Application.getStoreowners().isEmpty()){
           JOptionPane.showMessageDialog(rootPane, "There are no owners or suppliers to send messages");
        }else{
-              if(index1<=Application.storeowners.size()){
-                  String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-          Application.sendEmail(EMAIL_FROM, Application.storeowners.get(index1).getemail(), h);
-              Application.storeowners.get(index1).messages.add(h);
-              JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
+              if(index1<=Application.getStoreowners().size()){
+                  String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
+          Application.sendEmail(EMAIL_FROM, Application.getStoreowners().get(index1).getemail(), h);
+              Application.getStoreowners().get(index1).messages.add(h);
+              JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.getOwnername());
               jTextArea1.setText("");
             
        
               }
               
               else{
-                  index1-=Application.storeowners.size();
-                            String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                 Application.sendEmail(EMAIL_FROM, Application.suppliers.get(index1).getemail(), h);
-                    Application.suppliers.get(index1).messages.add(h);
-              JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.suppliername);
+                  index1-=Application.getStoreowners().size();
+                            String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
+                 Application.sendEmail(EMAIL_FROM, Application.getSuppliers().get(index1).getemail(), h);
+                    Application.getSuppliers().get(index1).messages.add(h);
+              JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.getSuppliername());
               jTextArea1.setText("");
               }
          
@@ -823,7 +823,7 @@ Application.populateAndSetupList(jlist1, items);
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
 
-List<Product> m = Application.findProductsByName(Application.products, jTextField1.getText());
+List<Product> m = Application.findProductsByName(Application.getProducts(), jTextField1.getText());
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -834,7 +834,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        List<Product> m = Application.findProductsByDescription(Application.products, "drink");
+        List<Product> m = Application.findProductsByDescription(Application.getProducts(), "drink");
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -845,7 +845,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
-           List<Product> m = Application.findProductsByDescription(Application.products, "dunat");
+           List<Product> m = Application.findProductsByDescription(Application.getProducts(), "dunat");
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -856,7 +856,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
          
-       List<Product> m = Application.findProductsByDescription(Application.products, "crepe");
+       List<Product> m = Application.findProductsByDescription(Application.getProducts(), "crepe");
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -867,7 +867,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
          
-           List<Product> m = Application.findProductsByDescription(Application.products, "cake");
+           List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cake");
            
      jPanel29.removeAll();
         for (Product product : m) {
@@ -879,7 +879,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
          
-           List<Product> m = Application.findProductsByDescription(Application.products, "cookie");
+           List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cookie");
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -890,7 +890,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
          
-           List<Product> m = Application.findProductsByDescription(Application.products, "cheescake");
+           List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cheescake");
      jPanel29.removeAll();
         for (Product product : m) {
             jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
@@ -901,10 +901,10 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
          
-          if(getPasswordAsString(jPasswordField2).equals(Application.publicuser.getpassword()+"")){
+          if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail(EMAIL_FROM, Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
+                Application.sendEmail(EMAIL_FROM, Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

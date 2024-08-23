@@ -122,7 +122,7 @@ jLabel3.setText(divideText(jLabel3,des));
               r3.setSelected(false);
                r4.setSelected(false);
                 r5.setSelected(false);
-                Application.posts.get(id).getRates().add(1);
+                Application.getPosts().get(id).getRates().add(1);
                 JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
 
@@ -134,7 +134,7 @@ jLabel3.setText(divideText(jLabel3,des));
                 r3.setSelected(false);
                  r4.setSelected(false);
                   r5.setSelected(false);
-               Application.posts.get(id).getRates().add(2);
+               Application.getPosts().get(id).getRates().add(2);
                   JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                 });
@@ -145,7 +145,7 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(true);
                    r4.setSelected(false);
                     r5.setSelected(false);
-                 Application.posts.get(id).getRates().add(3);
+                 Application.getPosts().get(id).getRates().add(3);
                     JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                   });
@@ -156,7 +156,7 @@ jLabel3.setText(divideText(jLabel3,des));
                     r3.setSelected(true);
                      r4.setSelected(true);
                       r5.setSelected(false);
-                   Application.posts.get(id).getRates().add(4);
+                   Application.getPosts().get(id).getRates().add(4);
                       JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                     });
@@ -167,7 +167,7 @@ jLabel3.setText(divideText(jLabel3,des));
                       r3.setSelected(true);
                        r4.setSelected(true);
                         r5.setSelected(true);
-                     Application.posts.get(id).getRates().add(5);
+                     Application.getPosts().get(id).getRates().add(5);
                         JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                       });

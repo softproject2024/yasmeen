@@ -18,12 +18,12 @@ public class Suppliersframe extends javax.swing.JFrame {
         initComponents();
         setSize(718, 470);
        ArrayList<String> items=new ArrayList<>();
-       for(int i = 0; i<Application.storeowners.size(); i++){
-          items.add(Application.storeowners.get(i).getname());
+       for(int i = 0; i<Application. getStoreowners().size(); i++){
+          items.add(Application. getStoreowners().get(i).getname());
        }
     
 Application.populateAndSetupList(jlist1, items);
-if(!Application.storeowners.isEmpty()){
+if(!Application. getStoreowners().isEmpty()){
       jlist1.setEnabled(true);
     }
   
@@ -368,9 +368,9 @@ if(!Application.storeowners.isEmpty()){
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.supplierspage.setVisible(false);
-        Application.supplierspage=new Suppliersframe();
-        Application.loginpage.setVisible(true);
+        Application.getSupplierspage().setVisible(false);
+        Application.setSupplierspage(new Suppliersframe());
+        Application.getLoginpage().setVisible(true);
 
     }
 
@@ -392,16 +392,16 @@ if(!Application.storeowners.isEmpty()){
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        if(Application.storeowners.isEmpty()){
+        if(Application. getStoreowners().isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "There are no owners to send messages");
         }else{
-            for(int i = 0; i<Application.storeowners.size(); i++){
-                if(Application.storeowners.get(i).getname().equals(Application.suppliername)){
-                    String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(UserPage.getIndex1()).getemail(), h );
+            for(int i = 0; i<Application. getStoreowners().size(); i++){
+                if(Application. getStoreowners().get(i).getname().equals(Application.getSuppliername())){
+                    String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
+                              Application.sendEmail("s12112895@stu.najah.edu", Application. getStoreowners().get(UserPage.getIndex1()).getemail(), h );
                     
-                    Application.storeowners.get(i).messages.add(h);
-                    JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
+                    Application. getStoreowners().get(i).messages.add(h);
+                    JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.getOwnername());
                     jTextArea1.setText("");
                     break;
                 }
@@ -411,10 +411,10 @@ if(!Application.storeowners.isEmpty()){
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
          
-          if(getPasswordAsString(jPasswordField2).equals(Application.publicuser.getpassword()+"")){
+          if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone" );
+                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone" );
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

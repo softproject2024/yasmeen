@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import yasmeen.softwareproject.Owner.ImageButton;
 
-import static yasmeen.softwareproject.Application.invalidvalue;
+
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
@@ -47,7 +47,7 @@ String p19="p19.png";
             try {
                 image = new ImageIcon(imagepath).getImage();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, invalidvalue);
+                JOptionPane.showMessageDialog(null, Application.getInvalidvalue());
             }
 
 
@@ -546,7 +546,7 @@ String p19="p19.png";
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        JOptionPane.showMessageDialog(rootPane,Application.getallproducts());
+        JOptionPane.showMessageDialog(rootPane,Application.getProducts());
     }
 
 
@@ -566,12 +566,12 @@ String p19="p19.png";
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        StringBuilder h= new StringBuilder("There is no posts");
-        for(int i=0;i<Application.posts.size();i++){
+        StringBuilder h= new StringBuilder("There is no  getPosts()");
+        for(int i=0;i<Application. getPosts().size();i++){
             if(i==0){
-                h = new StringBuilder("#. post rate\n1. " + Application.posts.get(i).getrate() + "\n");
+                h = new StringBuilder("#. post rate\n1. " + Application. getPosts().get(i).getrate() + "\n");
             } else{
-                h.append((i + 1)).append(". ").append(Application.posts.get(i).getrate()).append("\n");
+                h.append((i + 1)).append(". ").append(Application. getPosts().get(i).getrate()).append("\n");
             }
         }
         JOptionPane.showMessageDialog(null, h.toString());
@@ -579,10 +579,10 @@ String p19="p19.png";
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        String index=JOptionPane.showInputDialog(Application.getallproducts());
+        String index=JOptionPane.showInputDialog(Application.getProducts());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
-            if(x<0||x>Application.products.size()){
+            if(x<0||x>Application.getProducts().size()){
                 JOptionPane.showMessageDialog(rootPane, enter);
             }else{
                 String str1=JOptionPane.showInputDialog("What is the new Price of the product ?");
@@ -607,17 +607,17 @@ String p19="p19.png";
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
         StringBuilder h= new StringBuilder("There is no information");
-        for(int i = 0; i<Application.storeowners.size(); i++){
+        for(int i = 0; i<Application.getStoreowners().size(); i++){
             if(i==0){
                 h = new StringBuilder("Owners :\n");
             }
-            h.append(Application.storeowners.get(i).getname()).append("\n");
+            h.append(Application.getStoreowners().get(i).getname()).append("\n");
         }
-        for(int i=0;i<Application.suppliers.size();i++){
+        for(int i=0;i<Application.getSuppliers().size();i++){
             if(i==0){
-                h.append("Suppliers :\n");
+                h.append("getSuppliers() :\n");
             }
-            h.append(Application.suppliers.get(i).getname());
+            h.append(Application.getSuppliers().get(i).getname());
         }
 
         JOptionPane.showMessageDialog(null, h.toString());
@@ -625,9 +625,9 @@ String p19="p19.png";
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        Application.adminpage.setVisible(false);
+        Application.getAdminpage().setVisible(false);
        someMethod2();
-        Application.loginpage.setVisible(true);
+        Application.getLoginpage().setVisible(true);
     }
 
 
@@ -644,10 +644,10 @@ String p19="p19.png";
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        if (getPasswordAsString(jPasswordField2).equals(Application.publicuser.getpassword() + "")) {
+        if (getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword() + "")) {
             SecureRandom random = new SecureRandom();
             int verificationCode = 10000 + random.nextInt(90000);
-            Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is " + verificationCode + "\n" + "Please don't share this code with anyone");
+            Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is " + verificationCode + "\n" + "Please don't share this code with anyone");
             String b = JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
             if (Application.isNumber(b)) {
                 if (Integer.parseInt(b) == verificationCode) {
@@ -661,7 +661,7 @@ String p19="p19.png";
         }
     }
     public static void someMethod2() {
-        Application.adminpage = new Admin1();
+        Application.setAdminpage( new Admin1());
     }
     public static String getFilepath() {
 

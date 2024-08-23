@@ -217,7 +217,7 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
         Application.adminpage=new Admin1();
-        Application.userspage=new userpage();
+        Application.userspage=new UserPage();
         Application.ownerpage=new Owner();
         Application.supplierspage=new Suppliersframe();
       Application.type= jTextField3.getText();
@@ -314,7 +314,7 @@ public class Login extends javax.swing.JFrame {
             }
         }
     } else if(jTextField3.getText().equals("User")) {
-             Application.userspage=new userpage();
+             Application.userspage=new UserPage();
         for (int i = 0; i < Application.users.size(); i++) {
             if (jTextField1.getText().equals(Application.users.get(i).getemail())) {
                 if (jPasswordField1.getText().equals(Application.users.get(i).getpassword()+"")) {

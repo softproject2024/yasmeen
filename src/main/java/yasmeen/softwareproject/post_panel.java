@@ -58,7 +58,7 @@ public class post_panel extends javax.swing.JPanel {
     }
 
 }
-public static int rate=1;
+
   public static String divideText(JLabel label, String text) {
         FontMetrics fontMetrics = label.getFontMetrics(label.getFont());
         int labelWidth = 116;
@@ -116,58 +116,58 @@ jLabel3.setText(divideText(jLabel3,des));
         jPanel1.add(r4);
         jPanel1.add(r5);
         r1.addActionListener(e -> {
-            rate=1;
+
             r1.setSelected(true);
              r2.setSelected(false);
               r3.setSelected(false);
                r4.setSelected(false);
                 r5.setSelected(false);
-                Application.posts.get(id).getRates().add(rate);
+                Application.posts.get(id).getRates().add(1);
                 JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
 
               });
           r2.addActionListener(e -> {
-              rate=2;
+
               r1.setSelected(true);
                r2.setSelected(true);
                 r3.setSelected(false);
                  r4.setSelected(false);
                   r5.setSelected(false);
-               Application.posts.get(id).getRates().add(rate);
+               Application.posts.get(id).getRates().add(2);
                   JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                 });
             r3.addActionListener(e -> {
-                rate=3;
+
                 r1.setSelected(true);
                  r2.setSelected(true);
                   r3.setSelected(true);
                    r4.setSelected(false);
                     r5.setSelected(false);
-                 Application.posts.get(id).getRates().add(rate);
+                 Application.posts.get(id).getRates().add(3);
                     JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                   });
               r4.addActionListener(e -> {
-                  rate=4;
+
                   r1.setSelected(true);
                    r2.setSelected(true);
                     r3.setSelected(true);
                      r4.setSelected(true);
                       r5.setSelected(false);
-                   Application.posts.get(id).getRates().add(rate);
+                   Application.posts.get(id).getRates().add(4);
                       JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                     });
                 r5.addActionListener(e -> {
-                    rate=5;
+
                     r1.setSelected(true);
                      r2.setSelected(true);
                       r3.setSelected(true);
                        r4.setSelected(true);
                         r5.setSelected(true);
-                     Application.posts.get(id).getRates().add(rate);
+                     Application.posts.get(id).getRates().add(5);
                         JOptionPane.showMessageDialog(null, "Thanks for rating the post");
 
                       });

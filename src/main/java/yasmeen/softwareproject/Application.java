@@ -51,7 +51,7 @@ public class Application {
   public static Login loginpage;
   public static Owner ownerpage;
   public static Admin1 adminpage;
-   public static userpage userspage;
+   public static UserPage userspage;
 
   public static Suppliersframe supplierspage;
     public static final String OWNER_MSG ="Owner";
@@ -100,7 +100,7 @@ publicuser=new Account("",1,"",1,"",1);
      supplierspage=new Suppliersframe();
      posts.add(new post(path,"1","1",0 ));
 
-    userspage=new userpage();
+    userspage=new UserPage();
  }
 public static String getallproducts(){
     StringBuilder h= new StringBuilder("There is no products in the store");
@@ -628,7 +628,7 @@ publicuser.setpassword(newpassword);
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
                     int index = jList.locationToIndex(e.getPoint());
-                    userpage.index1 =index;
+                    UserPage.index1 =index;
                    
                     if (index >= 0) {
                         String selectedItem = listModel.getElementAt(index);

@@ -34,12 +34,12 @@ class ImagePanel extends JPanel {
    
 }
 
-public class userpage extends javax.swing.JFrame {
+public class UserPage extends javax.swing.JFrame {
 public static int index1;
     public static final String EMAIL_FROM ="s12112895@stu.najah.edu";
     public static final String STYLE ="Stylus BT";
     
-    public userpage() {
+    public UserPage() {
         initComponents();
         jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         setSize(this.getWidth()-10, this.getHeight());
@@ -56,7 +56,7 @@ public static int index1;
           jlist1.setEnabled(false);
          jTextArea1.setLineWrap(true);
          jScrollPane5.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-            jScrollPane5.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         ArrayList<String> items=new ArrayList<>();
           for(int i = 0; i<Application.storeowners.size(); i++){
           items.add(Application.storeowners.get(i).getname());
@@ -765,7 +765,7 @@ Application.populateAndSetupList(jlist1, items);
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
          
         Application.userspage.setVisible(false);
-        Application.userspage=new userpage();
+        Application.userspage=new UserPage();
         Application.loginpage.setVisible(true);
     }
 

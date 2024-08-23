@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 
 import static yasmeen.softwareproject.Owner.createImageLabel1;
-import static yasmeen.softwareproject.userpage.index1;
+import static yasmeen.softwareproject.UserPage.index1;
 
 public class Suppliersframe extends javax.swing.JFrame {
 

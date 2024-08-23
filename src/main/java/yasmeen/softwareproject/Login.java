@@ -268,9 +268,9 @@ public class Login extends javax.swing.JFrame {
                     Application.adminpage.getl2().setText("Welcome back " + Application.admins.get(i).getname());
                     Application.adminpage.setVisible(true);
                     Application.loginpage.setVisible(false);
-                         Application.adminpage.jTextField7.setText(Application.admins.get(i).getname());
-                    Application.adminpage.jTextField9.setText(Application.admins.get(i).getage()+"");
-                            Application.adminpage.jTextField8.setText(Application.admins.get(i).getphone()+"");
+                         Application.adminpage.getjTextField7().setText(Application.admins.get(i).getname());
+                    Application.adminpage.getjTextField9().setText(Application.admins.get(i).getage()+"");
+                            Application.adminpage.getjTextField8().setText(Application.admins.get(i).getphone()+"");
                     jTextField1.setText("");
                     jPasswordField1.setText("");
                     Application.publicuser=Application.admins.get(i);

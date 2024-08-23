@@ -688,14 +688,28 @@ String p19="p19.png";
     public JLabel getl2() {
         return jLabel2;
     }
-    public javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField1;
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField jTextField7;
-    public javax.swing.JTextField jTextField8;
-    public javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
 
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+    public JTextField getjTextField8() {
+        return jTextField8;
+    }
+    public JTextField getjTextField9() {
+        return jTextField9;
+    }
 }

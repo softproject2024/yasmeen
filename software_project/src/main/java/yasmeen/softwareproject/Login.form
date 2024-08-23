@@ -170,7 +170,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="Owner.createImageLabel1(&quot;C:\\Users\\nd\\Desktop\\yasmeen\\New folder\\p1.png&quot;)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="Owner.createImageLabel1(&quot;C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png&quot;)"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -280,7 +280,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="your name"/>
+            <Property name="text" type="java.lang.String" value="your type"/>
             <Property name="toolTipText" type="java.lang.String" value="Type your name"/>
           </Properties>
           <Events>

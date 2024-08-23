@@ -119,11 +119,12 @@ private String path,des;
     /**
      * Creates new form post_panel
      */
-    public post_panel(String name,String des,String path) {
+int id;
+    public post_panel(String name,String des,String path,int id) {
         this.path=path;
         this.des=des;
         initComponents();
-      
+      this.id=id;
       
 
 jLabel2.setSize(20,20);
@@ -153,7 +154,10 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(false);
                    r4.setSelected(false);
                     r5.setSelected(false);
-                
+                    Application.posts.get(id).getRates().add(rate);
+                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    
+                  
                   }
         });
           r2.addActionListener(new ActionListener() {
@@ -165,7 +169,9 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(false);
                    r4.setSelected(false);
                     r5.setSelected(false);
-                
+                 Application.posts.get(id).getRates().add(rate);
+                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    
                   }
         });
             r3.addActionListener(new ActionListener() {
@@ -177,7 +183,9 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(true);
                    r4.setSelected(false);
                     r5.setSelected(false);
-                
+                 Application.posts.get(id).getRates().add(rate);
+                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    
                   }
         });
               r4.addActionListener(new ActionListener() {
@@ -189,7 +197,9 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(true);
                    r4.setSelected(true);
                     r5.setSelected(false);
-                
+                 Application.posts.get(id).getRates().add(rate);
+                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    
                   }
         });
                 r5.addActionListener(new ActionListener() {
@@ -201,7 +211,9 @@ jLabel3.setText(divideText(jLabel3,des));
                   r3.setSelected(true);
                    r4.setSelected(true);
                     r5.setSelected(true);
-                
+                 Application.posts.get(id).getRates().add(rate);
+                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    
                   }
         });
         

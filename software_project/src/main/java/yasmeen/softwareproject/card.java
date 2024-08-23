@@ -14,6 +14,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 class ImageLabelFactory1 {
     public static JLabel createImageLabel1(String imagePath) {
@@ -61,19 +62,26 @@ class ImageLabelFactory1 {
  */
 public class card extends javax.swing.JPanel {
  private String path;
+
+ private int quant;
+ private String name;
+ private int price;
  
     /**
      * Creates new form card
      */
     public card(int price,int quantity,String name,String path) {
         this.path=path;
+        this.price=price;
+        this.name=name;
+        quant=quantity;
         initComponents();
         jLabel2.setSize(20,20);
         jLabel3.setText(quantity+"");
         jLabel4.setText(price+"");
-       jPanel1.setLayout(new FlowLayout());
-       jPanel1.add(new JLabel(name));
-       
+       jPanel1.setLayout(new FlowLayout(FlowLayout.CENTER));
+     jPanel1.add(new JLabel(name));
+   
         jLabel4.setVerticalAlignment(JLabel.TOP);
 jLabel4.setHorizontalAlignment(JLabel.LEFT);
   jLabel3.setVerticalAlignment(JLabel.TOP);
@@ -94,17 +102,22 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 229, 234));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setMaximumSize(new java.awt.Dimension(20, 20));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(255, 229, 234));
+        jPanel1.setBackground(new java.awt.Color(227, 240, 231));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 140, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,6 +152,35 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        String h=JOptionPane.showInputDialog("How much quantity do you want to buy ?");
+        if(!Application.isNumber(h)){
+           JOptionPane.showMessageDialog(null, "invalid value");
+        }else{
+           int x=Integer.parseInt(h);
+           if(x>quant){
+                 JOptionPane.showMessageDialog(null, "invalid value");
+     
+           }else{
+                      JOptionPane.showMessageDialog(null, "Your fee for this product is "+(price*x));
+          Application.purchase(name, x);
+           Application.userspage.jPanel21.removeAll();
+             for(int i=0;i<Application.products.size();i++){
+           Application.userspage.jPanel21.add(new card(Application.products.get(i).getprice(),Application.products.get(i).getquantity(),Application.products.get(i).getname(),Application.products.get(i).getpath()));
+     
+     
+       }
+            Application.userspage.jPanel29.removeAll();
+             Application.userspage.jPanel29.revalidate();  
+                 Application.userspage.jPanel29.repaint();
+                  Application.userspage.jPanel21.revalidate();  
+                 Application.userspage.jPanel21.repaint();
+           }
+        }
+       
+    }//GEN-LAST:event_jLabel2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

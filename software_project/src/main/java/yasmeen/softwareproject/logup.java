@@ -3,10 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package yasmeen.softwareproject;
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.security.SecureRandom;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -23,7 +26,11 @@ public class logup extends javax.swing.JFrame {
     public logup() {
         initComponents();
       
-        this.setSize(this.getWidth(), this.getHeight());
+        this.setSize(this.getWidth(), this.getHeight()-250);
+          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int centerX = screenSize.width / 2;
+        int centerY = screenSize.height / 2;
+        this.setLocation(centerX - this.getWidth() / 2, centerY - this.getHeight() / 2);
     }
 
     /**
@@ -36,7 +43,7 @@ public class logup extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = Owner.createImageLabel1("C:\\Users\\nd\\Desktop\\yasmeen\\New folder\\p1.png");
+        jLabel1 = Owner.createImageLabel1("C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -215,7 +222,7 @@ public class logup extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,9 +266,7 @@ public class logup extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -290,8 +295,19 @@ public class logup extends javax.swing.JFrame {
             }
             else{
                 Application.type2=new String(jTextField3.getText());
-             Application.logup(jTextField2.getText(),jTextField1.getText(),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField5.getText()),Integer.parseInt(jPasswordField1.getText()));
-       
+                 SecureRandom random = new SecureRandom();
+        int verificationCode = 10000 + random.nextInt(90000);
+                Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
+                 String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
+                 if(Application.isNumber(b)){
+                  if(Integer.parseInt(b)==verificationCode){
+                      Application.logup(jTextField2.getText(),jTextField1.getText(),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField5.getText()),Integer.parseInt(jPasswordField1.getText()));
+            
+                  }else{
+                 JOptionPane.showMessageDialog(null, "Wrong verificatio code");
+                 }
+                 }
+                 
             
                     }
             

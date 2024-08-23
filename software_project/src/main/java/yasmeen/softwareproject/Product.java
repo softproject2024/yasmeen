@@ -36,16 +36,19 @@ public class Product {
     private int quantity;
     int discount;
     String discription;
-
-    public Product(String name, int price, int quantity, String date, int discount,String description) {
+String path;
+    public Product(String name, int price, int quantity, String date, int discount,String description,String path) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.expire = stringToDate(date);
         this.discount = discount;
         this.discription=description;
+        this.path=path;
     }
-
+public String getpath(){
+    return path;
+}
     public String getname() {
         return name;
     }

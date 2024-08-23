@@ -29,8 +29,8 @@ public class Application {
 
 
 
-    Product carrot=new Product("tomato", 12,0, "1/12/2024",0,"noting");
-    Product cucumber=new Product("cucumber", 4,0, "30/12/2024",0,"nothing");
+    Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey","C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
+    Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool","C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
  public static String type;
  public static int maxindex;
   public static String type2;
@@ -64,6 +64,7 @@ public class Application {
      publicuser=new Admin("",0,"",0,0);
      products=new ArrayList<>();
      products.add(carrot);
+     
      products.add(cucumber);
      Admins=new ArrayList<>();
      Owners=new ArrayList<>();
@@ -78,10 +79,10 @@ public class Application {
      users=new ArrayList<>();
      users.add(new User("Hitler",1,"1",2,12 ));
      Admins.add(new Admin("any",1,"ad1@g.c",2112121212,12121212));
-     Owners.add(new Owneraccount("any",1,"ow1@g.c",2112121212,12121212));
+     Owners.add(new Owneraccount("nk",1,"ow1@g.c",2112121212,12121212));
     suppliers.add(new Suppliers("any",1,"su1@g.c",2112121212,12121212));
 
-     users.add(new User("any",1,"us1@g.c",2112121212,12121212));
+     users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
      sales=new ArrayList<>();
      sales.add(new orders(products.get(1).getname(), 12, 12, status));
       sales.add(new orders(products.get(1).getname(), 14, 14, status));
@@ -91,7 +92,7 @@ public class Application {
      ownerpage=new Owner();
      adminpage=new Admin1();
      supplierspage=new Suppliersframe();
-     posts.add(new post("1","1","1",0 ));
+     posts.add(new post("C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png","1","1",0 ));
 
     userspage=new userpage();
  }
@@ -131,7 +132,8 @@ if(price<0||quantity<0){
           return;
       }
   }
-  products.add(new Product(name,price,quantity,expire,discount,des));
+  String pa=adminpage.getFilePath();
+  products.add(new Product(name,price,quantity,expire,discount,des,pa));
   JOptionPane.showMessageDialog(null,"The Product "+name+" is added as a new product to the store" );
  }
  public static void removeproduct(String name){
@@ -182,7 +184,6 @@ if(price<0||quantity<0){
  }
  public  static void addpost(String path,String des,String prd){
      posts.add(new post(path,prd,des,0));
-     JOptionPane.showMessageDialog(null, "The post is added successfully");
  }
  public static void implementdiscount(int discount,Product p){
      if(discount<0||discount>=100){
@@ -229,9 +230,9 @@ if(price<0||quantity<0){
      // JOptionPane.showMessageDialog(null, "There is no sales happend in the store");
       return h;
   } else{
-      h="Sale id   produc name   sale profit   sale status\n";
+      h="#. produc name   sale profit   sale status\n";
       for(int i=0;i<sales.size();i++){
-      h+=(i+1)+". "+sales.get(i).getname()+"   "+sales.get(i).getprofit()+"   "+sales.get(i).status+"\n";
+      h+=(i+1)+". "+sales.get(i).getname()+"            "+sales.get(i).getprofit()+"              "+sales.get(i).status+"\n";
   }
    }
    return h;
@@ -404,7 +405,11 @@ public static void purchase(String prodname,int qua){
              if(products.get(i).getquantity()<qua){
                  JOptionPane.showMessageDialog(null,"invalid value");
              }else{
-                 products.get(i).setquantity(products.get(i).getquantity()-qua);
+     
+                  int x=products.get(i).getquantity();          
+                 products.get(i).setquantity(x-qua);
+                 sales.add(new orders(products.get(i).getname(), qua, (x*qua), "Pending"));
+      
              }
          }
      }
@@ -419,6 +424,7 @@ public static void purchase(String prodname,int qua){
         }
 
         return matchingProducts;
+       
     }
     public static List<Product> findProductsByName(ArrayList<Product> products, String searchString) {
         List<Product> matchingProducts = new ArrayList<>();
@@ -432,22 +438,32 @@ public static void purchase(String prodname,int qua){
         return matchingProducts;
     }
 public static void updatepassword(int newpassword){
-  SecureRandom random = new SecureRandom();
-        int verificationCode = 10000 + random.nextInt(90000);
-        sendEmail("softwareproject22@gmail.com",publicuser.getemail(),"The verification code is : "+verificationCode+"\nPlease don't share it","123");
-        String verification=JOptionPane.showInternalInputDialog(null, "What is the verificationCode ?");
-        try{
-            int code=Integer.parseInt(verification);
-            if(code==verificationCode){
-               publicuser.setpassword(newpassword);
-            }else{
-                 JOptionPane.showMessageDialog(null,"The verification Code is incorrecr");
-            }
-
-
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"The verification Code is incorrecr");
-
+publicuser.setpassword(newpassword);
+if(type.equals("Owner")){
+    for(int i=0;i<Owners.size();i++){
+        if(publicuser.getemail().equals(Owners.get(i).getemail())){
+            Owners.get(i).setpassword(newpassword);
+        }
+    }
+}else if(type.equals("Admin")){
+    for(int i=0;i<Admins.size();i++){
+        if(publicuser.getemail().equals(Admins.get(i).getemail())){
+            Admins.get(i).setpassword(newpassword);
+        }
+    }
+}
+else if(type.equals("Supplier")){
+    for(int i=0;i<suppliers.size();i++){
+        if(publicuser.getemail().equals(suppliers.get(i).getemail())){
+            suppliers.get(i).setpassword(newpassword);
+        }
+    }
+}else if(type.equals("User")){
+    for(int i=0;i<users.size();i++){
+        if(publicuser.getemail().equals(users.get(i).getemail())){
+            users.get(i).setpassword(newpassword);
+        }
+    }
 }
 }
 public void Purchase(String n,int q){
@@ -471,35 +487,6 @@ public void Purchase(String n,int q){
  }
  public static void logup(String email,String name,int age,int phone,int password){
 
-//       SecureRandom random = new SecureRandom();
-//        int verificationCode = 10000 + random.nextInt(90000);
-//        sendEmail("softwareproject22@gmail.com",email,"The verification code is : "+verificationCode+"\nPlease don't share it","123");
-//        String verification=JOptionPane.showInternalInputDialog(null, "What is the verificationCode ?");
-//        try{
-//            int code=Integer.parseInt(verification);
-//            if(code==verificationCode){
-//                 if(Application.type2.equals("Owner")){
-//        Owners.add(new Owneraccount(name, age, email, phone, password));
-//    }
-//    else if(Application.type2.equals("Admin")){
-//        Admins.add(new Admin(name, age, email, phone, password));
-//    }
-//    else if(Application.type2.equals("Supplier")){
-//        suppliers.add(new Suppliers(name, age, email, phone, password));
-//    }else{
-//      users.add(new User(name, age, email, phone, password));
-//    }
-//    JOptionPane.showMessageDialog(null,"Welcome to our store "+name);
-//            }else{
-//                 JOptionPane.showMessageDialog(null,"The verification Code is incorrecr");
-//            }
-//
-//
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null,"The verification Code is incorrecr");
-//
-//}
-//
 
 
      if(!isfoundmail(email)){
@@ -626,7 +613,7 @@ public void Purchase(String n,int q){
             message.setSubject("Your Subject Here");
             message.setText(messageContent);
             Transport.send(message);
-            System.out.println("Email sent successfully!");
+          
         } catch (MessagingException e) {
             e.printStackTrace();
         }
@@ -688,6 +675,8 @@ public static boolean isfoundmail(String email){
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
                     int index = jList.locationToIndex(e.getPoint());
+                    userspage.index1=index;
+                   
                     if (index >= 0) {
                         String selectedItem = listModel.getElementAt(index);
                         suppliername=selectedItem;
@@ -695,6 +684,7 @@ public static boolean isfoundmail(String email){
                         int y=order;
                         order=index;
                         if(y!=order){
+                            
                             JOptionPane.showMessageDialog(null, "You clicked: " + selectedItem);
                         }
                     }

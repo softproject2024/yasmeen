@@ -6,6 +6,7 @@ package yasmeen.softwareproject;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +27,11 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         
-        setSize(new Dimension(710, 351));
+        setSize(new Dimension(this.getWidth(), 351));
+          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int centerX = screenSize.width / 2;
+        int centerY = screenSize.height / 2;
+        this.setLocation(centerX - this.getWidth() / 2, centerY - this.getHeight() / 2);
         
     }
     
@@ -41,7 +46,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = Owner.createImageLabel1("C:\\Users\\nd\\Desktop\\yasmeen\\New folder\\p1.png");
+        jLabel1 = Owner.createImageLabel1("C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -113,7 +118,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel14.setText("Sign in to continue");
 
-        jTextField3.setText("your name");
+        jTextField3.setText("your type");
         jTextField3.setToolTipText("Type your name");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,13 +250,17 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-      
+        Application.adminpage=new Admin1();
+        Application.userspage=new userpage();
+        Application.ownerpage=new Owner();
+        Application.supplierspage=new Suppliersframe();
+      Application.type=new String(jTextField3.getText());
             
         if (isValidEmail(jTextField1.getText())) {
     boolean isValidUser = false;
     
     if (jTextField3.getText().equals("Owner")) {
+        
         for (int i = 0; i < Application.Owners.size(); i++) {
             if (jTextField1.getText().equals(Application.Owners.get(i).getemail())) {
                 if (jPasswordField1.getText().equals(Application.Owners.get(i).getpassword()+"")) {
@@ -293,6 +302,9 @@ public class Login extends javax.swing.JFrame {
                     Application.adminpage.jLabel2.setText("Welcome back " + Application.Admins.get(i).getname());
                     Application.adminpage.setVisible(true);
                     Application.loginpage.setVisible(false);
+                         Application.adminpage.jTextField7.setText(Application.Admins.get(i).getname());
+                    Application.adminpage.jTextField9.setText(Application.Admins.get(i).getage()+"");
+                            Application.adminpage.jTextField8.setText(Application.Admins.get(i).getphone()+"");
                     jTextField1.setText("");
                     jPasswordField1.setText("");
                     Application.publicuser=Application.Admins.get(i);
@@ -316,10 +328,10 @@ public class Login extends javax.swing.JFrame {
                     jTextField1.setText("");
                     Application.publicuser=Application.suppliers.get(i);
                     jPasswordField1.setText("");
-                   Application.supplierspage.jTextField4.setText(Application.suppliers.get(i).getname());
-                     Application.supplierspage.jTextField5.setText(Application.suppliers.get(i).getphone()+"");
-                      Application.supplierspage.jTextField6.setText(Application.suppliers.get(i).getage()+"");
-                      Application.supplierspage.jPasswordField12.setText("");
+                   Application.supplierspage.jTextField1.setText(Application.suppliers.get(i).getname());
+                     Application.supplierspage.jTextField2.setText(Application.suppliers.get(i).getphone()+"");
+                      Application.supplierspage.jTextField3.setText(Application.suppliers.get(i).getage()+"");
+                      Application.supplierspage.jPasswordField1.setText("");
                     Application.supplierspage.jLabel2.setText("Welcome back " + Application.suppliers.get(i).getname());
                        String h="There is no messages to this account";
             for(int ip=0;ip<Application.publicuser.messages.size();ip++){
@@ -339,10 +351,8 @@ public class Login extends javax.swing.JFrame {
             }
         }
     } else if(jTextField3.getText().equals("User")) {
-       
-           
+             Application.userspage=new userpage();
         for (int i = 0; i < Application.users.size(); i++) {
-
             if (jTextField1.getText().equals(Application.users.get(i).getemail())) {
                 if (jPasswordField1.getText().equals(Application.users.get(i).getpassword()+"")) {
                         Application.userspage.setVisible(true);

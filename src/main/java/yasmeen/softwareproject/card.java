@@ -43,9 +43,9 @@ class ImageLabelFactory1 {
            
             label.setIcon(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+
             
-            label.setText("Image load error: " + e.getMessage());
+            label.setText("Image load error: ");
         }
 
         return label;

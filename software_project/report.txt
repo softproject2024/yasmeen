@@ -1,4 +1,0 @@
-#. produc name   sale profit   sale status
-1. cucumber            12              Complete
-2. cucumber            14              Complete
-3. cucumber            13              Complete

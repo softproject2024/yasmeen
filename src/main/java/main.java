@@ -15,7 +15,7 @@ public class main {
              Application.products=new ArrayList<>();
               Application.sales=new ArrayList<>();
            
-Application.loginpage.setVisible(true);
+Application.loginpage.setVisible(false);
        
     }
 }

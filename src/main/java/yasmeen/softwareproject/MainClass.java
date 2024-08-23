@@ -1,9 +1,9 @@
+package yasmeen.softwareproject;
 
 import java.util.ArrayList;
-import yasmeen.softwareproject.Application;
 
-public class main {
-  
+public class MainClass {
+
     public static void main(String[] args) {
         new Application();
       Application.Owners=new ArrayList<>();

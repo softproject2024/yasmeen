@@ -3,7 +3,7 @@ name: SonarCloud
 on:
   push:
     branches:
-      - main
+      - yasmeen.softwareproject.MainClass
   pull_request:
     types: [opened, synchronize, reopened]
 

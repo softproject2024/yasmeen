@@ -12,7 +12,7 @@ import java.util.List;
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 class ImagePanel extends JPanel {
 
-   private final Image image;
+   private final transient Image image;
 
    
     public ImagePanel(String imagePath) {
@@ -33,15 +33,12 @@ class ImagePanel extends JPanel {
 
    
 }
-/**
- *
- * @author Hp
- */
+
 public class userpage extends javax.swing.JFrame {
 public static int index1;
-    /**
-     * Creates new form userpage
-     */
+    public static final String emailfrom="s12112895@stu.najah.edu";
+    public static final String style="Stylus BT";
+    
     public userpage() {
         initComponents();
         jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -58,7 +55,7 @@ public static int index1;
           jPanel29.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
           jlist1.setEnabled(false);
          jTextArea1.setLineWrap(true);
-         jScrollPane5.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+         jScrollPane5.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
             jScrollPane5.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         ArrayList<String> items=new ArrayList<>();
           for(int i = 0; i<Application.storeowners.size(); i++){
@@ -71,18 +68,18 @@ public static int index1;
        }
       
 Application.populateAndSetupList(jlist1, items);
-       jScrollPane8.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+       jScrollPane8.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
             
             
-            jScrollPane8.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                 jScrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+            jScrollPane8.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                 jScrollPane1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+
+        jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+              jScrollPane7.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
             
             
-            jScrollPane1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-              jScrollPane7.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-            
-            
-            jScrollPane7.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+            jScrollPane7.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
              Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int centerX = screenSize.width / 2;
         int centerY = screenSize.height / 2;
@@ -97,21 +94,21 @@ Application.populateAndSetupList(jlist1, items);
         JTabbedPane jTabbedPane12 = new JTabbedPane();
         JPanel jPanel24 = new JPanel();
         JPanel jPanel1 = new JPanel();
-        jPanel2 = new ImagePanel("C:\\Users\\Hp\\Desktop\\x7.png");
+        jPanel2 = new ImagePanel("man");
         JLabel jLabel19 = new JLabel();
         JPanel jPanel6 = new JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         JPanel jPanel26 = new JPanel();
         JPanel jPanel18 = new JPanel();
-        JPanel jPanel19 = new ImagePanel("C:\\Users\\Hp\\Desktop\\x7.png");
+        JPanel jPanel19 = new ImagePanel("man");
         JLabel jLabel18 = new JLabel();
         JPanel jPanel20 = new JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jPanel21 = new javax.swing.JPanel();
         JPanel jPanel27 = new JPanel();
         JPanel jPanel22 = new JPanel();
-        JPanel jPanel23 = new ImagePanel("C:\\Users\\Hp\\Desktop\\x7.png");
+        JPanel jPanel23 = new ImagePanel("man");
         JLabel jLabel1 = new JLabel();
         jTextField1 = new javax.swing.JTextField();
         JButton jButton1 = new JButton();
@@ -159,7 +156,7 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel14.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jLabel3.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Welcome Back Yasmeen");
 
@@ -501,7 +498,7 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
+        jLabel12.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier or Owner");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -528,9 +525,9 @@ Application.populateAndSetupList(jlist1, items);
 
         jScrollPane6.setViewportView(jlist1);
 
-        jButton8.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton8.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Confirm");
+
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -573,22 +570,22 @@ Application.populateAndSetupList(jlist1, items);
 
         jTabbedPane12.addTab("Feedback", jPanel5);
 
-        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel7.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel9.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel15.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel15.setText("change password");
 
-        jButton7.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton7.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Confirm");
+
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -643,31 +640,31 @@ Application.populateAndSetupList(jlist1, items);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel2.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel2.setText("Change the Phone Number");
 
-        jLabel4.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel4.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel4.setText("Change the Name ");
 
-        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel6.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel6.setText("Change the Age");
 
-        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
 
-        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
 
-        jTextField4.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField4.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel10.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel10.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel10.setText("Confirm the password");
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton9.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton9.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Confirm");
+     
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
 
@@ -793,7 +790,7 @@ Application.populateAndSetupList(jlist1, items);
        }else{
               if(index1<=Application.storeowners.size()){
                   String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-          Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+          Application.sendEmail(emailfrom, Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
               Application.storeowners.get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
               jTextArea1.setText("");
@@ -804,7 +801,7 @@ Application.populateAndSetupList(jlist1, items);
               else{
                   index1-=Application.storeowners.size();
                             String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                 Application.sendEmail("s12112895@stu.najah.edu", Application.suppliers.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+                 Application.sendEmail(emailfrom, Application.suppliers.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
                     Application.suppliers.get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.suppliername);
               jTextArea1.setText("");
@@ -896,7 +893,7 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
           if(jPasswordField2.getText().equals(Application.publicuser.getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
+                Application.sendEmail(emailfrom, Application.publicuser.getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", "nhdo kelh sbgl qynb");
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

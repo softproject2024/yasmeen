@@ -58,6 +58,7 @@ public class Application {
     public static final String adminmsg="Admin";
     public static final String suppliermsg="Supplier";
     public static final String usermsg="User";
+    public static final String enter="Please enter a valid password";
     
 
  public Application(){
@@ -120,7 +121,7 @@ if(!isValidFutureDate(expire)){
     return;
 }
 if(price<0||quantity<0){
-    JOptionPane.showMessageDialog(null, "invalid  value");
+    JOptionPane.showMessageDialog(null, invalidvalue);
 
     return;
 }
@@ -258,7 +259,7 @@ if(price<0||quantity<0){
 
                          } else {
 
-                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             JOptionPane.showMessageDialog(null, enter);
                              isValidUser = false;
                              break;
                          }
@@ -276,7 +277,7 @@ if(price<0||quantity<0){
                              Application.publicuser = Application.admins.get(i);
                              return true;
                          } else {
-                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             JOptionPane.showMessageDialog(null, enter);
                              isValidUser = false;
                              break;
                          }
@@ -292,7 +293,7 @@ if(price<0||quantity<0){
                              Application.publicuser = Application.suppliers.get(i);
                              return true;
                          } else {
-                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             JOptionPane.showMessageDialog(null, enter);
                              isValidUser = false;
                              break;
                          }

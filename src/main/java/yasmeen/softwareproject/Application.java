@@ -321,7 +321,7 @@ if(price<0||quantity<0){
     public static void updateinformation(String name,int age,int phone,int password){
 if(publicuser.getpassword()==password){
     for (Owneraccount owner : Owners) {
-        if (publicuser.getemail().equals(owner.getemail())) {
+        if (isowner(owner.getemail())) {
             owner.setname(name);
             owner.setage(age);
             owner.setphone(phone);
@@ -332,7 +332,7 @@ if(publicuser.getpassword()==password){
         }
     }
     for (Admin admin : Admins) {
-        if (publicuser.getemail().equals(admin.getemail())) {
+        if (isadmin(admin.getemail())) {
             admin.setname(name);
             admin.setage(age);
             admin.setphone(phone);
@@ -343,7 +343,7 @@ if(publicuser.getpassword()==password){
         }
     }
     for (Suppliers supplier : suppliers) {
-        if (publicuser.getemail().equals(supplier.getemail())) {
+        if (issuppleir(supplier.getemail())) {
             supplier.setname(name);
             supplier.setage(age);
             supplier.setphone(phone);
@@ -373,6 +373,18 @@ if(publicuser.getpassword()==password){
 
 }
 }
+
+    private static boolean issuppleir(String getemail) {
+        return publicuser.getemail().equals(getemail);
+    }
+
+    private static boolean isadmin(String getemail) {
+       return publicuser.getemail().equals(getemail);
+    }
+
+    private static boolean isowner(String getemail) {
+      return  publicuser.getemail().equals(getemail);
+    }
 
     public static void purchase(String prodname,int qua){
      if(qua<0){

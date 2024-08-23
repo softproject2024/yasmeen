@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import yasmeen.softwareproject.Owner.ImageButton;
+
+import static yasmeen.softwareproject.Application.Invalid_Value;
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 
 class ghk extends JPanel{
@@ -45,7 +47,7 @@ public static class ImageButto extends JLabel {
         try {
             image = new ImageIcon(imagePath).getImage();
         } catch (Exception e) {
-            e.printStackTrace();
+           JOptionPane.showMessageDialog(null,Invalid_Value);
         }
 
      
@@ -76,7 +78,7 @@ public static class ImageButto extends JLabel {
            setSize(new Dimension(this.getWidth()-50,this.getHeight()-20));
        
     }
-
+String enter="Enter a valid value";
     private void initComponents() {
 
         JPanel jPanel13 = new JPanel();
@@ -580,7 +582,7 @@ JOptionPane.showMessageDialog(null, h.toString());
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
             if(x<0||x>Application.products.size()){
-                JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+                JOptionPane.showMessageDialog(rootPane, enter);
             }else{
                 String str1=JOptionPane.showInputDialog("What is the new Price of the product ?");
                 if(Application.isNumber(str1)){
@@ -595,7 +597,7 @@ JOptionPane.showMessageDialog(null, h.toString());
                 }
             }
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, enter);
         }
     }
 

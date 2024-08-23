@@ -2,6 +2,7 @@
 package yasmeen.softwareproject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Account {
@@ -11,14 +12,14 @@ protected String name;
 protected String email;
 protected int phone;
 protected String type;
-protected ArrayList<String>messages;
+protected List<String>messages;
 public Account(String name,int age,String email,int phone,String type,int password){
  this.age=age;
  this.email= email;
  this.phone=phone;
  this.name= name;
  this.type= type;
- messages=new ArrayList<>();
+ messages=new ArrayList<String>();
  this.password=password;
 
 }
@@ -37,7 +38,7 @@ public void setpassword(int password){
 public int getpassword(){
    return password; 
 }
-public ArrayList messages(){
+public List<String> messages(){
     return messages;
 }
 

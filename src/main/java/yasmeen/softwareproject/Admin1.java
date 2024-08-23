@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import yasmeen.softwareproject.Owner.ImageButton;
 
-import static yasmeen.softwareproject.Application.Invalid_Value;
+import static yasmeen.softwareproject.Application.invalidvalue;
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 
 class Jpanelcolored extends JPanel{
@@ -46,7 +46,7 @@ String p19="p19.png";
             try {
                 image = new ImageIcon(imagepath).getImage();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,Invalid_Value);
+                JOptionPane.showMessageDialog(null, invalidvalue);
             }
 
 

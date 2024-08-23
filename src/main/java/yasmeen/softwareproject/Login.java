@@ -261,18 +261,18 @@ public class Login extends javax.swing.JFrame {
             }
         }
     } else if (jTextField3.getText().equals("Admin")) {
-        for (int i = 0; i < Application.Admins.size(); i++) {
-            if (jTextField1.getText().equals(Application.Admins.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.Admins.get(i).getpassword()+"")) {
-                    Application.adminpage.jLabel2.setText("Welcome back " + Application.Admins.get(i).getname());
+        for (int i = 0; i < Application.admins.size(); i++) {
+            if (jTextField1.getText().equals(Application.admins.get(i).getemail())) {
+                if (jPasswordField1.getText().equals(Application.admins.get(i).getpassword()+"")) {
+                    Application.adminpage.jLabel2.setText("Welcome back " + Application.admins.get(i).getname());
                     Application.adminpage.setVisible(true);
                     Application.loginpage.setVisible(false);
-                         Application.adminpage.jTextField7.setText(Application.Admins.get(i).getname());
-                    Application.adminpage.jTextField9.setText(Application.Admins.get(i).getage()+"");
-                            Application.adminpage.jTextField8.setText(Application.Admins.get(i).getphone()+"");
+                         Application.adminpage.jTextField7.setText(Application.admins.get(i).getname());
+                    Application.adminpage.jTextField9.setText(Application.admins.get(i).getage()+"");
+                            Application.adminpage.jTextField8.setText(Application.admins.get(i).getphone()+"");
                     jTextField1.setText("");
                     jPasswordField1.setText("");
-                    Application.publicuser=Application.Admins.get(i);
+                    Application.publicuser=Application.admins.get(i);
                     isValidUser = true;
                     break;
                 } else {

@@ -25,23 +25,26 @@ public class Application {
 
 
 
+    String path ="C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png";
 
-    Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey","C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
-    Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool","C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png");
+
+    Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey",path);
+    Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool",path);
  public static String type;
  public static int maxindex;
- static String Invalid_Value="invalid value";
+ public static String invalidvalue ="invalid value";
   public static String type2;
   public static String suppliername;
    public static String ownername;
   public static int order;
    public static String status;
+  
  public static Account publicuser;
- public static ArrayList<Admin>Admins;
- public static ArrayList<Owneraccount>Owners;
- public static ArrayList<Suppliers>suppliers;
- public static ArrayList<User>users;
- public static ArrayList<Product>products;
+ public static List<Admin> admins;
+ public static List<Owneraccount>Owners;
+ public static List<Suppliers>suppliers;
+ public static List<User>users;
+ public static List<Product>products;
  public static ArrayList<orders>sales;
  public static ArrayList<post>posts;
   public static logup loguppage;
@@ -64,7 +67,7 @@ public class Application {
      products.add(carrot);
      
      products.add(cucumber);
-     Admins=new ArrayList<>();
+     admins =new ArrayList<>();
      Owners=new ArrayList<>();
 
      Owners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
@@ -76,7 +79,7 @@ public class Application {
 
      users=new ArrayList<>();
      users.add(new User("Hitler",1,"1",2,12 ));
-     Admins.add(new Admin("any",1,"ad1@g.c",2112121212,12121212));
+     admins.add(new Admin("any",1,"ad1@g.c",2112121212,12121212));
      Owners.add(new Owneraccount("nk",1,"ow1@g.c",2112121212,12121212));
     suppliers.add(new Suppliers("any",1,"su1@g.c",2112121212,12121212));
 
@@ -90,7 +93,7 @@ public class Application {
      ownerpage=new Owner();
      adminpage=new Admin1();
      supplierspage=new Suppliersframe();
-     posts.add(new post("C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p19.png","1","1",0 ));
+     posts.add(new post(path,"1","1",0 ));
 
     userspage=new userpage();
  }
@@ -257,14 +260,14 @@ if(price<0||quantity<0){
                  }
              }
              case "Admin" -> {
-                 for (int i = 0; i < Application.Admins.size(); i++) {
-                     JOptionPane.showMessageDialog(null, Application.Admins
+                 for (int i = 0; i < Application.admins.size(); i++) {
+                     JOptionPane.showMessageDialog(null, Application.admins
                              .get(i).getemail());
-                     if (email.equals(Application.Admins.get(i).getemail())) {
-                         if (pass.equals(Application.Admins.get(i).getpassword() + "")) {
+                     if (email.equals(Application.admins.get(i).getemail())) {
+                         if (pass.equals(Application.admins.get(i).getpassword() + "")) {
 
 
-                             Application.publicuser = Application.Admins.get(i);
+                             Application.publicuser = Application.admins.get(i);
                              return true;
                          } else {
                              JOptionPane.showMessageDialog(null, "Please enter a valid password");
@@ -332,7 +335,7 @@ if(publicuser.getpassword()==password){
             publicuser.setphone(phone);
         }
     }
-    for (Admin admin : Admins) {
+    for (Admin admin : admins) {
         if (isadmin(admin.getemail())) {
             admin.setname(name);
             admin.setage(age);
@@ -389,12 +392,12 @@ if(publicuser.getpassword()==password){
 
     public static void purchase(String prodname,int qua){
      if(qua<0){
-         JOptionPane.showMessageDialog(null,Invalid_Value);
+         JOptionPane.showMessageDialog(null, invalidvalue);
      }
     for (Product product : products) {
         if (product.getname().equals(prodname)) {
             if (product.getquantity() < qua) {
-                JOptionPane.showMessageDialog(null, Invalid_Value);
+                JOptionPane.showMessageDialog(null, invalidvalue);
             } else {
 
                 int x = product.getquantity();
@@ -405,7 +408,7 @@ if(publicuser.getpassword()==password){
         }
     }
 }
-    public static List<Product> findProductsByDescription(ArrayList<Product> products, String searchString) {
+    public static List<Product> findProductsByDescription(List<Product> products, String searchString) {
         List<Product> matchingProducts = new ArrayList<>();
 
         for (Product product : products) {
@@ -417,7 +420,7 @@ if(publicuser.getpassword()==password){
         return matchingProducts;
        
     }
-    public static List<Product> findProductsByName(ArrayList<Product> products, String searchString) {
+    public static List<Product> findProductsByName(List<Product> products, String searchString) {
         List<Product> matchingProducts = new ArrayList<>();
 
         for (Product product : products) {
@@ -439,7 +442,7 @@ publicuser.setpassword(newpassword);
             }
         }
         case "Admin" -> {
-            for (Admin admin : Admins) {
+            for (Admin admin : admins) {
                 if (publicuser.getemail().equals(admin.getemail())) {
                     admin.setpassword(newpassword);
                 }
@@ -475,7 +478,7 @@ publicuser.setpassword(newpassword);
                 loginpage.removecontents();
             }
             case "Admin" -> {
-                Admins.add(new Admin(name, age, email, phone, password));
+                admins.add(new Admin(name, age, email, phone, password));
 
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store Admin " + name);
@@ -547,7 +550,7 @@ publicuser.setpassword(newpassword);
                     fileWriter.close();
                 }
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(null,Invalid_Value);
+                JOptionPane.showMessageDialog(null, invalidvalue);
             }
         }
     }
@@ -578,7 +581,7 @@ publicuser.setpassword(newpassword);
             Transport.send(message);
           
         } catch (MessagingException e) {
-            JOptionPane.showMessageDialog(null,Invalid_Value);
+            JOptionPane.showMessageDialog(null, invalidvalue);
         }
     }
     public static boolean isNumber(String str) {
@@ -594,7 +597,7 @@ publicuser.setpassword(newpassword);
                 return true;
             }
         }
-        for (Admin admin : Admins) {
+        for (Admin admin : admins) {
             if (email.equals(admin.getemail())) {
                 return true;
             }

@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import yasmeen.softwareproject.*;
 
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import static org.junit.Assert.*;
@@ -635,14 +636,14 @@ type2=string;
     @Given(": my name is {string} and my age is {int} and my phone number is {int} and password is {int} and email {string} as admin")
     public void my_name_is_and_my_age_is_and_my_phone_number_is_and_password_is_and_email_as_admin(String string, Integer int1, Integer int2, Integer int3, String string2) {
         // Write code here that turns the phrase above into concrete actions
-    oldvalue= Admins.size();
+    oldvalue= admins.size();
     logup(string2,string,int1,int2,int3);
     loginpage.setVisible(false);
     }
     @Then("the Admin users must be increased by {int}")
     public void the_admin_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Admins.size(),oldvalue+int1);
+        assertEquals(admins.size(),oldvalue+int1);
     }
 
 
@@ -799,7 +800,7 @@ type2=string;
     @Then(": the product must appear which is {int}")
     public void the_product_must_appear_which_is(int int1) {
         // Write code here that turns the phrase above into concrete actions
-  assertEquals(findProductsByName(products,newName).size(),int1);
+  assertEquals(findProductsByName((ArrayList<Product>) products,newName).size(),int1);
     }
 
     @Given(": i am a {string} and i want to search with fillter with all products that does not have {string}")
@@ -810,7 +811,7 @@ type2=string;
     @Then(": the number of products must appear which is {int}")
     public void the_number_of_products_must_appear_which_is(int int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(findProductsByDescription(products,newName).size(),int1);
+        assertEquals(findProductsByDescription((ArrayList<Product>) products,newName).size(),int1);
     }
 
 

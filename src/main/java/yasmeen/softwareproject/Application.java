@@ -45,8 +45,8 @@ public class Application {
  public static List<Suppliers>suppliers;
  public static List<User>users;
  public static List<Product>products;
- public static ArrayList<orders>sales;
- public static ArrayList<post>posts;
+ public static List<orders>sales;
+ public static List<post>posts;
   public static logup loguppage;
   public static Login loginpage;
   public static Owner ownerpage;
@@ -55,20 +55,19 @@ public class Application {
 
   public static Suppliersframe supplierspage;
     public static final String OWNER_MSG ="Owner";
-    public static final String adminmsg="Admin";
-    public static final String suppliermsg="Supplier";
+    public static final String ADMIN_MSG="Admin";
+    public static final String SUPPLIER_MSG="Supplier";
     public static final String USER_MSG="User";
-    public static final String enter="Please enter a valid password";
+    public static final String ENTER_MSG="Please enter a valid password";
     
 
  public Application(){
 
-     type= OWNER_MSG;
-     type2= OWNER_MSG;
+publicuser=new Account("",1,"",1,"",1);
      status="Complete";
  
      posts= new ArrayList<>();
-     publicuser=new Admin("",0,"",0,0);
+
      products=new ArrayList<>();
      products.add(carrot);
      
@@ -179,7 +178,7 @@ if(price<0||quantity<0){
          }
      }
  }
- public static void rate_post(int r,post m){
+ public static void ratePost(int r, post m){
      for (yasmeen.softwareproject.post post : posts) {
          if (m.id == post.id) {
              post.rates.add(r);
@@ -259,14 +258,14 @@ if(price<0||quantity<0){
 
                          } else {
 
-                             JOptionPane.showMessageDialog(null, enter);
+                             JOptionPane.showMessageDialog(null, ENTER_MSG);
                              isValidUser = false;
                              break;
                          }
                      }
                  }
              }
-             case adminmsg -> {
+             case ADMIN_MSG -> {
                  for (int i = 0; i < Application.admins.size(); i++) {
                      JOptionPane.showMessageDialog(null, Application.admins
                              .get(i).getemail());
@@ -277,14 +276,14 @@ if(price<0||quantity<0){
                              Application.publicuser = Application.admins.get(i);
                              return true;
                          } else {
-                             JOptionPane.showMessageDialog(null, enter);
+                             JOptionPane.showMessageDialog(null, ENTER_MSG);
                              isValidUser = false;
                              break;
                          }
                      }
                  }
              }
-             case suppliermsg -> {
+             case SUPPLIER_MSG -> {
                  for (int i = 0; i < Application.suppliers.size(); i++) {
                      if (email.equals(Application.suppliers.get(i).getemail())) {
                          if (pass.equals(Application.suppliers.get(i).getpassword() + "")) {
@@ -293,7 +292,7 @@ if(price<0||quantity<0){
                              Application.publicuser = Application.suppliers.get(i);
                              return true;
                          } else {
-                             JOptionPane.showMessageDialog(null, enter);
+                             JOptionPane.showMessageDialog(null, ENTER_MSG);
                              isValidUser = false;
                              break;
                          }
@@ -448,14 +447,14 @@ publicuser.setpassword(newpassword);
                 }
             }
         }
-        case adminmsg -> {
+        case ADMIN_MSG -> {
             for (Admin admin : admins) {
                 if (publicuser.getemail().equals(admin.getemail())) {
                     admin.setpassword(newpassword);
                 }
             }
         }
-        case suppliermsg -> {
+        case SUPPLIER_MSG -> {
             for (Suppliers supplier : suppliers) {
                 if (publicuser.getemail().equals(supplier.getemail())) {
                     supplier.setpassword(newpassword);
@@ -484,14 +483,14 @@ publicuser.setpassword(newpassword);
                 JOptionPane.showMessageDialog(null, "Welcome to our store Owner " + name);
                 loginpage.removecontents();
             }
-            case adminmsg -> {
+            case ADMIN_MSG -> {
                 admins.add(new Admin(name, age, email, phone, password));
 
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store Admin " + name);
                 loginpage.removecontents();
             }
-            case suppliermsg -> {
+            case SUPPLIER_MSG -> {
                 suppliers.add(new Suppliers(name, age, email, phone, password));
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store Supplier " + name);
@@ -517,8 +516,8 @@ publicuser.setpassword(newpassword);
 
 
  public static boolean isValidEmail(String email) {
-     String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-        Pattern pattern = Pattern.compile(EMAIL_REGEX);
+     String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
@@ -541,27 +540,16 @@ publicuser.setpassword(newpassword);
     }
     public static boolean generatereport(String msg, String filename) {
         File file = new File(filename);
-        FileWriter fileWriter = null;
-        try {
 
-            fileWriter = new FileWriter(file);
+        try (FileWriter fileWriter = new FileWriter(file)) {
             fileWriter.write(msg);
             return true;
         } catch (IOException e) {
-          return false;
-
-        } finally {
-
-            try {
-                if (fileWriter != null) {
-                    fileWriter.close();
-                }
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, invalidvalue);
-            }
+            return false;
         }
     }
-  public static void sendEmail(String fromEmail, String toEmail, String messageContent) {
+
+    public static void sendEmail(String fromEmail, String toEmail, String messageContent) {
         String host = "smtp.gmail.com";
         final String username = fromEmail;
 
@@ -620,7 +608,7 @@ publicuser.setpassword(newpassword);
         }
     return false;
 }
-   public static void populateAndSetupList(JList<String> jList, ArrayList<String> items) {
+   public static void populateAndSetupList(JList<String> jList, List<String> items) {
        jList.removeAll();
    if(items.isEmpty()){
      DefaultListModel<String> listModel = new DefaultListModel<>();

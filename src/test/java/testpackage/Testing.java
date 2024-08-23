@@ -766,7 +766,7 @@ type2=string;
         // Write code here that turns the phrase above into concrete actions
      newAge=int1;
      oldvalue= posts.getFirst().getRates().size();
-     rate_post(int1, posts.getFirst());
+     ratePost(int1, posts.getFirst());
     }
     @Then(": the post evaluations mus be increased by {int}")
     public void the_post_evaluations_mus_be_increased_by(Integer int1) {

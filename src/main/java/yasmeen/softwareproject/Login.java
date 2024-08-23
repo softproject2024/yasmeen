@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("E-mail");
 
         jTextField1.setText("Type your name");
-        jTextField1.setToolTipText("Type your name");
+
 
 
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         jLabel14.setText("Sign in to continue");
 
         jTextField3.setText("your type");
-        jTextField3.setToolTipText("Type your name");
+
         jTextField3.addActionListener(this::jTextField3ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

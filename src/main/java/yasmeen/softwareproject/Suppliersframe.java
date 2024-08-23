@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 import static yasmeen.softwareproject.Owner.getPasswordAsString;
-import static yasmeen.softwareproject.UserPage.index1;
+
 
 public class Suppliersframe extends javax.swing.JFrame {
 
@@ -398,7 +398,7 @@ if(!Application.storeowners.isEmpty()){
             for(int i = 0; i<Application.storeowners.size(); i++){
                 if(Application.storeowners.get(i).getname().equals(Application.suppliername)){
                     String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h );
+                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(UserPage.getIndex1()).getemail(), h );
                     
                     Application.storeowners.get(i).messages.add(h);
                     JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);

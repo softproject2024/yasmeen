@@ -635,7 +635,7 @@ publicuser.setpassword(newpassword);
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
                     int index = jList.locationToIndex(e.getPoint());
-                    UserPage.index1 =index;
+                    UserPage.setIndex1(index);
                    
                     if (index >= 0) {
                         String selectedItem = listModel.getElementAt(index);

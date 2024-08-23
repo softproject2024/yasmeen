@@ -324,19 +324,19 @@ public class Login extends javax.swing.JFrame {
                     jTextField1.setText("");
                     Application.publicuser=Application.users.get(i);
                     jPasswordField1.setText("");
-                   Application.userspage.jTextField2.setText(Application.users.get(i).getname());
-                     Application.userspage.jTextField3.setText(Application.users.get(i).getphone()+"");
-                      Application.userspage.jTextField4.setText(Application.users.get(i).getage()+"");
-                      Application.userspage.jPasswordField1.setText("");
-                    Application.userspage.jLabel3.setText("Welcome back " + Application.users.get(i).getname());
+                   Application.userspage.getjTextField2().setText(Application.users.get(i).getname());
+                     Application.userspage.getjTextField3().setText(Application.users.get(i).getphone()+"");
+                      Application.userspage.getjTextField4().setText(Application.users.get(i).getage()+"");
+                      Application.userspage.getjPasswordField1().setText("");
+                    Application.userspage.getl3().setText("Welcome back " + Application.users.get(i).getname());
                        StringBuilder h= new StringBuilder("There is no messages to this account");
             for(int ip=0;ip<Application.publicuser.messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
                 h.append(Application.publicuser.messages.get(ip)).append("\n");
                     }
                
-         Application.userspage.jTextArea2.setText(h.toString());
-         Application.userspage.jTextArea2.setEditable(false);
+         Application.userspage.getjTextArea2().setText(h.toString());
+         Application.userspage.getjTextArea2().setEditable(false);
                     isValidUser = true;
                     break;
                 } else {

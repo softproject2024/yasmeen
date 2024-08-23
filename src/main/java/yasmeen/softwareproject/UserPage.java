@@ -37,9 +37,17 @@ class ImagePanel extends JPanel {
 }
 
 public class UserPage extends javax.swing.JFrame {
-public static int index1;
-    public static final String EMAIL_FROM ="s12112895@stu.najah.edu";
-    public static final String STYLE ="Stylus BT";
+private static int index1;
+public static int getIndex1(){
+    return index1;
+}
+
+    public static void setIndex1(int index1) {
+        UserPage.index1 = index1;
+    }
+
+    private static final String EMAIL_FROM ="s12112895@stu.najah.edu";
+    private static final String STYLE ="Stylus BT";
     
     public UserPage() {
         initComponents();
@@ -87,6 +95,7 @@ Application.populateAndSetupList(jlist1, items);
         int centerY = screenSize.height / 2;
         this.setLocation(centerX - this.getWidth() / 2, centerY - this.getHeight() / 2);
     }
+
 
 
     private void initComponents() {
@@ -910,24 +919,76 @@ List<Product> m = Application.findProductsByName(Application.products, jTextFiel
     }
 
 
-    public javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel3;
+    public JLabel getl3(){
+        return  jLabel3;
+    }
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel21;
-    public javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel21;
+
+    public JPanel getjPanel21() {
+        return jPanel21;
+    }
+
+    private javax.swing.JPanel jPanel29;
+
+    public JPanel getjPanel29() {
+        return jPanel29;
+    }
+
     private javax.swing.JPanel jPanel7;
-    public javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField1;
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
     private javax.swing.JPasswordField jPasswordField2;
+
+    public JPasswordField getjPasswordField2() {
+        return jPasswordField2;
+    }
+
     private javax.swing.JPasswordField jPasswordField3;
+
+    public JPasswordField getjPasswordField3() {
+        return jPasswordField3;
+    }
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextArea jTextArea1;
-    public javax.swing.JTextArea jTextArea2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField jTextField4;
+    private javax.swing.JTextArea jTextArea2;
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    private javax.swing.JTextField jTextField1;
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    private javax.swing.JTextField jTextField2;
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    private javax.swing.JTextField jTextField3;
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JList<String> jlist1;
 
 }

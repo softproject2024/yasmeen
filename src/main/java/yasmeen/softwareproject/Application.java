@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.security.SecureRandom;
+
 import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -60,7 +60,7 @@ public class Application {
      type2="Owner";
      status="Complete";
  
-     posts=new ArrayList<post>();
+     posts= new ArrayList<>();
      publicuser=new Admin("",0,"",0,0);
      products=new ArrayList<>();
      products.add(carrot);
@@ -70,7 +70,7 @@ public class Application {
      Owners=new ArrayList<>();
 
      Owners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
-     Owners.get(0).messages.add("hi");
+     Owners.getFirst().messages.add("hi");
      suppliers=new ArrayList<>();
 //     suppliers.add(new Suppliers("yahya" +0, type, 0, 0));
       suppliers.add(new Suppliers("Yaqoot", 0, "a1@g.c", 0, 12121212));
@@ -84,9 +84,9 @@ public class Application {
 
      users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
      sales=new ArrayList<>();
-     sales.add(new orders(products.get(1).getname(), 12, 12, status));
-      sales.add(new orders(products.get(1).getname(), 14, 14, status));
-       sales.add(new orders(products.get(1).getname(), 13, 13, status));
+     sales.add(new orders(products.get(1).getname(), 12, status));
+      sales.add(new orders(products.get(1).getname(), 14, status));
+       sales.add(new orders(products.get(1).getname(), 13, status));
      loguppage=new logup();
      loginpage=new Login();
      ownerpage=new Owner();
@@ -97,15 +97,15 @@ public class Application {
     userspage=new userpage();
  }
 public static String getallproducts(){
-    String h="There is no products in the store";
+    StringBuilder h= new StringBuilder("There is no products in the store");
     if(!products.isEmpty()){
-        h="#. Product Name   Product price   Product discount\n";
+        h = new StringBuilder("#. Product Name   Product price   Product discount\n");
         for(int i=0;i<products.size();i++){
-            h+=(i+1)+". "+products.get(i).getname()+"   "+products.get(i).getprice()+"   "+products.get(i).getdiscount()+"\n";
+            h.append((i + 1)).append(". ").append(products.get(i).getname()).append("   ").append(products.get(i).getprice()).append("   ").append(products.get(i).getdiscount()).append("\n");
         }
     }
 
-    return h;
+    return h.toString();
 }
  public static void  addproduct(String name,int price,int quantity,String expire,int discount,String des){
 if(!isValidFutureDate(expire)){
@@ -118,21 +118,18 @@ if(price<0||quantity<0){
 
     return;
 }
-  for(int i=0;i<products.size();i++){
+     for (Product product : products) {
 
-      
-      
-      
-      
-      if(name.equals(products.get(i).getname())){
-          int x=quantity+products.get(i).getquantity();
-          products.get(i).setquantity(x);
 
-          JOptionPane.showMessageDialog(null, "The quantity "+quantity+" is added to the store\n new quantity of the product : "+products.get(i).getname()+" is : "+x);
-          return;
-      }
-  }
-  String pa=adminpage.getFilePath();
+         if (name.equals(product.getname())) {
+             int x = quantity + product.getquantity();
+             product.setquantity(x);
+
+             JOptionPane.showMessageDialog(null, "The quantity " + quantity + " is added to the store\n new quantity of the product : " + product.getname() + " is : " + x);
+             return;
+         }
+     }
+  String pa= Admin1.getFilePath();
   products.add(new Product(name,price,quantity,expire,discount,des,pa));
   JOptionPane.showMessageDialog(null,"The Product "+name+" is added as a new product to the store" );
  }
@@ -162,23 +159,23 @@ if(price<0||quantity<0){
  }
  public static void sendfeedback(String msg,Account a){
      if(a.gettype().equals("Owner")){
-         for(int i=0;i<Owners.size();i++){
-             if(a.getemail().equals(Owners.get(i).getemail())){
-                 Owners.get(i).messages.add(msg);
+         for (Owneraccount owner : Owners) {
+             if (a.getemail().equals(owner.getemail())) {
+                 owner.messages.add(msg);
              }
          }
      }else{
-         for(int i=0;i<suppliers.size();i++){
-             if(a.getemail().equals(suppliers.get(i).getemail())){
-                 suppliers.get(i).messages.add(msg);
+         for (Suppliers supplier : suppliers) {
+             if (a.getemail().equals(supplier.getemail())) {
+                 supplier.messages.add(msg);
              }
          }
      }
  }
  public static void rate_post(int r,post m){
-     for(int i=0;i<posts.size();i++){
-         if(m.id==posts.get(i).id){
-             posts.get(i).rates.add(r);
+     for (yasmeen.softwareproject.post post : posts) {
+         if (m.id == post.id) {
+             post.rates.add(r);
          }
      }
  }
@@ -189,11 +186,11 @@ if(price<0||quantity<0){
      if(discount<0||discount>=100){
           JOptionPane.showMessageDialog(null, "The discount value is not correct");
      }
-     for(int i=0;i<products.size();i++){
-       if(p==products.get(i)){
-            JOptionPane.showMessageDialog(null, "The new discount for the product "+p.getname()+" is : "+discount);
-           products.get(i).updatediscount(discount);
-       }
+     for (Product product : products) {
+         if (p == product) {
+             JOptionPane.showMessageDialog(null, "The new discount for the product " + p.getname() + " is : " + discount);
+             product.updatediscount(discount);
+         }
      }
  }
  public static Product getmaxprofit(){
@@ -205,37 +202,37 @@ if(price<0||quantity<0){
 
   String productname="";
   maxindex=0;
-    for(int i=0;i<sales.size();i++){
+     for (orders sale : sales) {
 
-      if(maxindex<sales.get(i).getprofit()){
+         if (maxindex < sale.getprofit()) {
 
-        maxindex=sales.get(i).getprofit();
+             maxindex = sale.getprofit();
 
-        productname=sales.get(i).getname();
-      }
-  }
+             productname = sale.getname();
+         }
+     }
 
-      for(int i=0;i<products.size();i++){
+     for (Product product : products) {
 
-      if(productname.equals(products.get(i).getname())){
-       return products.get(i);
+         if (productname.equals(product.getname())) {
+             return product;
 
-      }
-  }
+         }
+     }
    return null;
  }
  public static String getsalesmessage(){
-      String h="There is no sales happend in the store";
+      StringBuilder h= new StringBuilder("There is no sales happend in the store");
    if(sales.isEmpty()){
      // JOptionPane.showMessageDialog(null, "There is no sales happend in the store");
-      return h;
+      return h.toString();
   } else{
-      h="#. produc name   sale profit   sale status\n";
+      h = new StringBuilder("#. produc name   sale profit   sale status\n");
       for(int i=0;i<sales.size();i++){
-      h+=(i+1)+". "+sales.get(i).getname()+"            "+sales.get(i).getprofit()+"              "+sales.get(i).status+"\n";
+      h.append((i + 1)).append(". ").append(sales.get(i).getname()).append("            ").append(sales.get(i).getprofit()).append("              ").append(sales.get(i).status).append("\n");
   }
    }
-   return h;
+   return h.toString();
  }
  public static boolean login(String email, String pass){
      // TODO add your handling code here:
@@ -243,70 +240,73 @@ if(price<0||quantity<0){
      if (isValidEmail(email)) {
          boolean isValidUser = true;
 
-         if (Application.type.equals("Owner")) {
-             for (int i = 0; i < Application.Owners.size(); i++) {
+         switch (Application.type) {
+             case "Owner" -> {
+                 for (int i = 0; i < Application.Owners.size(); i++) {
 
-                 if (email.equals(Application.Owners.get(i).getemail())) {
+                     if (email.equals(Application.Owners.get(i).getemail())) {
 
-                     if (pass.equals(Application.Owners.get(i).getpassword()+"")) {
- Application.publicuser=Application.Owners.get(i);
- isValidUser=true;return true;
+                         if (pass.equals(Application.Owners.get(i).getpassword() + "")) {
+                             Application.publicuser = Application.Owners.get(i);
+                             return true;
 
-                     } else {
+                         } else {
 
-                         JOptionPane.showMessageDialog(null, "Please enter a valid password");
-                         isValidUser = false;
-                         break;
+                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             isValidUser = false;
+                             break;
+                         }
                      }
                  }
              }
-         } else if (Application.type.equals("Admin")) {
-             for (int i = 0; i < Application.Admins.size(); i++) {
-                 JOptionPane.showMessageDialog(null,Application.Admins
-                         .get(i).getemail());
-                 if (email.equals(Application.Admins.get(i).getemail())) {
-                     if (pass.equals(Application.Admins.get(i).getpassword()+"")) {
+             case "Admin" -> {
+                 for (int i = 0; i < Application.Admins.size(); i++) {
+                     JOptionPane.showMessageDialog(null, Application.Admins
+                             .get(i).getemail());
+                     if (email.equals(Application.Admins.get(i).getemail())) {
+                         if (pass.equals(Application.Admins.get(i).getpassword() + "")) {
 
-                     
-                     
-                         Application.publicuser=Application.Admins.get(i);
-                         isValidUser=true;return true;
-                     } else {
-                         JOptionPane.showMessageDialog(null, "Please enter a valid password");
-                         isValidUser = false;
-                         break;
+
+                             Application.publicuser = Application.Admins.get(i);
+                             return true;
+                         } else {
+                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             isValidUser = false;
+                             break;
+                         }
                      }
                  }
              }
-         } else if (Application.type.equals("Supplier")) {
-             for (int i = 0; i < Application.suppliers.size(); i++) {
-                 if (email.equals(Application.suppliers.get(i).getemail())) {
-                     if (pass.equals(Application.suppliers.get(i).getpassword()+"")) {
+             case "Supplier" -> {
+                 for (int i = 0; i < Application.suppliers.size(); i++) {
+                     if (email.equals(Application.suppliers.get(i).getemail())) {
+                         if (pass.equals(Application.suppliers.get(i).getpassword() + "")) {
 
 
-                         Application.publicuser=Application.suppliers.get(i);
-                     return true;
-                     } else {
-                         JOptionPane.showMessageDialog(null, "Please enter a valid password");
-                         isValidUser = false;
-                         break;
+                             Application.publicuser = Application.suppliers.get(i);
+                             return true;
+                         } else {
+                             JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                             isValidUser = false;
+                             break;
+                         }
                      }
                  }
              }
-         } else {
+             default -> {
 
-             for (int i = 0; i < Application.users.size(); i++) {
-                 JOptionPane.showMessageDialog(null,Application.users.get(i).getemail());
-                 if (email.equals(Application.users.get(i).getemail())) {
-
-
-publicuser.type=new String("User");
+                 for (int i = 0; i < Application.users.size(); i++) {
+                     JOptionPane.showMessageDialog(null, Application.users.get(i).getemail());
+                     if (email.equals(Application.users.get(i).getemail())) {
 
 
-                     return true;
+                         publicuser.type = "User";
 
 
+                         return true;
 
+
+                     }
                  }
              }
          }
@@ -321,57 +321,51 @@ publicuser.type=new String("User");
 
      return false;
  }
- public static void addmessagetouser(String message,Account m){
- m.messages().add(message);
- }
-public static void updateinformation(String name,int age,int phone,int password){
+
+    public static void updateinformation(String name,int age,int phone,int password){
 if(publicuser.getpassword()==password){
-   for(int i=0;i<Owners.size();i++){
-        if(publicuser.getemail().equals(Owners.get(i).getemail())){
-           Owners.get(i).setname(name);
-           Owners.get(i).setage(age);
-           Owners.get(i).setphone(phone);
-           publicuser.setpassword(password);
-           publicuser.setage(age);
-           publicuser.setname(name);
-           publicuser.setphone(phone);
-        }
-    }
-    for(int i=0;i<Admins.size();i++){
-        if(publicuser.getemail().equals(Admins.get(i).getemail())){
-           Admins.get(i).setname(name);
-           Admins.get(i).setage(age);
-           Admins.get(i).setphone(phone);
+    for (Owneraccount owner : Owners) {
+        if (publicuser.getemail().equals(owner.getemail())) {
+            owner.setname(name);
+            owner.setage(age);
+            owner.setphone(phone);
             publicuser.setpassword(password);
             publicuser.setage(age);
             publicuser.setname(name);
             publicuser.setphone(phone);
         }
     }
-    for(int i=0;i<suppliers.size();i++){
-        if(publicuser.getemail().equals(suppliers.get(i).getemail())){
-          suppliers.get(i).setname(name);
-           suppliers.get(i).setage(age);
-           suppliers.get(i).setphone(phone);
+    for (Admin admin : Admins) {
+        if (publicuser.getemail().equals(admin.getemail())) {
+            admin.setname(name);
+            admin.setage(age);
+            admin.setphone(phone);
             publicuser.setpassword(password);
             publicuser.setage(age);
             publicuser.setname(name);
             publicuser.setphone(phone);
         }
     }
-    for(int i=0;i<users.size();i++){
-        if(publicuser.getemail().equals(users.get(i).getemail())){
-        users.get(i).setname(name);
-           users.get(i).setage(age);
-           users.get(i).setphone(phone);
+    for (Suppliers supplier : suppliers) {
+        if (publicuser.getemail().equals(supplier.getemail())) {
+            supplier.setname(name);
+            supplier.setage(age);
+            supplier.setphone(phone);
             publicuser.setpassword(password);
             publicuser.setage(age);
             publicuser.setname(name);
             publicuser.setphone(phone);
-            
-            
-
-
+        }
+    }
+    for (User user : users) {
+        if (publicuser.getemail().equals(user.getemail())) {
+            user.setname(name);
+            user.setage(age);
+            user.setphone(phone);
+            publicuser.setpassword(password);
+            publicuser.setage(age);
+            publicuser.setname(name);
+            publicuser.setphone(phone);
 
 
         }
@@ -383,36 +377,24 @@ if(publicuser.getpassword()==password){
 
 }
 }
-public static void addnewstore(String storename,String storecity){
-if(publicuser.gettype().equals("Owner")){
-    for(int i=0;i<Owners.size();i++){
-     if(  publicuser.name.equals(Owners.get(i).getname())){
-         Owners.get(i).addstore(storename, storename);
-         JOptionPane.showMessageDialog(null, "The store is added to the Owner "+publicuser.name);
-     }
-    }
-} else{
-    JOptionPane.showMessageDialog(null, "You are not an Owner");
-}
-}
 
-public static void purchase(String prodname,int qua){
+    public static void purchase(String prodname,int qua){
      if(qua<0){
          JOptionPane.showMessageDialog(null,"invalid value");
      }
-     for(int i=0;i<products.size();i++){
-         if(products.get(i).getname().equals(prodname)){
-             if(products.get(i).getquantity()<qua){
-                 JOptionPane.showMessageDialog(null,"invalid value");
-             }else{
-     
-                  int x=products.get(i).getquantity();          
-                 products.get(i).setquantity(x-qua);
-                 sales.add(new orders(products.get(i).getname(), qua, (x*qua), "Pending"));
-      
-             }
-         }
-     }
+    for (Product product : products) {
+        if (product.getname().equals(prodname)) {
+            if (product.getquantity() < qua) {
+                JOptionPane.showMessageDialog(null, "invalid value");
+            } else {
+
+                int x = product.getquantity();
+                product.setquantity(x - qua);
+                sales.add(new orders(product.getname(), (x * qua), "Pending"));
+
+            }
+        }
+    }
 }
     public static List<Product> findProductsByDescription(ArrayList<Product> products, String searchString) {
         List<Product> matchingProducts = new ArrayList<>();
@@ -439,85 +421,71 @@ public static void purchase(String prodname,int qua){
     }
 public static void updatepassword(int newpassword){
 publicuser.setpassword(newpassword);
-if(type.equals("Owner")){
-    for(int i=0;i<Owners.size();i++){
-        if(publicuser.getemail().equals(Owners.get(i).getemail())){
-            Owners.get(i).setpassword(newpassword);
+    switch (type) {
+        case "Owner" -> {
+            for (Owneraccount owner : Owners) {
+                if (publicuser.getemail().equals(owner.getemail())) {
+                    owner.setpassword(newpassword);
+                }
+            }
         }
-    }
-}else if(type.equals("Admin")){
-    for(int i=0;i<Admins.size();i++){
-        if(publicuser.getemail().equals(Admins.get(i).getemail())){
-            Admins.get(i).setpassword(newpassword);
+        case "Admin" -> {
+            for (Admin admin : Admins) {
+                if (publicuser.getemail().equals(admin.getemail())) {
+                    admin.setpassword(newpassword);
+                }
+            }
+        }
+        case "Supplier" -> {
+            for (Suppliers supplier : suppliers) {
+                if (publicuser.getemail().equals(supplier.getemail())) {
+                    supplier.setpassword(newpassword);
+                }
+            }
+        }
+        case "User" -> {
+            for (User user : users) {
+                if (publicuser.getemail().equals(user.getemail())) {
+                    user.setpassword(newpassword);
+                }
+            }
         }
     }
 }
-else if(type.equals("Supplier")){
-    for(int i=0;i<suppliers.size();i++){
-        if(publicuser.getemail().equals(suppliers.get(i).getemail())){
-            suppliers.get(i).setpassword(newpassword);
-        }
-    }
-}else if(type.equals("User")){
-    for(int i=0;i<users.size();i++){
-        if(publicuser.getemail().equals(users.get(i).getemail())){
-            users.get(i).setpassword(newpassword);
-        }
-    }
-}
-}
-public void Purchase(String n,int q){
-     if(q<=0){
-         JOptionPane.showMessageDialog(null,"invalid value");
-         return;
-     }
-     for(int i=0;i<products.size();i++){
-         if(products.get(i).getname().equals(n)){
-             if(q>products.get(i).getquantity()){
-                 JOptionPane.showMessageDialog(null,"invalid value");
-                 return;
-             }else{
-                products.get(i).setquantity(products.get(i).getquantity()-q);
-                int y=q*products.get(i).getprice();
-                sales.add(new orders(products.get(i).getname(),q,y,"Pending"));
-                 return;
-             }
-         }
-     }
- }
- public static void logup(String email,String name,int age,int phone,int password){
+
+    public static void logup(String email,String name,int age,int phone,int password){
 
 
 
      if(!isfoundmail(email)){
     if(isValidEmail(email)){
-        if(Application.type2.equals("Owner")){
-        Owners.add(new Owneraccount(name, age, email, phone, password));
-         JOptionPane.showMessageDialog(null,"Welcome to our store Owner "+name);
-           loginpage.removecontents();
-    }
-    else if(Application.type2.equals("Admin")){
-        Admins.add(new Admin(name, age, email, phone, password));
+        switch (Application.type2) {
+            case "Owner" -> {
+                Owners.add(new Owneraccount(name, age, email, phone, password));
+                JOptionPane.showMessageDialog(null, "Welcome to our store Owner " + name);
+                loginpage.removecontents();
+            }
+            case "Admin" -> {
+                Admins.add(new Admin(name, age, email, phone, password));
 
 
-         JOptionPane.showMessageDialog(null,"Welcome to our store Admin "+name);
-          loginpage.removecontents();
-    }
-    else if(Application.type2.equals("Supplier")){
-        suppliers.add(new Suppliers(name, age, email, phone, password));
+                JOptionPane.showMessageDialog(null, "Welcome to our store Admin " + name);
+                loginpage.removecontents();
+            }
+            case "Supplier" -> {
+                suppliers.add(new Suppliers(name, age, email, phone, password));
 
-         JOptionPane.showMessageDialog(null,"Welcome to our store Supplier "+name);
-          loginpage.removecontents();
-    }else if(Application.type2.equals("User")){
-      users.add(new User(name, age, email, phone, password));
+                JOptionPane.showMessageDialog(null, "Welcome to our store Supplier " + name);
+                loginpage.removecontents();
+            }
+            case "User" -> {
+                users.add(new User(name, age, email, phone, password));
 
-       JOptionPane.showMessageDialog(null,"Welcome to our store User "+name);
-        loginpage.removecontents();
-    }else{
-        
-         JOptionPane.showMessageDialog(null,"Invalid type");
-     
-    }
+                JOptionPane.showMessageDialog(null, "Welcome to our store User " + name);
+                loginpage.removecontents();
+            }
+            default -> JOptionPane.showMessageDialog(null, "Invalid type");
+        }
 
     }
 
@@ -527,20 +495,7 @@ public void Purchase(String n,int q){
 
  }
 
- public String infos(){
-     String msg="";
-     for(int i=0;i<Owners.size();i++){
-         if(i==0)msg="Owners : ";
-         msg+=(i+1)+". "+Owners.get(i).getname()+"  ";
 
-     }
-     for(int i=0;i<suppliers.size();i++){
-         if(i==0)msg="\nSuppliers : ";
-         msg+=(i+1)+". "+suppliers.get(i).getname()+"  ";
-
-     }
-     return  msg;
- }
 
  public static boolean isValidEmail(String email) {
      String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
@@ -624,35 +579,28 @@ public void Purchase(String n,int q){
         }
         return str.matches("\\d+");
     }
-    public static boolean isfoundproduct(String name){
-  for(int i=0;i<products.size();i++){
-      if(name.equals(products.get(i))){
-          return true;
-      }
-  }
-    return false;
-}
-public static boolean isfoundmail(String email){
-    for(int i=0;i<Owners.size();i++){
-        if(email.equals(Owners.get(i).getemail())){
-            return true;
+
+    public static boolean isfoundmail(String email){
+        for (Owneraccount owner : Owners) {
+            if (email.equals(owner.getemail())) {
+                return true;
+            }
         }
-    }
-    for(int i=0;i<Admins.size();i++){
-        if(email.equals(Admins.get(i).getemail())){
-            return true;
+        for (Admin admin : Admins) {
+            if (email.equals(admin.getemail())) {
+                return true;
+            }
         }
-    }
-    for(int i=0;i<suppliers.size();i++){
-        if(email.equals(suppliers.get(i).getemail())){
-            return true;
+        for (Suppliers supplier : suppliers) {
+            if (email.equals(supplier.getemail())) {
+                return true;
+            }
         }
-    }
-    for(int i=0;i<users.size();i++){
-        if(email.equals(users.get(i).getemail())){
-            return true;
+        for (User user : users) {
+            if (email.equals(user.getemail())) {
+                return true;
+            }
         }
-    }
     return false;
 }
    public static void populateAndSetupList(JList<String> jList, ArrayList<String> items) {
@@ -675,7 +623,7 @@ public static boolean isfoundmail(String email){
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 1) {
                     int index = jList.locationToIndex(e.getPoint());
-                    userspage.index1=index;
+                    userpage.index1 =index;
                    
                     if (index >= 0) {
                         String selectedItem = listModel.getElementAt(index);

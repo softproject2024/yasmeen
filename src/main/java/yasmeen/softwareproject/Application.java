@@ -24,19 +24,27 @@ import javax.swing.JOptionPane;
 public class Application {
 
     public static void someMethod() {
+        posts= new ArrayList<>();
         Application.adminpage = new Admin1();
+        products=new ArrayList<>();
+
+        sales=new ArrayList<>();
+        users=new ArrayList<>();
+        suppliers=new ArrayList<>();
+        admins =new ArrayList<>();
+        storeowners =new ArrayList<>();
         loguppage=new logup();
         loginpage=new Login();
         ownerpage=new Owner();
         userspage=new UserPage();
         supplierspage=new Suppliersframe();
+
     }
 
     String path ="C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png";
 
 
-    Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey",path);
-    Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool",path);
+
  private static String type;
 
     public static String getType() {
@@ -224,31 +232,31 @@ public class Application {
 
 publicuser=new Account("",1,"",1,"",1);
      status="Complete";
+     someMethod();
 
-     posts= new ArrayList<>();
 
-     products=new ArrayList<>();
+     Product carrot=new Product("tomato", 12,1000, "1/12/2024",0,"dunat is vey",path);
+     Product cucumber=new Product("cucumber", 4,999, "30/12/2024",0,"cheescake is very cool",path);
      products.add(carrot);
      
      products.add(cucumber);
-     admins =new ArrayList<>();
-     storeowners =new ArrayList<>();
+
 
      storeowners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
      storeowners.getFirst().messages.add("hi");
-     suppliers=new ArrayList<>();
+
 
       suppliers.add(new Suppliers("Yaqoot", 0, "a1@g.c", 0, 12121212));
 
 
-     users=new ArrayList<>();
+
      users.add(new User("Hitler",1,"1",2,12 ));
      admins.add(new Admin("any",1,"ad1@g.c",2112121212,12121212));
      storeowners.add(new Owneraccount("nk",1,"ow1@g.c",2112121212,12121212));
     suppliers.add(new Suppliers("any",1,"su1@g.c",2112121212,12121212));
 
      users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
-     sales=new ArrayList<>();
+
      sales.add(new orders(products.get(1).getname(), 12, status));
       sales.add(new orders(products.get(1).getname(), 14, status));
        sales.add(new orders(products.get(1).getname(), 13, status));
@@ -257,7 +265,7 @@ publicuser=new Account("",1,"",1,"",1);
 
 
      posts.add(new post(path,"1","1",0 ));
-     someMethod();
+
 
  }
 

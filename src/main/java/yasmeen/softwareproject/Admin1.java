@@ -63,10 +63,7 @@ class ghkt extends JTabbedPane{
     }
     
 }
-/**
- *
- * @author Hp
- */
+
 public class Admin1 extends javax.swing.JFrame {
 
 public static class ImageButto extends JLabel {

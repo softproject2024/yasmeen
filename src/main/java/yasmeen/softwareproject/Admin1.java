@@ -13,7 +13,8 @@ import static yasmeen.softwareproject.Application.Invalid_Value;
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 
 class Jpanelcolored extends JPanel{
-    Color c1,c2;
+    Color c1;
+     Color   c2;
     public Jpanelcolored(Color s1, Color s2){
         c1=s1;
         c2=s2;
@@ -34,15 +35,15 @@ class Jpanelcolored extends JPanel{
 }
 
 public class Admin1 extends javax.swing.JFrame {
-String Path ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
+String path ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
 
-String Typee="Stylus BT";
+String typee="Stylus BT";
     public static class ImageButto extends JLabel {
         private transient Image image;
 
-        public ImageButto(String imagePath) {
+        public ImageButto(String imagepath) {
             try {
-                image = new ImageIcon(imagePath).getImage();
+                image = new ImageIcon(imagepath).getImage();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,Invalid_Value);
             }
@@ -82,17 +83,17 @@ String Typee="Stylus BT";
         jLabel2 = new javax.swing.JLabel();
         javax.swing.JTabbedPane jTabbedPane11 = new javax.swing.JTabbedPane();
         JPanel jPanel3 = new JPanel();
-        javax.swing.JButton jButton2 = new ImageButton(Path +"p10.png");
-        JLabel jLabel7 = createImageLabel1(Path +"p19.png");
+        javax.swing.JButton jButton2 = new ImageButton(path +"p10.png");
+        JLabel jLabel7 = createImageLabel1(path +"p19.png");
         JPanel jPanel4 = new JPanel();
-        javax.swing.JButton jButton10 = new ImageButton(Path +"p9.png");
-        javax.swing.JButton jButton11 = new ImageButton(Path +"p11.png");
-        JLabel jLabel9 = createImageLabel1(Path +"p19.png");
+        javax.swing.JButton jButton10 = new ImageButton(path +"p9.png");
+        javax.swing.JButton jButton11 = new ImageButton(path +"p11.png");
+        JLabel jLabel9 = createImageLabel1(path +"p19.png");
         JPanel jPanel24 = new JPanel();
-        javax.swing.JButton jButton7 = new ImageButton(Path +"p14.png");
-        JLabel jLabel25 = createImageLabel1(Path +"p19.png");
-        javax.swing.JButton jButton8 = new ImageButton(Path +"p13.png");
-        javax.swing.JButton jButton9 = new ImageButton(Path +"p17.png");
+        javax.swing.JButton jButton7 = new ImageButton(path +"p14.png");
+        JLabel jLabel25 = createImageLabel1(path +"p19.png");
+        javax.swing.JButton jButton8 = new ImageButton(path +"p13.png");
+        javax.swing.JButton jButton9 = new ImageButton(path +"p17.png");
         JPanel jPanel1 = new JPanel();
         JLabel jLabel1 = new ImageButto("C:\\Users\\Hp\\Desktop\\nn.png");
         JLabel jLabel3 = new JLabel();
@@ -101,16 +102,16 @@ String Typee="Stylus BT";
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         javax.swing.JButton jButton1 = new javax.swing.JButton();
-        javax.swing.JButton jButton3 = new ImageButton(Path +"p16.png");
-        JLabel jLabel11 = createImageLabel1(Path +"p19.png");
+        javax.swing.JButton jButton3 = new ImageButton(path +"p16.png");
+        JLabel jLabel11 = createImageLabel1(path +"p19.png");
         JPanel jPanel6 = new Jpanelcolored(Color.white, Color.white);
         JLabel jLabel13 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel21 = new JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
-        JLabel jLabel14 = createImageLabel1(Path +"p19.png");
+        JLabel jLabel14 = createImageLabel1(path +"p19.png");
         JLabel jLabel15 = new JLabel();
-        javax.swing.JButton jButton5 = new ImageButton(Path +"p16.png");
+        javax.swing.JButton jButton5 = new ImageButton(path +"p16.png");
         JPanel jPanel7 = new JPanel();
         JLabel jLabel5 = new JLabel();
         JLabel jLabel6 = new JLabel();
@@ -118,17 +119,17 @@ String Typee="Stylus BT";
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        JLabel jLabel23 = createImageLabel1(Path +"p19.png");
+        JLabel jLabel23 = createImageLabel1(path +"p19.png");
         JLabel jLabel24 = new JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        javax.swing.JButton jButton6 = new ImageButton(Path +"p16.png");
-        javax.swing.JButton jButton14 = new ImageButton(Path +"p7.png");
+        javax.swing.JButton jButton6 = new ImageButton(path +"p16.png");
+        javax.swing.JButton jButton14 = new ImageButton(path +"p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel13.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel2.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jLabel2.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
@@ -164,13 +165,13 @@ String Typee="Stylus BT";
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton10.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton10.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Add Product");
 
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
-        jButton11.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton11.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Update Product");
 
@@ -211,19 +212,19 @@ String Typee="Stylus BT";
 
         jPanel24.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton7.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton7.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Add Product");
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
-        jButton8.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton8.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Update Product");
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
-        jButton9.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton9.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Monitor sales and profits");
 
@@ -269,10 +270,10 @@ String Typee="Stylus BT";
         jLabel4.setText("The discription of the product");
 
         jButton1.setBackground(new java.awt.Color(227, 240, 231));
-        jButton1.setText("Path of the picture");
+        jButton1.setText("path of the picture");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton3.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton3.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton3.setText("akm");
         jButton3.addActionListener(evt -> jButton3ActionPerformed());
 
@@ -337,20 +338,20 @@ String Typee="Stylus BT";
 
         jTabbedPane11.addTab("Add Post", jPanel1);
 
-        jLabel13.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jLabel13.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
         jLabel13.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jPasswordField2.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
 
-        jLabel21.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jLabel21.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
         jLabel21.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jPasswordField3.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
 
-        jLabel15.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jLabel15.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
         jLabel15.setText("change password");
 
-        jButton5.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton5.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Confirm");
         jButton5.addActionListener(this::jButton5ActionPerformed);
@@ -407,29 +408,29 @@ String Typee="Stylus BT";
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel5.setFont(new java.awt.Font(Typee, Font.PLAIN, 20));
+        jLabel5.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
         jLabel5.setText("Change the Phone Number");
 
-        jLabel6.setFont(new java.awt.Font(Typee, Font.PLAIN, 20));
+        jLabel6.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
         jLabel6.setText("Change the Name ");
 
-        jLabel22.setFont(new java.awt.Font(Typee, Font.PLAIN, 20));
+        jLabel22.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
         jLabel22.setText("Change the Age");
 
-        jTextField7.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jTextField7.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
 
 
-        jTextField8.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jTextField8.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
 
 
-        jTextField9.setFont(new java.awt.Font(Typee, Font.PLAIN, 24));
+        jTextField9.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
 
-        jLabel24.setFont(new java.awt.Font(Typee, Font.PLAIN, 20));
+        jLabel24.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
         jLabel24.setText("Confirm the password");
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));
 
-        jButton6.setFont(new java.awt.Font(Typee, Font.BOLD, 24));
+        jButton6.setFont(new java.awt.Font(typee, Font.BOLD, 24));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Confirm");
 
@@ -537,7 +538,7 @@ String Typee="Stylus BT";
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
-        jTextField3.setText(getFilePath());
+        jTextField3.setText(getFilepath());
     }
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -657,7 +658,7 @@ String Typee="Stylus BT";
         }
     }
 
-    public static String getFilePath() {
+    public static String getFilepath() {
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

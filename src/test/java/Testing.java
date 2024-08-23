@@ -657,14 +657,14 @@ type2=string;
     @Given(": my name is {string} and my age is {int} and my phone number is {int} and password is {int} and email {string} as owner")
     public void my_name_is_and_my_age_is_and_my_phone_number_is_and_password_is_and_email_as_owner(String string, Integer int1, Integer int2, Integer int3, String string2) {
         // Write code here that turns the phrase above into concrete actions
-        oldvalue= Owners.size();
+        oldvalue= storeowners.size();
         logup(string2,string,int1,int2,int3);
         loginpage.setVisible(false);
     }
     @Then("the Owner users must be increased by {int}")
     public void the_owner_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(Owners.size(),oldvalue+int1);
+        assertEquals(storeowners.size(),oldvalue+int1);
     }
 
 
@@ -719,7 +719,7 @@ type2=string;
     public void i_can_choose_an_owner_or_supplier(String string, String string2) {
         // Write code here that turns the phrase above into concrete actions
     oldName=string2;
-    Owners.add(new Owneraccount(string,1,"2",1,1));
+    storeowners.add(new Owneraccount(string,1,"2",1,1));
     newName=string2;
         suppliers.add(new Suppliers (string2
 
@@ -737,11 +737,11 @@ type2=string;
 
         oldvalue=oldqua=ind1=ind2=0;
         // Write code here that turns the phrase above into concrete actions
-        for (int i = 0; i< Owners.size(); i++){
-            if(Owners.get(i).getname().equals(oldName)){
-                oldvalue= Owners.get(i).messages().size();
+        for (int i = 0; i< storeowners.size(); i++){
+            if(storeowners.get(i).getname().equals(oldName)){
+                oldvalue= storeowners.get(i).messages().size();
                 ind1=i;
-                sendfeedback(string, Owners.get(i));
+                sendfeedback(string, storeowners.get(i));
             }
         }
         for (int i = 0; i< suppliers.size(); i++){
@@ -755,7 +755,7 @@ type2=string;
     @Then("the number of messages to each one must be increased by {int}")
     public void the_number_of_messages_to_each_one_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(oldvalue+int1, Owners.get(ind1).messages().size());
+        assertEquals(oldvalue+int1, storeowners.get(ind1).messages().size());
         assertEquals(oldqua+1, suppliers.get(ind2).messages().size());
     }
 

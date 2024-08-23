@@ -17,12 +17,12 @@ public class Suppliersframe extends javax.swing.JFrame {
         initComponents();
         setSize(718, 470);
        ArrayList<String> items=new ArrayList<>();
-       for(int i=0;i<Application.Owners.size();i++){
-          items.add(Application.Owners.get(i).getname());
+       for(int i = 0; i<Application.storeowners.size(); i++){
+          items.add(Application.storeowners.get(i).getname());
        }
     
 Application.populateAndSetupList(jlist1, items);
-if(!Application.Owners.isEmpty()){
+if(!Application.storeowners.isEmpty()){
       jlist1.setEnabled(true);
     }
   
@@ -391,15 +391,15 @@ if(!Application.Owners.isEmpty()){
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        if(Application.Owners.isEmpty()){
+        if(Application.storeowners.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "There are no owners to send messages");
         }else{
-            for(int i=0;i<Application.Owners.size();i++){
-                if(Application.Owners.get(i).getname().equals(Application.suppliername)){
+            for(int i = 0; i<Application.storeowners.size(); i++){
+                if(Application.storeowners.get(i).getname().equals(Application.suppliername)){
                     String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-                              Application.sendEmail("s12112895@stu.najah.edu", Application.Owners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+                              Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
                     
-                    Application.Owners.get(i).messages.add(h);
+                    Application.storeowners.get(i).messages.add(h);
                     JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
                     jTextArea1.setText("");
                     break;

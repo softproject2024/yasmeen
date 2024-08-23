@@ -61,8 +61,8 @@ public static int index1;
          jScrollPane5.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
             jScrollPane5.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         ArrayList<String> items=new ArrayList<>();
-          for(int i=0;i<Application.Owners.size();i++){
-          items.add(Application.Owners.get(i).getname());
+          for(int i = 0; i<Application.storeowners.size(); i++){
+          items.add(Application.storeowners.get(i).getname());
             jlist1.setEnabled(true);
        }
        for(int i=0;i<Application.suppliers.size();i++){
@@ -788,13 +788,13 @@ Application.populateAndSetupList(jlist1, items);
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
          
-          if(Application.suppliers.isEmpty()&&Application.Owners.isEmpty()){
+          if(Application.suppliers.isEmpty()&&Application.storeowners.isEmpty()){
           JOptionPane.showMessageDialog(rootPane, "There are no owners or suppliers to send messages");
        }else{
-              if(index1<=Application.Owners.size()){
+              if(index1<=Application.storeowners.size()){
                   String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
-          Application.sendEmail("s12112895@stu.najah.edu", Application.Owners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
-              Application.Owners.get(index1).messages.add(h);
+          Application.sendEmail("s12112895@stu.najah.edu", Application.storeowners.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
+              Application.storeowners.get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.ownername);
               jTextArea1.setText("");
             
@@ -802,7 +802,7 @@ Application.populateAndSetupList(jlist1, items);
               }
               
               else{
-                  index1-=Application.Owners.size();
+                  index1-=Application.storeowners.size();
                             String h="From "+Application.publicuser.getname()+" : "+jTextArea1.getText();
                  Application.sendEmail("s12112895@stu.najah.edu", Application.suppliers.get(index1).getemail(), h, "nhdo kelh sbgl qynb");
                     Application.suppliers.get(index1).messages.add(h);

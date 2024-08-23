@@ -6,7 +6,7 @@ public class MainClass {
 
     public static void main(String[] args) {
         new Application();
-      Application.Owners=new ArrayList<>();
+      Application.storeowners =new ArrayList<>();
          Application.admins =new ArrayList<>();
           Application.posts=new ArrayList<>();
            Application.suppliers=new ArrayList<>();

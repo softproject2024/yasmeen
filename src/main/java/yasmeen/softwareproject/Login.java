@@ -227,16 +227,16 @@ public class Login extends javax.swing.JFrame {
     
     if (jTextField3.getText().equals("Owner")) {
         
-        for (int i = 0; i < Application.Owners.size(); i++) {
-            if (jTextField1.getText().equals(Application.Owners.get(i).getemail())) {
-                if (jPasswordField1.getText().equals(Application.Owners.get(i).getpassword()+"")) {
+        for (int i = 0; i < Application.storeowners.size(); i++) {
+            if (jTextField1.getText().equals(Application.storeowners.get(i).getemail())) {
+                if (jPasswordField1.getText().equals(Application.storeowners.get(i).getpassword()+"")) {
 
                     Application.ownerpage.setVisible(true);
-                    Application.publicuser=Application.Owners.get(i);
-                    Application.ownerpage.jLabel2.setText("Welcome back " + Application.Owners.get(i).getname());
-                    Application.ownerpage.jTextField1.setText(Application.Owners.get(i).getname());
-                     Application.ownerpage.jTextField2.setText(Application.Owners.get(i).getphone()+"");
-                      Application.ownerpage.jTextField3.setText(Application.Owners.get(i).getage()+"");
+                    Application.publicuser=Application.storeowners.get(i);
+                    Application.ownerpage.jLabel2.setText("Welcome back " + Application.storeowners.get(i).getname());
+                    Application.ownerpage.jTextField1.setText(Application.storeowners.get(i).getname());
+                     Application.ownerpage.jTextField2.setText(Application.storeowners.get(i).getphone()+"");
+                      Application.ownerpage.jTextField3.setText(Application.storeowners.get(i).getage()+"");
                       Application.ownerpage.jPasswordField1.setText("");
                     Application.loginpage.setVisible(false);
                     jTextField1.setText("");

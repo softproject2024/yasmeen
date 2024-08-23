@@ -606,11 +606,11 @@ String p19="p19.png";
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
         StringBuilder h= new StringBuilder("There is no information");
-        for(int i=0;i<Application.Owners.size();i++){
+        for(int i = 0; i<Application.storeowners.size(); i++){
             if(i==0){
                 h = new StringBuilder("Owners :\n");
             }
-            h.append(Application.Owners.get(i).getname()).append("\n");
+            h.append(Application.storeowners.get(i).getname()).append("\n");
         }
         for(int i=0;i<Application.suppliers.size();i++){
             if(i==0){

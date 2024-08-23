@@ -41,7 +41,7 @@ public class Application {
   
  public static Account publicuser;
  public static List<Admin> admins;
- public static List<Owneraccount>Owners;
+ public static List<Owneraccount> storeowners;
  public static List<Suppliers>suppliers;
  public static List<User>users;
  public static List<Product>products;
@@ -54,11 +54,16 @@ public class Application {
    public static userpage userspage;
 
   public static Suppliersframe supplierspage;
+    public static final String ownermsg="Owner";
+    public static final String adminmsg="Admin";
+    public static final String suppliermsg="Supplier";
+    public static final String usermsg="User";
+    
 
  public Application(){
 
-     type="Owner";
-     type2="Owner";
+     type=ownermsg;
+     type2=ownermsg;
      status="Complete";
  
      posts= new ArrayList<>();
@@ -68,10 +73,10 @@ public class Application {
      
      products.add(cucumber);
      admins =new ArrayList<>();
-     Owners=new ArrayList<>();
+     storeowners =new ArrayList<>();
 
-     Owners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
-     Owners.getFirst().messages.add("hi");
+     storeowners.add(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
+     storeowners.getFirst().messages.add("hi");
      suppliers=new ArrayList<>();
 
       suppliers.add(new Suppliers("Yaqoot", 0, "a1@g.c", 0, 12121212));
@@ -80,7 +85,7 @@ public class Application {
      users=new ArrayList<>();
      users.add(new User("Hitler",1,"1",2,12 ));
      admins.add(new Admin("any",1,"ad1@g.c",2112121212,12121212));
-     Owners.add(new Owneraccount("nk",1,"ow1@g.c",2112121212,12121212));
+     storeowners.add(new Owneraccount("nk",1,"ow1@g.c",2112121212,12121212));
     suppliers.add(new Suppliers("any",1,"su1@g.c",2112121212,12121212));
 
      users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
@@ -159,8 +164,8 @@ if(price<0||quantity<0){
 
  }
  public static void sendfeedback(String msg,Account a){
-     if(a.gettype().equals("Owner")){
-         for (Owneraccount owner : Owners) {
+     if(a.gettype().equals(ownermsg)){
+         for (Owneraccount owner : storeowners) {
              if (a.getemail().equals(owner.getemail())) {
                  owner.messages.add(msg);
              }
@@ -240,14 +245,15 @@ if(price<0||quantity<0){
      if (isValidEmail(email)) {
          boolean isValidUser = true;
 
+         
          switch (Application.type) {
-             case "Owner" -> {
-                 for (int i = 0; i < Application.Owners.size(); i++) {
+             case ownermsg -> {
+                 for (int i = 0; i < Application.storeowners.size(); i++) {
 
-                     if (email.equals(Application.Owners.get(i).getemail())) {
+                     if (email.equals(Application.storeowners.get(i).getemail())) {
 
-                         if (pass.equals(Application.Owners.get(i).getpassword() + "")) {
-                             Application.publicuser = Application.Owners.get(i);
+                         if (pass.equals(Application.storeowners.get(i).getpassword() + "")) {
+                             Application.publicuser = Application.storeowners.get(i);
                              return true;
 
                          } else {
@@ -259,7 +265,7 @@ if(price<0||quantity<0){
                      }
                  }
              }
-             case "Admin" -> {
+             case adminmsg -> {
                  for (int i = 0; i < Application.admins.size(); i++) {
                      JOptionPane.showMessageDialog(null, Application.admins
                              .get(i).getemail());
@@ -277,7 +283,7 @@ if(price<0||quantity<0){
                      }
                  }
              }
-             case "Supplier" -> {
+             case suppliermsg -> {
                  for (int i = 0; i < Application.suppliers.size(); i++) {
                      if (email.equals(Application.suppliers.get(i).getemail())) {
                          if (pass.equals(Application.suppliers.get(i).getpassword() + "")) {
@@ -300,7 +306,7 @@ if(price<0||quantity<0){
                      if (email.equals(Application.users.get(i).getemail())) {
 
 
-                         publicuser.type = "User";
+                         publicuser.type = usermsg;
 
 
                          return true;
@@ -324,7 +330,7 @@ if(price<0||quantity<0){
 
     public static void updateinformation(String name,int age,int phone,int password){
 if(publicuser.getpassword()==password){
-    for (Owneraccount owner : Owners) {
+    for (Owneraccount owner : storeowners) {
         if (isowner(owner.getemail())) {
             owner.setname(name);
             owner.setage(age);
@@ -434,28 +440,28 @@ if(publicuser.getpassword()==password){
 public static void updatepassword(int newpassword){
 publicuser.setpassword(newpassword);
     switch (type) {
-        case "Owner" -> {
-            for (Owneraccount owner : Owners) {
+        case ownermsg -> {
+            for (Owneraccount owner : storeowners) {
                 if (publicuser.getemail().equals(owner.getemail())) {
                     owner.setpassword(newpassword);
                 }
             }
         }
-        case "Admin" -> {
+        case adminmsg -> {
             for (Admin admin : admins) {
                 if (publicuser.getemail().equals(admin.getemail())) {
                     admin.setpassword(newpassword);
                 }
             }
         }
-        case "Supplier" -> {
+        case suppliermsg -> {
             for (Suppliers supplier : suppliers) {
                 if (publicuser.getemail().equals(supplier.getemail())) {
                     supplier.setpassword(newpassword);
                 }
             }
         }
-        case "User" -> {
+        case usermsg -> {
             for (User user : users) {
                 if (publicuser.getemail().equals(user.getemail())) {
                     user.setpassword(newpassword);
@@ -472,25 +478,25 @@ publicuser.setpassword(newpassword);
      if(!isfoundmail(email)){
     if(isValidEmail(email)){
         switch (Application.type2) {
-            case "Owner" -> {
-                Owners.add(new Owneraccount(name, age, email, phone, password));
+            case ownermsg -> {
+                storeowners.add(new Owneraccount(name, age, email, phone, password));
                 JOptionPane.showMessageDialog(null, "Welcome to our store Owner " + name);
                 loginpage.removecontents();
             }
-            case "Admin" -> {
+            case adminmsg -> {
                 admins.add(new Admin(name, age, email, phone, password));
 
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store Admin " + name);
                 loginpage.removecontents();
             }
-            case "Supplier" -> {
+            case suppliermsg -> {
                 suppliers.add(new Suppliers(name, age, email, phone, password));
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store Supplier " + name);
                 loginpage.removecontents();
             }
-            case "User" -> {
+            case usermsg -> {
                 users.add(new User(name, age, email, phone, password));
 
                 JOptionPane.showMessageDialog(null, "Welcome to our store User " + name);
@@ -592,7 +598,7 @@ publicuser.setpassword(newpassword);
     }
 
     public static boolean isfoundmail(String email){
-        for (Owneraccount owner : Owners) {
+        for (Owneraccount owner : storeowners) {
             if (email.equals(owner.getemail())) {
                 return true;
             }

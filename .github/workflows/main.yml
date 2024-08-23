@@ -1,4 +1,4 @@
-name: SonarCloud
+name: Build and Analyze
 
 on:
   push:
@@ -40,8 +40,8 @@ jobs:
 
       - name: Build and Analyze with SonarCloud
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Required for SonarCloud analysis of PRs
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # SonarCloud authentication token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B clean verify -X org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=softproject2024_yasmeen
 

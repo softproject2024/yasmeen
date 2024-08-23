@@ -42,11 +42,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Required for SonarCloud analysis of PRs
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # SonarCloud authentication token
-        run: mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+        run: mvn -B clean verify -X org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=softproject2024_yasmeen
 
       - name: Upload test results
-        if: always()  # This ensures the reports are uploaded even if tests fail
+        if: always()  # Ensures this step runs even if previous steps fail
         uses: actions/upload-artifact@v3
         with:
           name: test-results

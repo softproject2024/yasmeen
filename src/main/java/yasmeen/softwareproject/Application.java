@@ -23,7 +23,14 @@ import javax.swing.JOptionPane;
 
 public class Application {
 
-
+    public static void someMethod() {
+        Application.adminpage = new Admin1();
+        loguppage=new logup();
+        loginpage=new Login();
+        ownerpage=new Owner();
+        userspage=new UserPage();
+        supplierspage=new Suppliersframe();
+    }
 
     String path ="C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png";
 
@@ -65,7 +72,7 @@ public class Application {
 
 publicuser=new Account("",1,"",1,"",1);
      status="Complete";
- 
+
      posts= new ArrayList<>();
 
      products=new ArrayList<>();
@@ -93,14 +100,13 @@ publicuser=new Account("",1,"",1,"",1);
      sales.add(new orders(products.get(1).getname(), 12, status));
       sales.add(new orders(products.get(1).getname(), 14, status));
        sales.add(new orders(products.get(1).getname(), 13, status));
-     loguppage=new logup();
-     loginpage=new Login();
-     ownerpage=new Owner();
-     adminpage=new Admin1();
-     supplierspage=new Suppliersframe();
-     posts.add(new post(path,"1","1",0 ));
 
-    userspage=new UserPage();
+
+
+
+     posts.add(new post(path,"1","1",0 ));
+     someMethod();
+
  }
 public static String getallproducts(){
     StringBuilder h= new StringBuilder("There is no products in the store");

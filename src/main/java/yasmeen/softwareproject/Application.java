@@ -627,6 +627,9 @@ public class Application {
                     }
                 }
             }
+            default ->{
+              JOptionPane.showMessageDialog(null,"Email; not fund");
+            }
         }
     }
 

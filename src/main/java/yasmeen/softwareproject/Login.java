@@ -11,7 +11,9 @@ import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
 public class Login extends javax.swing.JFrame {
-
+private String welcome="Welcome back ";
+private String nomessage="There is no messages to this account";
+private String invalidpass="Please enter a valid password";
 
     public Login() {
         initComponents();
@@ -85,6 +87,7 @@ public class Login extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(205, 160, 167));
         jLabel9.setText("Log up");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked();
             }
@@ -234,7 +237,7 @@ public class Login extends javax.swing.JFrame {
 
                     Application.getOwnerpage().setVisible(true);
                     Application.setPublicuser(Application.getStoreowners().get(i));
-                    Application.getOwnerpage().getjLabel2().setText("Welcome back " + Application.getStoreowners().get(i).getname());
+                    Application.getOwnerpage().getjLabel2().setText(welcome+ Application.getStoreowners().get(i).getname());
                     Application.getOwnerpage().getjTextField1().setText(Application.getStoreowners().get(i).getname());
                      Application.getOwnerpage().getjTextField2().setText(Application.getStoreowners().get(i).getphone()+"");
                       Application.getOwnerpage().getjTextField3().setText(Application.getStoreowners().get(i).getage()+"");
@@ -243,7 +246,7 @@ public class Login extends javax.swing.JFrame {
                     jTextField1.setText("");
                     jPasswordField1.setText("");
 
-                       StringBuilder h= new StringBuilder("There is no messages to this account");
+                       StringBuilder h= new StringBuilder(nomessage);
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
                 h.append(Application.getPublicuser().messages.get(ip)).append("\n");
@@ -253,10 +256,10 @@ public class Login extends javax.swing.JFrame {
          Application.getOwnerpage().getjTextArea2().setText(h.toString());
          Application.getOwnerpage().getjTextArea2().setEditable(false);
                     isValidUser = true;
-                    break;
+
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                    JOptionPane.showMessageDialog(null, invalidpass);
                     break;
                 }
             }
@@ -265,7 +268,7 @@ public class Login extends javax.swing.JFrame {
         for (int i = 0; i < Application.getAdmins().size(); i++) {
             if (jTextField1.getText().equals(Application.getAdmins().get(i).getemail())) {
                 if (getPasswordAsString(jPasswordField1).equals(Application.getAdmins().get(i).getpassword()+"")) {
-                    Application.getAdminpage().getl2().setText("Welcome back " + Application.getAdmins().get(i).getname());
+                    Application.getAdminpage().getl2().setText(welcome+ Application.getAdmins().get(i).getname());
                     Application.getAdminpage().setVisible(true);
                     Application.getLoginpage().setVisible(false);
                          Application.getAdminpage().getjTextField7().setText(Application.getAdmins().get(i).getname());
@@ -277,7 +280,7 @@ public class Login extends javax.swing.JFrame {
                     isValidUser = true;
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                    JOptionPane.showMessageDialog(null, invalidpass);
                     break;
                 }
             }
@@ -297,8 +300,8 @@ public class Login extends javax.swing.JFrame {
                      Application.getSupplierspage().getjTextField2().setText(Application.getSuppliers().get(i).getphone()+"");
                       Application.getSupplierspage().getjTextField3().setText(Application.getSuppliers().get(i).getage()+"");
                       Application.getSupplierspage().getjPasswordField1().setText("");
-                    Application.getSupplierspage().getjLabel2().setText("Welcome back " + Application.getSuppliers().get(i).getname());
-                       StringBuilder h= new StringBuilder("There is no messages to this account");
+                    Application.getSupplierspage().getjLabel2().setText(welcome+ Application.getSuppliers().get(i).getname());
+                       StringBuilder h= new StringBuilder(nomessage);
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
                 h.append(Application.getPublicuser().messages.get(ip)).append("\n");
@@ -309,7 +312,7 @@ public class Login extends javax.swing.JFrame {
                     isValidUser = true;
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                    JOptionPane.showMessageDialog(null, invalidpass);
                     break;
                 }
             }
@@ -328,8 +331,8 @@ public class Login extends javax.swing.JFrame {
                      Application.getUserspage().getjTextField3().setText(Application.getUsers().get(i).getphone()+"");
                       Application.getUserspage().getjTextField4().setText(Application.getUsers().get(i).getage()+"");
                       Application.getUserspage().getjPasswordField1().setText("");
-                    Application.getUserspage().getl3().setText("Welcome back " + Application.getUsers().get(i).getname());
-                       StringBuilder h= new StringBuilder("There is no messages to this account");
+                    Application.getUserspage().getl3().setText(welcome+ Application.getUsers().get(i).getname());
+                       StringBuilder h= new StringBuilder(nomessage);
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
                 h.append(Application.getPublicuser().messages.get(ip)).append("\n");
@@ -340,7 +343,7 @@ public class Login extends javax.swing.JFrame {
                     isValidUser = true;
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Please enter a valid password");
+                    JOptionPane.showMessageDialog(null, invalidpass);
                     break;
                 }
             }

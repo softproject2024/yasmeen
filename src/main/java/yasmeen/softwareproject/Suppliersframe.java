@@ -52,7 +52,7 @@ if(!Application.Owners.isEmpty()){
         JLabel jLabel6 = new JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         JButton jButton6 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
-        JPanel jPanel6 = new ghk(Color.white, Color.white);
+        JPanel jPanel6 = new Jpanelcolored(Color.white, Color.white);
         JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = new JLabel();

@@ -134,7 +134,7 @@ Application.populateAndSetupList(jlist1, items);
         JScrollPane jScrollPane6 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
         JButton jButton8 = new ImageButton("C:\\Users\\nd\\\\\\\\Desktop\\\\\\\\248\\New folder\\p16.png");
-        JPanel jPanel8 = new ghk(Color.white, Color.white);
+        JPanel jPanel8 = new Jpanelcolored(Color.white, Color.white);
         JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = new JLabel();

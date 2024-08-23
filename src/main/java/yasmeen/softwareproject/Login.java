@@ -234,11 +234,11 @@ public class Login extends javax.swing.JFrame {
 
                     Application.getOwnerpage().setVisible(true);
                     Application.setPublicuser(Application.getStoreowners().get(i));
-                    Application.getOwnerpage().jLabel2.setText("Welcome back " + Application.getStoreowners().get(i).getname());
-                    Application.getOwnerpage().jTextField1.setText(Application.getStoreowners().get(i).getname());
-                     Application.getOwnerpage().jTextField2.setText(Application.getStoreowners().get(i).getphone()+"");
-                      Application.getOwnerpage().jTextField3.setText(Application.getStoreowners().get(i).getage()+"");
-                      Application.getOwnerpage().jPasswordField1.setText("");
+                    Application.getOwnerpage().getjLabel2().setText("Welcome back " + Application.getStoreowners().get(i).getname());
+                    Application.getOwnerpage().getjTextField1().setText(Application.getStoreowners().get(i).getname());
+                     Application.getOwnerpage().getjTextField2().setText(Application.getStoreowners().get(i).getphone()+"");
+                      Application.getOwnerpage().getjTextField3().setText(Application.getStoreowners().get(i).getage()+"");
+                      Application.getOwnerpage().getjPasswordField1().setText("");
                     Application.getLoginpage().setVisible(false);
                     jTextField1.setText("");
                     jPasswordField1.setText("");
@@ -250,8 +250,8 @@ public class Login extends javax.swing.JFrame {
                     }
 
 
-         Application.getOwnerpage().jTextArea2.setText(h.toString());
-         Application.getOwnerpage().jTextArea2.setEditable(false);
+         Application.getOwnerpage().getjTextArea2().setText(h.toString());
+         Application.getOwnerpage().getjTextArea2().setEditable(false);
                     isValidUser = true;
                     break;
                 } else {
@@ -293,19 +293,19 @@ public class Login extends javax.swing.JFrame {
                     jTextField1.setText("");
                     Application.setPublicuser(Application.getSuppliers().get(i));
                     jPasswordField1.setText("");
-                   Application.getSupplierspage().jTextField1.setText(Application.getSuppliers().get(i).getname());
-                     Application.getSupplierspage().jTextField2.setText(Application.getSuppliers().get(i).getphone()+"");
-                      Application.getSupplierspage().jTextField3.setText(Application.getSuppliers().get(i).getage()+"");
-                      Application.getSupplierspage().jPasswordField1.setText("");
-                    Application.getSupplierspage().jLabel2.setText("Welcome back " + Application.getSuppliers().get(i).getname());
+                   Application.getSupplierspage().getjTextField1().setText(Application.getSuppliers().get(i).getname());
+                     Application.getSupplierspage().getjTextField2().setText(Application.getSuppliers().get(i).getphone()+"");
+                      Application.getSupplierspage().getjTextField3().setText(Application.getSuppliers().get(i).getage()+"");
+                      Application.getSupplierspage().getjPasswordField1().setText("");
+                    Application.getSupplierspage().getjLabel2().setText("Welcome back " + Application.getSuppliers().get(i).getname());
                        StringBuilder h= new StringBuilder("There is no messages to this account");
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
                 h.append(Application.getPublicuser().messages.get(ip)).append("\n");
                     }
                
-         Application.getSupplierspage().jTextArea2.setText(h.toString());
-         Application.getSupplierspage().jTextArea2.setEditable(false);
+         Application.getSupplierspage().getjTextArea2().setText(h.toString());
+         Application.getSupplierspage().getjTextArea2().setEditable(false);
                     isValidUser = true;
                     break;
                 } else {

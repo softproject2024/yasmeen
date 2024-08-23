@@ -1033,18 +1033,43 @@ jRadioButton3.setSelected(true);
     }
 
 
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel jLabel2;
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    private  javax.swing.JPasswordField jPasswordField1;
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JTextArea jTextArea1;
-    public javax.swing.JTextArea jTextArea2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField3;
+    private javax.swing.JTextArea jTextArea2;
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    private javax.swing.JTextField jTextField1;
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JList<String> jlist1;
     private javax.swing.JList<String> jlist3;
    

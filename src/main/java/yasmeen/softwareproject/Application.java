@@ -564,7 +564,6 @@ publicuser.setpassword(newpassword);
   public static void sendEmail(String fromEmail, String toEmail, String messageContent) {
         String host = "smtp.gmail.com";
         final String username = fromEmail;
-String password="nhdo kelh sbgl qynb";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -575,7 +574,7 @@ String password="nhdo kelh sbgl qynb";
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
+                return new PasswordAuthentication(username, "nhdo kelh sbgl qynb");
             }
         });
 

@@ -220,11 +220,11 @@ if(!Application.getSales().isEmpty()){
         JPanel jPanel2 = makePanel();
         JPanel jPanel7 = makePanel();
         JScrollPane jScrollPane2 = makeJscrollPane();
-        jTextArea2 = makeJtextarea();
+        jTextArea2 = new javax.swing.JTextArea();
         JPanel jPanel8 = makePanel();
         JLabel jLabel12 = makeJlabel();
         JScrollPane jScrollPane1 = makeJscrollPane();
-        jTextArea1 = makeJtextarea();
+        jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane3 = makeJscrollPane();
         jlist1 = new javax.swing.JList<>();
         JButton jButton5 = makeJbutton(PATH + P16);

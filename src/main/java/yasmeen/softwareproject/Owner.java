@@ -201,7 +201,7 @@ if(!Application.getSales().isEmpty()){
         JLabel jLabel4 = createImageLabel1(PATH + P19);
 
         JLabel jLabel6 = makeJlabel();
-        jPasswordField1 = makeJpaswwordfield();
+        jPasswordField1 = new javax.swing.JPasswordField();
         JButton jButton6 = makeJbutton(PATH + P16);
         JPanel jPanel5 = makePanel();
         JLabel jLabel8 = makeJlabel();
@@ -230,9 +230,9 @@ if(!Application.getSales().isEmpty()){
         JButton jButton5 = makeJbutton(PATH + P16);
         JPanel jPanel6 = makePanel();
         JLabel jLabel7 = makeJlabel();
-        jPasswordField2 = makeJpaswwordfield();
+        jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = makeJlabel();
-        jPasswordField3 = makeJpaswwordfield();
+        jPasswordField3 = new javax.swing.JPasswordField();
         JLabel jLabel14 = createImageLabel1(PATH + P19);
         JLabel jLabel15 = makeJlabel();
         JButton jButton3 = makeJbutton(PATH + P16);

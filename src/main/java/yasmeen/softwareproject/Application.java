@@ -398,93 +398,90 @@ public class Application {
         }
         return h.toString();
     }
-    public static boolean login(String email, String pass){
-
-
-        if (isValidEmail(email)) {
-            boolean isValidUser = true;
-
-
-            switch (Application.type) {
-                case OWNER_MSG :
-                    for (int i = 0; i < Application.storeowners.size(); i++) {
-
-                        if (email.equals(Application.storeowners.get(i).getemail())) {
-
-                            if (pass.equals(Application.storeowners.get(i).getpassword() + "")) {
-                                Application.publicuser = Application.storeowners.get(i);
-                                return true;
-
-                            } else {
-
-                                JOptionPane.showMessageDialog(null, ENTER_MSG);
-                                isValidUser = false;
-                                break;
-                            }
-                        }
-                    }
-                break;
-                case ADMIN_MSG :
-                    for (int i = 0; i < Application.admins.size(); i++) {
-                        JOptionPane.showMessageDialog(null, Application.admins
-                                .get(i).getemail());
-                        if (email.equals(Application.admins.get(i).getemail())) {
-                            if (pass.equals(Application.admins.get(i).getpassword() + "")) {
-
-
-                                Application.publicuser = Application.admins.get(i);
-                                return true;
-                            } else {
-                                JOptionPane.showMessageDialog(null, ENTER_MSG);
-                                isValidUser = false;
-                                break;
-                            }
-                        }
-                    }
-                break;
-                case SUPPLIER_MSG :
-                    for (int i = 0; i < Application.suppliers.size(); i++) {
-                        if (email.equals(Application.suppliers.get(i).getemail())) {
-                            if (pass.equals(Application.suppliers.get(i).getpassword() + "")) {
-
-
-                                Application.publicuser = Application.suppliers.get(i);
-                                return true;
-                            } else {
-                                JOptionPane.showMessageDialog(null, ENTER_MSG);
-                                isValidUser = false;
-                                break;
-                            }
-                        }
-                    }
-                break;
-                default:
-
-                    for (int i = 0; i < Application.users.size(); i++) {
-                        JOptionPane.showMessageDialog(null, Application.users.get(i).getemail());
-                        if (email.equals(Application.users.get(i).getemail())) {
-
-
-                            publicuser.type = USER_MSG;
-
-
-                            return true;
-
-
-                        }
-                    }
-                break;
-            }
-
-            if (!isValidUser) {
-                JOptionPane.showMessageDialog(null, "Email not found in our records");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please enter a valid email");
+    public static boolean login(String email, String pass) {
+        if (!isValidEmail(email)) {
+            showMessage("Please enter a valid email");
+            return false;
         }
 
+        boolean isValidUser = validateUser(email, pass);
+        if (!isValidUser) {
+            showMessage("Email not found in our records");
+            return false;
+        }
 
-        return false;
+        return true;
+    }
+
+
+
+    private static boolean validateUser(String email, String pass) {
+        User user = getUserByEmail(email);
+        if (user == null) {
+            return false;
+        }
+
+        if (!isPasswordCorrect(user, pass)) {
+            showMessage(ENTER_MSG);
+            return false;
+        }
+
+        Application.publicuser = user;
+        return true;
+    }
+
+    private static User getUserByEmail(String email) {
+        switch (Application.type) {
+            case OWNER_MSG:
+                return findUserInListofowners(Application.storeowners, email);
+            case ADMIN_MSG:
+                return findUserInListofadmins(Application.admins, email);
+            case SUPPLIER_MSG:
+                return findUserInListofsupploers(Application.suppliers, email);
+            default:
+                return findUserInListofusers(Application.users, email);
+        }
+    }
+
+    private static User findUserInListofowners(List<Owneraccount> userList, String email) {
+        for (Account user : userList) {
+            if (email.equals(user.getemail())) {
+                return (User) user;
+            }
+        }
+        return null;
+    }
+    private static User findUserInListofadmins(List<Admin> userList, String email) {
+        for (Account user : userList) {
+            if (email.equals(user.getemail())) {
+                return (User) user;
+            }
+        }
+        return null;
+    }
+    private static User findUserInListofsupploers(List<Suppliers> userList, String email) {
+        for (Account user : userList) {
+            if (email.equals(user.getemail())) {
+                return (User) user;
+            }
+        }
+        return null;
+    }
+    private static User findUserInListofusers(List<User> userList, String email) {
+        for (Account user : userList) {
+            if (email.equals(user.getemail())) {
+                return (User) user;
+            }
+        }
+        return null;
+    }
+
+    private static boolean isPasswordCorrect(User user, String pass) {
+        return pass.equals(user.getpassword() + "");
+    }
+
+    private static void showMessage(String message) {
+        JOptionPane.showMessageDialog(null, message);
     }
 
     public static void updateinformation(String name,int age,int phone,int password){
@@ -772,41 +769,56 @@ public class Application {
     }
     public static void populateAndSetupList(JList<String> jList, List<String> items) {
         jList.removeAll();
-        if(items.isEmpty()){
-            DefaultListModel<String> listModel = new DefaultListModel<>();
-            listModel.add(0, "There is no Data");
-            jList.setEnabled(false);
-            jList.setModel(listModel);
-        }else{
-            jList.setEnabled(false);
-            DefaultListModel<String> listModel = new DefaultListModel<>();
-            for (String item : items) {
-                listModel.addElement(item);
-            }
-            jList.setModel(listModel);
-
-            jList.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    if (e.getClickCount() == 1) {
-                        int index = jList.locationToIndex(e.getPoint());
-                        UserPage.setIndex1(index);
-
-                        if (index >= 0) {
-                            String selectedItem = listModel.getElementAt(index);
-                            suppliername=selectedItem;
-                            ownername=selectedItem;
-                            int y=order;
-                            order=index;
-                            if(y!=order){
-
-                                JOptionPane.showMessageDialog(null, "You clicked: " + selectedItem);
-                            }
-                        }
-                    }
-                }
-            });
+        if (items.isEmpty()) {
+            setupEmptyList(jList);
+        } else {
+            setupListWithItems(jList, items);
         }
     }
+
+    private static void setupEmptyList(JList<String> jList) {
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        listModel.addElement("There is no Data");
+        jList.setEnabled(false);
+        jList.setModel(listModel);
+    }
+
+    private static void setupListWithItems(JList<String> jList, List<String> items) {
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (String item : items) {
+            listModel.addElement(item);
+        }
+        jList.setEnabled(false);
+        jList.setModel(listModel);
+        addMouseListenerToList(jList, listModel);
+    }
+
+    private static void addMouseListenerToList(JList<String> jList, DefaultListModel<String> listModel) {
+        jList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                handleMouseClick(e, jList, listModel);
+            }
+        });
+    }
+
+    private static void handleMouseClick(MouseEvent e, JList<String> jList, DefaultListModel<String> listModel) {
+        if (e.getClickCount() == 1) {
+            int index = jList.locationToIndex(e.getPoint());
+            UserPage.setIndex1(index);
+
+            if (index >= 0) {
+                String selectedItem = listModel.getElementAt(index);
+                suppliername = selectedItem;
+                ownername = selectedItem;
+                int y = order;
+                order = index;
+                if (y != order) {
+                    JOptionPane.showMessageDialog(null, "You clicked: " + selectedItem);
+                }
+            }
+        }
+    }
+
 
 }

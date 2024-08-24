@@ -869,56 +869,86 @@ jRadioButton3.setSelected(true);
     }
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
-         
-        String name;
-        String price;
-        String quantity;
-        String date;
-        String discount;
-        boolean flag=true;
-        name=JOptionPane.showInputDialog("What is the name of the new product ?");
-        for(int i=0;i<Application.getProducts().size();i++){
-            if(name.equals(Application.getProducts().get(i).getname())){
-                flag=false;
-                JOptionPane.showMessageDialog(rootPane, "The Popduct is exist , If you want more of it please request it from a Supplier");
-                break;
+        String name = getProductName();
+        if (isProductExisting(name)) {
+            showProductExistsMessage();
+        } else {
+            handleNewProduct();
+        }
+    }
 
+    private String getProductName() {
+        return JOptionPane.showInputDialog("What is the name of the new product ?");
+    }
+
+    private boolean isProductExisting(String name) {
+        for (int i = 0; i < Application.getProducts().size(); i++) {
+            if (name.equals(Application.getProducts().get(i).getname())) {
+                return true;
             }
         }
-        if(flag){
-            price=JOptionPane.showInputDialog("What is the price of the new product ?");
-            if(Application.isNumber(price)){
-                quantity=JOptionPane.showInputDialog("What is the quantity of the new product ?");
-                if(Application.isNumber(quantity)){
-                    date=JOptionPane.showInputDialog("What is the Expire Date of the new product ? \nexample : 1/1/2024");
-                    if(Application.isValidFutureDate(date)){
-                                String h=JOptionPane.showInputDialog("What is the descripton of this new product ?");
-                        discount=JOptionPane.showInputDialog("How much is the discount of the new product ?");
-                        if(discount.isEmpty()){
-                    
-                            Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, 0,h);
-                               }else{
-                            if(Application.isNumber(discount)){
-                                int dis=Integer.parseInt(discount);
-                                if(dis<0||dis>=100){
-                                    JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
-                                }else{
-                                    Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, Integer.parseInt(discount),h);
-                                   }
-                            }
-                        }
-                    }else{
-                        JOptionPane.showMessageDialog(rootPane, "Enter a valid Expire Date");
-                    }
-                }else{
-                    JOptionPane.showMessageDialog(rootPane, "Enter a valid Quantity");
+        return false;
+    }
+
+    private void showProductExistsMessage() {
+        JOptionPane.showMessageDialog(rootPane, "The Product is exist, If you want more of it please request it from a Supplier");
+    }
+
+    private void handleNewProduct() {
+        String name=getInput("What is the name of the new product ?");
+        String price = getInput("What is the price of the new product ?");
+        if (Application.isNumber(price)) {
+            String quantity = getInput("What is the quantity of the new product ?");
+            if (Application.isNumber(quantity)) {
+                String date = getInput("What is the Expire Date of the new product ? \nexample: 1/1/2024");
+                if (Application.isValidFutureDate(date)) {
+                    String description = getInput("What is the description of this new product ?");
+                    String discount = getInput("How much is the discount of the new product ?");
+                    processDiscountAndAddProduct(name,price, quantity, date, description, discount);
+                } else {
+                    showInvalidExpireDateMessage();
                 }
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Enter a valid Price");
+            } else {
+                showInvalidQuantityMessage();
             }
-
+        } else {
+            showInvalidPriceMessage();
         }
+    }
 
+    private String getInput(String message) {
+        return JOptionPane.showInputDialog(message);
+    }
+
+    private void processDiscountAndAddProduct(String name,String price, String quantity, String date, String description, String discount) {
+        if (discount.isEmpty()) {
+            Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, 0, description);
+        } else {
+            if (Application.isNumber(discount)) {
+                int dis = Integer.parseInt(discount);
+                if (dis < 0 || dis >= 100) {
+                    showInvalidDiscountMessage();
+                } else {
+                    Application.addproduct(name, Integer.parseInt(price), Integer.parseInt(quantity), date, dis, description);
+                }
+            }
+        }
+    }
+
+    private void showInvalidExpireDateMessage() {
+        JOptionPane.showMessageDialog(rootPane, "Enter a valid Expire Date");
+    }
+
+    private void showInvalidQuantityMessage() {
+        JOptionPane.showMessageDialog(rootPane, "Enter a valid Quantity");
+    }
+
+    private void showInvalidPriceMessage() {
+        JOptionPane.showMessageDialog(rootPane, "Enter a valid Price");
+    }
+
+    private void showInvalidDiscountMessage() {
+        JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
     }
 
 
@@ -973,33 +1003,55 @@ jRadioButton3.setSelected(true);
 
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
-         
-        String index=JOptionPane.showInputDialog(Application.getProducts());
-        if(Application.isNumber(index)){
-            int x=Integer.parseInt(index);
-            if(x<0||x>Application.getProducts().size()){
-                JOptionPane.showMessageDialog(rootPane, VALIDATOR);
-            }else{
-                String discount=JOptionPane.showInputDialog("How much is the new Discount for the Product ?");
-                if(discount.isEmpty()){
-                    Application.implementdiscount(0, Application.getProducts().get(x-1));
-                    }else{
-                    if(Application.isNumber(discount)){
-                        int dis=Integer.parseInt(discount);
-                        if(dis<0||dis>=100){
-                            JOptionPane.showMessageDialog(rootPane, "The Discount is not correct");
-                        }else{
-                            Application.implementdiscount(dis, Application.getProducts().get(x-1));
-                            }
-                    }else{
-                        JOptionPane.showMessageDialog(rootPane, "The Discount value is not valid");
-                    }
-                }
-
-            }
-        }else{
-            JOptionPane.showMessageDialog(rootPane, VALIDATOR);
+        int productIndex = getProductIndex();
+        if (productIndex >= 0) {
+            handleDiscount(productIndex);
+        } else {
+            showInvalidIndexMessage();
         }
+    }
+
+    private int getProductIndex() {
+        String indexInput = JOptionPane.showInputDialog(Application.getProducts());
+        if (Application.isNumber(indexInput)) {
+            int index = Integer.parseInt(indexInput);
+            if (index >= 0 && index <= Application.getProducts().size()) {
+                return index;
+            }
+        }
+        return -1; // Indicates an invalid index
+    }
+
+    private void handleDiscount(int productIndex) {
+        String discountInput = JOptionPane.showInputDialog("How much is the new Discount for the Product ?");
+        if (discountInput.isEmpty()) {
+            Application.implementdiscount(0, Application.getProducts().get(productIndex - 1));
+        } else {
+            processDiscount(discountInput, productIndex);
+        }
+    }
+
+    private void processDiscount(String discountInput, int productIndex) {
+        if (Application.isNumber(discountInput)) {
+            int discount = Integer.parseInt(discountInput);
+            if (discount >= 0 && discount < 100) {
+                Application.implementdiscount(discount, Application.getProducts().get(productIndex - 1));
+            } else {
+                showInvalidDiscountMessage();
+            }
+        } else {
+            showInvalidDiscountValueMessage();
+        }
+    }
+
+    private void showInvalidIndexMessage() {
+        JOptionPane.showMessageDialog(rootPane, VALIDATOR);
+    }
+
+   
+
+    private void showInvalidDiscountValueMessage() {
+        JOptionPane.showMessageDialog(rootPane, "The Discount value is not valid");
     }
 
 

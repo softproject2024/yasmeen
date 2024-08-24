@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
 public class Product {
 
     private Date stringToDate(String dateString) {
-        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            return DATE_FORMAT.parse(dateString);
+            return dateFormat.parse(dateString);
         } catch (ParseException e) {
 
             return null;
@@ -20,8 +20,8 @@ public class Product {
     }
 
     public String dateToString(Date date) {
-        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-        return DATE_FORMAT.format(date);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dateFormat.format(date);
     }
 
     private int price;

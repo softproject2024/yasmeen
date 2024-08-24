@@ -9,11 +9,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 class ImageLabelFactory1 {
+    private ImageLabelFactory1() {
+        // Initialization code if needed
+    }
     public static JLabel createImageLabel1(String imagePath) {
         JLabel label = new JLabel();
 
@@ -53,7 +54,7 @@ class ImageLabelFactory1 {
 
 }
 
-public class card extends javax.swing.JPanel {
+public class Card extends javax.swing.JPanel {
  private final String path;
 
  private final int quant;
@@ -61,7 +62,7 @@ public class card extends javax.swing.JPanel {
  private final int price;
  
 
-    public card(int price,int quantity,String name,String path) {
+    public Card(int price, int quantity, String name, String path) {
         this.path=path;
         this.price=price;
         this.name=name;
@@ -72,11 +73,11 @@ public class card extends javax.swing.JPanel {
         jLabel4.setText(price+"");
        jPanel1.setLayout(new FlowLayout(FlowLayout.CENTER));
      jPanel1.add(new JLabel(name));
-   
-        jLabel4.setVerticalAlignment(JLabel.TOP);
-jLabel4.setHorizontalAlignment(JLabel.LEFT);
-  jLabel3.setVerticalAlignment(JLabel.TOP);
-jLabel3.setHorizontalAlignment(JLabel.RIGHT);
+
+        jLabel4.setVerticalAlignment(SwingConstants.TOP);
+jLabel4.setHorizontalAlignment(SwingConstants.LEFT);
+  jLabel3.setVerticalAlignment(SwingConstants.TOP);
+jLabel3.setHorizontalAlignment(SwingConstants.LEFT);
     }
 
     private void initComponents() {
@@ -90,6 +91,7 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
 
         jLabel2.setMaximumSize(new java.awt.Dimension(20, 20));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked();
             }
@@ -152,7 +154,7 @@ jLabel3.setHorizontalAlignment(JLabel.RIGHT);
           Application.purchase(name, x);
            Application.getUserspage(). getjPanel21().removeAll();
              for(int i=0;i<Application.getProducts().size();i++){
-           Application.getUserspage(). getjPanel21().add(new card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
+           Application.getUserspage(). getjPanel21().add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
      
      
        }

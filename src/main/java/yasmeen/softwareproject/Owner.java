@@ -137,13 +137,16 @@ public class Owner extends JFrame {
     private static final String PASS ="nhdo kelh sbgl qynb";
     private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
     private static final String P19 ="p19.png";
+    private static final String P16 ="p16.png";
+    private static final String STYLE ="Stylus BT";
     private static final String VALIDATOR ="Enter a valid value";
 
     private static final String COMPLETE ="Complete";
-    private static final String STYLE ="Stylus BT";
+
+
     private static final String PENDING ="Pending";
     private static final String CASH ="Cash";
-    private static final String P16 ="p16.png";
+
     public Owner() {
 
         
@@ -1031,7 +1034,7 @@ jRadioButton3.setSelected(true);
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
          
-   if(jPasswordField2.getText().equals(Application.getPublicuser().getpassword()+"")){
+   if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
                 Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", PASS);

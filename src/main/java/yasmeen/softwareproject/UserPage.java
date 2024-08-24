@@ -37,7 +37,7 @@ class ImagePanel extends JPanel {
 }
 
 public class UserPage extends javax.swing.JFrame {
-    private final String pass="nhdo kelh sbgl qynb";
+    private static final String pass="nhdo kelh sbgl qynb";
 private static int index1;
 public static int getIndex1(){
     return index1;
@@ -56,12 +56,12 @@ public static int getIndex1(){
         setSize(this.getWidth()-10, this.getHeight());
         jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
        for(int i=0;i<Application.getPosts().size();i++){
-            jPanel7.add(new post_panel(Application.getPosts().get(i).prd,Application.getPosts().get(i).des,Application.getPosts().get(i).path,i));
+            jPanel7.add(new PostPanel(Application.getPosts().get(i).prd,Application.getPosts().get(i).des,Application.getPosts().get(i).path,i));
        }
        jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
              jPanel21.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
             for(int i=0;i<Application.getProducts().size();i++){
-            jPanel21.add(new card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
+            jPanel21.add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
        }
           jPanel29.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
           jlist1.setEnabled(false);
@@ -811,7 +811,7 @@ Application.populateAndSetupList(jlist1, items);
               }
               
               else{
-                  index1-=Application.getStoreowners().size();
+                  updateIndex();
                             String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
                  Application.sendEmail(EMAIL_FROM, Application.getSuppliers().get(index1).getemail(), h,pass);
                     Application.getSuppliers().get(index1).messages.add(h);
@@ -822,12 +822,17 @@ Application.populateAndSetupList(jlist1, items);
        }
     }
 
+    public void updateIndex() {
+        index1 -= Application.getStoreowners().size();
+
+    }
+
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
 
 List<Product> m = Application.findProductsByName(Application.getProducts(), jTextField1.getText());
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -838,7 +843,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
         List<Product> m = Application.findProductsByDescription(Application.getProducts(), "drink");
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -849,7 +854,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "dunat");
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -860,7 +865,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
        List<Product> m = Application.findProductsByDescription(Application.getProducts(), "crepe");
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -872,7 +877,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
            
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -883,7 +888,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cookie");
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -894,7 +899,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cheescake");
      jPanel29.removeAll();
         for (Product product : m) {
-            jPanel29.add(new card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
+            jPanel29.add(new Card(product.getprice(), product.getquantity(), product.getname(), product.getpath()));
         }
        jPanel29.revalidate();  
                  jPanel29.repaint();
@@ -946,15 +951,11 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
 
     private javax.swing.JPasswordField jPasswordField2;
 
-    public JPasswordField getjPasswordField2() {
-        return jPasswordField2;
-    }
+
 
     private javax.swing.JPasswordField jPasswordField3;
 
-    public JPasswordField getjPasswordField3() {
-        return jPasswordField3;
-    }
+
 
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;

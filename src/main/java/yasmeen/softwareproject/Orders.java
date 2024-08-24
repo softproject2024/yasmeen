@@ -4,11 +4,11 @@ package yasmeen.softwareproject;
 import javax.swing.JOptionPane;
 
 
-public class orders {
+public class Orders {
 private final String productname;
     private final int profit;
 String status;
-public orders(String productname, int profit, String status){
+public Orders(String productname, int profit, String status){
  this.productname= productname;
  this.profit=profit;
     this.status= status;

@@ -27,7 +27,7 @@ public class Application {
         status="Complete";
 
         publicuser=new Account("",1,"",1,"",1);
-        posts= new ArrayList<>();
+        Posts = new ArrayList<>();
         Application.adminpage = new Admin1();
         products=new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class Application {
         suppliers=new ArrayList<>();
         admins =new ArrayList<>();
         storeowners =new ArrayList<>();
-        loguppage=new logup();
+        loguppage=new LogUp();
         loginpage=new Login();
         ownerpage=new Owner();
         userspage=new UserPage();
@@ -149,21 +149,21 @@ public class Application {
         return products;
     }
 
-    private static List<orders>sales;
+    private static List<Orders>sales;
 
-    public static List<orders> getSales() {
+    public static List<Orders> getSales() {
         return sales;
     }
 
-    private static List<post>posts;
+    private static List<Post> Posts;
 
-    public static List<post> getPosts() {
-        return posts;
+    public static List<Post> getPosts() {
+        return Posts;
     }
 
-    private static logup loguppage;
+    private static LogUp loguppage;
 
-    public static logup getLoguppage() {
+    public static LogUp getLoguppage() {
         return loguppage;
     }
 
@@ -249,14 +249,14 @@ public class Application {
 
         users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
 
-        sales.add(new orders(products.get(1).getname(), 12, status));
-        sales.add(new orders(products.get(1).getname(), 14, status));
-        sales.add(new orders(products.get(1).getname(), 13, status));
+        sales.add(new Orders(products.get(1).getname(), 12, status));
+        sales.add(new Orders(products.get(1).getname(), 14, status));
+        sales.add(new Orders(products.get(1).getname(), 13, status));
 
 
 
 
-        posts.add(new post(path,"1","1",0 ));
+        Posts.add(new Post(path,"1","1",0 ));
 
 
     }
@@ -337,15 +337,15 @@ public class Application {
             }
         }
     }
-    public static void ratePost(int r, post m){
-        for (yasmeen.softwareproject.post post : posts) {
+    public static void ratePost(int r, Post m){
+        for (Post post : Posts) {
             if (m.id == post.id) {
                 post.rates.add(r);
             }
         }
     }
     public  static void addpost(String path,String des,String prd){
-        posts.add(new post(path,prd,des,0));
+        Posts.add(new Post(path,prd,des,0));
     }
     public static void implementdiscount(int discount,Product p){
         if(discount<0||discount>=100){
@@ -366,7 +366,7 @@ public class Application {
 
         String productname="";
         maxindex=0;
-        for (orders sale : sales) {
+        for (Orders sale : sales) {
 
             if (maxindex < sale.getprofit()) {
 
@@ -567,7 +567,7 @@ public class Application {
 
                     int x = product.getquantity();
                     product.setquantity(x - qua);
-                    sales.add(new orders(product.getname(), (x * qua), "Pending"));
+                    sales.add(new Orders(product.getname(), (x * qua), "Pending"));
 
                 }
             }

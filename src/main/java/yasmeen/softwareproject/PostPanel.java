@@ -14,9 +14,11 @@ import java.util.List;
 
 
 
-public class post_panel extends javax.swing.JPanel {
+public class PostPanel extends javax.swing.JPanel {
     static class ImageLabelFactory {
-
+        private ImageLabelFactory() {
+            // Initialization code if needed
+        }
     public static JLabel createImageLabel1(String imagePath) {
         JLabel label = new JLabel();
 
@@ -87,11 +89,11 @@ public class post_panel extends javax.swing.JPanel {
         return "<html>"+String.join("<br>", lines)+"</html>";
     }
 private final String path;
-
+private static final String RatingThank ="Thanks for rating the post";
 
   
 int id;
-    public post_panel(String name,String des,String path,int id) {
+    public PostPanel(String name, String des, String path, int id) {
         this.path=path;
         initComponents();
       this.id=id;
@@ -123,7 +125,7 @@ jLabel3.setText(divideText(jLabel3,des));
                r4.setSelected(false);
                 r5.setSelected(false);
                 Application.getPosts().get(id).getRates().add(1);
-                JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                JOptionPane.showMessageDialog(null, RatingThank);
 
 
               });
@@ -135,7 +137,7 @@ jLabel3.setText(divideText(jLabel3,des));
                  r4.setSelected(false);
                   r5.setSelected(false);
                Application.getPosts().get(id).getRates().add(2);
-                  JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                  JOptionPane.showMessageDialog(null, RatingThank);
 
                 });
             r3.addActionListener(e -> {
@@ -146,7 +148,7 @@ jLabel3.setText(divideText(jLabel3,des));
                    r4.setSelected(false);
                     r5.setSelected(false);
                  Application.getPosts().get(id).getRates().add(3);
-                    JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                    JOptionPane.showMessageDialog(null, RatingThank);
 
                   });
               r4.addActionListener(e -> {
@@ -157,7 +159,7 @@ jLabel3.setText(divideText(jLabel3,des));
                      r4.setSelected(true);
                       r5.setSelected(false);
                    Application.getPosts().get(id).getRates().add(4);
-                      JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                      JOptionPane.showMessageDialog(null, RatingThank);
 
                     });
                 r5.addActionListener(e -> {
@@ -168,7 +170,7 @@ jLabel3.setText(divideText(jLabel3,des));
                        r4.setSelected(true);
                         r5.setSelected(true);
                      Application.getPosts().get(id).getRates().add(5);
-                        JOptionPane.showMessageDialog(null, "Thanks for rating the post");
+                        JOptionPane.showMessageDialog(null, RatingThank);
 
                       });
         

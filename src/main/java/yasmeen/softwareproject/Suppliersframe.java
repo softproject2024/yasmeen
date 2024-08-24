@@ -14,6 +14,11 @@ import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 public class Suppliersframe extends javax.swing.JFrame {
     private final String pass="nhdo kelh sbgl qynb";
+    private static final String P19 ="p19.png";
+    private static final String P16 ="p16.png";
+    private static final String CONFIRM ="Confirm";
+   private static final String STYLE ="Stylus BT";;
+    private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
 
     public Suppliersframe() {
         initComponents();
@@ -50,18 +55,18 @@ if(!Application. getStoreowners().isEmpty()){
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        JLabel jLabel4 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+        JLabel jLabel4 = createImageLabel1(PATH+P19);
         JLabel jLabel6 = new JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        JButton jButton6 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton6 = new ImageButton(PATH+P16);
         JPanel jPanel6 = new Jpanelcolored(Color.white, Color.white);
         JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = new JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
-        JLabel jLabel14 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+        JLabel jLabel14 = createImageLabel1(PATH+P19);
         JLabel jLabel15 = new JLabel();
-        JButton jButton3 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton3 = new ImageButton(PATH+P16);
         JPanel jPanel2 = new JPanel();
         JPanel jPanel7 = new JPanel();
         JScrollPane jScrollPane2 = new JScrollPane();
@@ -72,46 +77,46 @@ if(!Application. getStoreowners().isEmpty()){
         jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane3 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
-        JButton jButton5 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton5 = new ImageButton(PATH+P16);
 
-        JButton jButton14 = new ImageButton("C:\\Users\\nd\\\\\\\\Desktop\\\\\\\\248\\New folder\\p7.png");
+        JButton jButton14 = new ImageButton(PATH+"p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(227, 240, 231));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jLabel2.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel1.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
         jLabel1.setText("Change the Phone Number");
 
-        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
         jLabel3.setText("Change the Name ");
 
-        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel5.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
         jLabel5.setText("Change the Age");
 
-        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField1.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
 
-        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
 
-        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
-        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel6.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
         jLabel6.setText("Confirm the password");
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton6.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Confirm");
+        jButton6.setText(CONFIRM);
 
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
@@ -168,22 +173,22 @@ if(!Application. getStoreowners().isEmpty()){
 
         jTabbedPane1.addTab("Account Management ", jPanel4);
 
-        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel9.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
-        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
         jLabel15.setText("change password");
 
-        jButton3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton3.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Confirm");
+        jButton3.setText(CONFIRM);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -255,7 +260,7 @@ if(!Application. getStoreowners().isEmpty()){
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
+        jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -282,9 +287,9 @@ if(!Application. getStoreowners().isEmpty()){
 
         jScrollPane3.setViewportView(jlist1);
 
-        jButton5.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton5.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Confirm");
+        jButton5.setText(CONFIRM);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

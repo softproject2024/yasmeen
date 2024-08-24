@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
 import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
-public class logup extends javax.swing.JFrame {
+public class LogUp extends javax.swing.JFrame {
 
 
-    public logup() {
+    public LogUp() {
         initComponents();
       
         this.setSize(this.getWidth(), this.getHeight()-250);
@@ -97,6 +97,7 @@ public class logup extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(205, 160, 167));
         jLabel9.setText("Login");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked();
             }

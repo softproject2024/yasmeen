@@ -29,7 +29,8 @@ import java.security.SecureRandom;
 import java.util.Objects;
 import javax.imageio.ImageIO;
 
-import static yasmeen.softwareproject.Suppliersframe.*;
+import static yasmeen.softwareproject.Suppliersframe.makeJlabel;
+import static yasmeen.softwareproject.Suppliersframe.makePanel;
 
 
 class TransparentRadioButton extends JRadioButton {
@@ -209,7 +210,7 @@ if(!Application.getSales().isEmpty()){
         JButton jButton2 = new ImageButton(PATH + P16);
         JPanel jPanel1 = makePanel();
         JLabel jLabel13 = makeJlabel();
-        JScrollPane jScrollPane5 = makeJscrollPane();
+        JScrollPane jScrollPane5 = new JScrollPane();
         jlist3 = new javax.swing.JList<>();
         JLabel jLabel16 = makeJlabel();
         JLabel jLabel17 = makeJlabel();
@@ -219,13 +220,13 @@ if(!Application.getSales().isEmpty()){
         jRadioButton3 = new TransparentRadioButton(CASH);
         JPanel jPanel2 = makePanel();
         JPanel jPanel7 = makePanel();
-        JScrollPane jScrollPane2 = makeJscrollPane();
+        JScrollPane jScrollPane2 = new JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         JPanel jPanel8 = makePanel();
         JLabel jLabel12 = makeJlabel();
-        JScrollPane jScrollPane1 = makeJscrollPane();
+        JScrollPane jScrollPane1 = new JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        JScrollPane jScrollPane3 = makeJscrollPane();
+        JScrollPane jScrollPane3 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
         JButton jButton5 = new ImageButton(PATH + P16);
         JPanel jPanel6 = makePanel();

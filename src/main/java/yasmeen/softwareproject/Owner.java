@@ -133,9 +133,9 @@ public class Owner extends JFrame {
         return label;
     }
 
-
+    private final String pass="nhdo kelh sbgl qynb";
     public Owner() {
-      
+
         
         initComponents();
         jRadioButton1.setSelected(true);
@@ -1003,7 +1003,7 @@ jRadioButton3.setSelected(true);
            if(Application.getSuppliers().get(i).getname().equals(Application.getSuppliername())){
                String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
               Application.getSuppliers().get(i).messages.add(h);
-                Application.sendEmail("s12112895@stu.najah.edu",  Application.getSuppliers().get(i).getemail(), h);
+                Application.sendEmail("s12112895@stu.najah.edu",  Application.getSuppliers().get(i).getemail(), h,pass);
              
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.getSuppliername());
               jTextArea1.setText("");
@@ -1018,7 +1018,7 @@ jRadioButton3.setSelected(true);
    if(jPasswordField2.getText().equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
+                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone",pass);
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

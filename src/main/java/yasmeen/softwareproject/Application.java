@@ -406,7 +406,7 @@ public class Application {
 
 
             switch (Application.type) {
-                case OWNER_MSG -> {
+                case OWNER_MSG :
                     for (int i = 0; i < Application.storeowners.size(); i++) {
 
                         if (email.equals(Application.storeowners.get(i).getemail())) {
@@ -423,8 +423,8 @@ public class Application {
                             }
                         }
                     }
-                }
-                case ADMIN_MSG -> {
+                break;
+                case ADMIN_MSG :
                     for (int i = 0; i < Application.admins.size(); i++) {
                         JOptionPane.showMessageDialog(null, Application.admins
                                 .get(i).getemail());
@@ -441,8 +441,8 @@ public class Application {
                             }
                         }
                     }
-                }
-                case SUPPLIER_MSG -> {
+                break;
+                case SUPPLIER_MSG :
                     for (int i = 0; i < Application.suppliers.size(); i++) {
                         if (email.equals(Application.suppliers.get(i).getemail())) {
                             if (pass.equals(Application.suppliers.get(i).getpassword() + "")) {
@@ -457,8 +457,8 @@ public class Application {
                             }
                         }
                     }
-                }
-                default -> {
+                break;
+                default:
 
                     for (int i = 0; i < Application.users.size(); i++) {
                         JOptionPane.showMessageDialog(null, Application.users.get(i).getemail());
@@ -473,7 +473,7 @@ public class Application {
 
                         }
                     }
-                }
+                break;
             }
 
             if (!isValidUser) {
@@ -711,7 +711,7 @@ public class Application {
         }
     }
 
-    public static void sendEmail(String fromEmail, String toEmail, String messageContent) {
+    public static void sendEmail(String fromEmail, String toEmail, String messageContent,String pass) {
         String host = "smtp.gmail.com";
         final String username = fromEmail;
 
@@ -724,7 +724,7 @@ public class Application {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, "nhdo kelh sbgl qynb");
+                return new PasswordAuthentication(username, pass);
             }
         });
 

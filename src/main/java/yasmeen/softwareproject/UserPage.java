@@ -37,6 +37,7 @@ class ImagePanel extends JPanel {
 }
 
 public class UserPage extends javax.swing.JFrame {
+    private final String pass="nhdo kelh sbgl qynb";
 private static int index1;
 public static int getIndex1(){
     return index1;
@@ -801,7 +802,7 @@ Application.populateAndSetupList(jlist1, items);
        }else{
               if(index1<=Application.getStoreowners().size()){
                   String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
-          Application.sendEmail(EMAIL_FROM, Application.getStoreowners().get(index1).getemail(), h);
+          Application.sendEmail(EMAIL_FROM, Application.getStoreowners().get(index1).getemail(), h,pass);
               Application.getStoreowners().get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.getOwnername());
               jTextArea1.setText("");
@@ -812,7 +813,7 @@ Application.populateAndSetupList(jlist1, items);
               else{
                   index1-=Application.getStoreowners().size();
                             String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
-                 Application.sendEmail(EMAIL_FROM, Application.getSuppliers().get(index1).getemail(), h);
+                 Application.sendEmail(EMAIL_FROM, Application.getSuppliers().get(index1).getemail(), h,pass);
                     Application.getSuppliers().get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.getSuppliername());
               jTextArea1.setText("");
@@ -904,7 +905,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
           if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail(EMAIL_FROM, Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone");
+                Application.sendEmail(EMAIL_FROM, Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone",pass);
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

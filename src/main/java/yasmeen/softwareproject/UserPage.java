@@ -11,7 +11,6 @@ import java.util.List;
 
 import static yasmeen.softwareproject.Owner.createImageLabel1;
 import static yasmeen.softwareproject.Owner.getPasswordAsString;
-import static yasmeen.softwareproject.Suppliersframe.makePanel;
 
 class ImagePanel extends JPanel {
 
@@ -39,6 +38,10 @@ class ImagePanel extends JPanel {
 
 public class UserPage extends javax.swing.JFrame {
     private static final String ANY ="nhdo kelh sbgl qynb";
+    private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
+    private static final String P19 ="p19.png";
+    private static final String P16 ="p16.png";
+    
 private static int index1;
 public static int getIndex1(){
     return index1;
@@ -49,11 +52,7 @@ public static int getIndex1(){
     }
 
     private static final String EMAIL_FROM ="s12112895@stu.najah.edu";
-    private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
-    private static final String P19 ="p19.png";
-    private static final String P16 ="p16.png";
     private static final String STYLE ="Stylus BT";
-    
     
     public UserPage() {
         initComponents();
@@ -106,26 +105,26 @@ Application.populateAndSetupList(jlist1, items);
 
     private void initComponents() {
 
-        JPanel jPanel14 =makePanel();
+        JPanel jPanel14 = new JPanel();
         jLabel3 = new javax.swing.JLabel();
         JTabbedPane jTabbedPane12 = new JTabbedPane();
-        JPanel jPanel24 =makePanel();
-        JPanel jPanel1 =makePanel();
+        JPanel jPanel24 = new JPanel();
+        JPanel jPanel1 = new JPanel();
         jPanel2 = new ImagePanel("man");
         JLabel jLabel19 = new JLabel();
-        JPanel jPanel6 =makePanel();
+        JPanel jPanel6 = new JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
-        JPanel jPanel26 =makePanel();
-        JPanel jPanel18 =makePanel();
-        JPanel jPanel19 =makePanel();
+        JPanel jPanel26 = new JPanel();
+        JPanel jPanel18 = new JPanel();
+        JPanel jPanel19 = new JPanel();
         JLabel jLabel18 = new JLabel();
-        JPanel jPanel20 =makePanel();
+        JPanel jPanel20 = new JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jPanel21 =makePanel();
-        JPanel jPanel27 =makePanel();
-        JPanel jPanel22 =makePanel();
-        JPanel jPanel23 =makePanel();
+        jPanel21 = new JPanel();
+        JPanel jPanel27 = new JPanel();
+        JPanel jPanel22 = new JPanel();
+        JPanel jPanel23 = new JPanel();
         JLabel jLabel1 = new JLabel();
         jTextField1 = new javax.swing.JTextField();
         JButton jButton1 = new JButton();
@@ -134,21 +133,21 @@ Application.populateAndSetupList(jlist1, items);
         JButton jButton4 = new JButton();
         JButton jButton5 = new JButton();
         JButton jButton6 = new JButton();
-        JPanel jPanel28 =makePanel();
+        JPanel jPanel28 = new JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel29 = new javax.swing.JPanel();
-        JPanel jPanel5 =makePanel();
-        JPanel jPanel15 =makePanel();
+        JPanel jPanel5 = new JPanel();
+        JPanel jPanel15 = new JPanel();
         JScrollPane jScrollPane4 = new JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        JPanel jPanel16 =makePanel();
+        JPanel jPanel16 = new JPanel();
         JLabel jLabel12 = new JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane6 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
         JButton jButton8 = new ImageButton(PATH+P16);
-        JPanel jPanel8 =makePanel();
+        JPanel jPanel8 = new JPanel();
         JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = new JLabel();
@@ -156,7 +155,7 @@ Application.populateAndSetupList(jlist1, items);
         JLabel jLabel14 = createImageLabel1(PATH+P19);
         JLabel jLabel15 = new JLabel();
         JButton jButton7 = new ImageButton(PATH+P16);
-        JPanel jPanel4 =makePanel();
+        JPanel jPanel4 = new JPanel();
         JLabel jLabel2 = new JLabel();
         JLabel jLabel4 = new JLabel();
         JLabel jLabel6 = new JLabel();

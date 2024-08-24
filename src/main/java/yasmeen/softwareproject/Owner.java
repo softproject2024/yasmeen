@@ -1048,7 +1048,7 @@ jRadioButton3.setSelected(true);
         JOptionPane.showMessageDialog(rootPane, VALIDATOR);
     }
 
-   
+
 
     private void showInvalidDiscountValueMessage() {
         JOptionPane.showMessageDialog(rootPane, "The Discount value is not valid");

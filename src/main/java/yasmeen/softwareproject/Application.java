@@ -416,7 +416,7 @@ public class Application {
 
 
     private static boolean validateUser(String email, String pass) {
-        User user = getUserByEmail(email);
+        Account user = getUserByEmail(email);
         if (user == null) {
             return false;
         }
@@ -430,7 +430,7 @@ public class Application {
         return true;
     }
 
-    private static User getUserByEmail(String email) {
+    private static Account getUserByEmail(String email) {
         switch (Application.type) {
             case OWNER_MSG:
                 return findUserInListofowners(Application.storeowners, email);
@@ -443,40 +443,40 @@ public class Application {
         }
     }
 
-    private static User findUserInListofowners(List<Owneraccount> userList, String email) {
-        for (Account user : userList) {
+    private static Owneraccount findUserInListofowners(List<Owneraccount> userList, String email) {
+        for (Owneraccount user : userList) {
             if (email.equals(user.getemail())) {
-                return (User) user;
+                return  user;
             }
         }
         return null;
     }
-    private static User findUserInListofadmins(List<Admin> userList, String email) {
-        for (Account user : userList) {
+    private static Admin findUserInListofadmins(List<Admin> userList, String email) {
+        for (Admin user : userList) {
             if (email.equals(user.getemail())) {
-                return (User) user;
+                return  user;
             }
         }
         return null;
     }
-    private static User findUserInListofsupploers(List<Suppliers> userList, String email) {
-        for (Account user : userList) {
+    private static Suppliers findUserInListofsupploers(List<Suppliers> userList, String email) {
+        for (Suppliers user : userList) {
             if (email.equals(user.getemail())) {
-                return (User) user;
+                return  user;
             }
         }
         return null;
     }
     private static User findUserInListofusers(List<User> userList, String email) {
-        for (Account user : userList) {
+        for (User user : userList) {
             if (email.equals(user.getemail())) {
-                return (User) user;
+                return  user;
             }
         }
         return null;
     }
 
-    private static boolean isPasswordCorrect(User user, String pass) {
+    private static boolean isPasswordCorrect(Account user, String pass) {
         return pass.equals(user.getpassword() + "");
     }
 

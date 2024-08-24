@@ -29,11 +29,7 @@ import java.security.SecureRandom;
 import java.util.Objects;
 import javax.imageio.ImageIO;
 
- 
-
-  
- 
-
+import static yasmeen.softwareproject.Suppliersframe.makePanel;
 
 
 class TransparentRadioButton extends JRadioButton {
@@ -146,30 +142,7 @@ public class Owner extends JFrame {
 
     private static final String PENDING ="Pending";
     private static final String CASH ="Cash";
-    private JPanel makePanel(){
-        return new JPanel();
-    }
-    private JLabel makeJlabel(){
-        return new JLabel();
-    }
-    private JScrollPane makeJscrollPane(){
-        return new JScrollPane();
-    }
-    private JPasswordField makeJpaswwordfield(){
-        return new JPasswordField();
-    }
-    private JTextField makeJtextfield(){
-        return new JTextField();
-    }
-    private JTextArea makeJtextarea(){
-        return new JTextArea();
-    }
-    private JButton makeJbutton(String path){
-        return new Owner.ImageButton(path);
-    }
-    private GroupLayout makeGroup(JPanel j){
-        return new GroupLayout(j);
-    }
+
     public Owner() {
 
         

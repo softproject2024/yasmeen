@@ -41,7 +41,7 @@ if(!Application. getStoreowners().isEmpty()){
          
        
     }
-private JPanel makePanel(){
+public static JPanel makePanel(){
      return new JPanel();   
 }
 private JLabel makeJlabel(){

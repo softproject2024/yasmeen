@@ -11,50 +11,48 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-class ImageLabelFactory1 {
-    private ImageLabelFactory1() {
-        // Initialization code if needed
-    }
-    public static JLabel createImageLabel1(String imagePath) {
-        JLabel label = new JLabel();
 
-        try {
-           
-            BufferedImage image = ImageIO.read(new File(imagePath));
-           
-
-            ImageIcon icon = new ImageIcon(image);
-
-            
-            label.addComponentListener(new ComponentAdapter() {
-                @Override
-                public void componentResized(ComponentEvent e) {
-                   
-                    Image scaledImage = icon.getImage().getScaledInstance(
-                       180,
-                       180,
-                        Image.SCALE_SMOOTH
-                    );
-
-                 
-                    label.setIcon(new ImageIcon(scaledImage));
-                }
-            });
-
-           
-            label.setIcon(icon);
-        } catch (IOException e) {
-
-            
-            label.setText("Image load error: ");
-        }
-
-        return label;
-    }
-
-}
 
 public class Card extends javax.swing.JPanel {
+
+        public static JLabel createImageLabel1(String imagePath) {
+            JLabel label = new JLabel();
+
+            try {
+
+                BufferedImage image = ImageIO.read(new File(imagePath));
+
+
+                ImageIcon icon = new ImageIcon(image);
+
+
+                label.addComponentListener(new ComponentAdapter() {
+                    @Override
+                    public void componentResized(ComponentEvent e) {
+
+                        Image scaledImage = icon.getImage().getScaledInstance(
+                                180,
+                                180,
+                                Image.SCALE_SMOOTH
+                        );
+
+
+                        label.setIcon(new ImageIcon(scaledImage));
+                    }
+                });
+
+
+                label.setIcon(icon);
+            } catch (IOException e) {
+
+
+                label.setText("Image load error: ");
+            }
+
+            return label;
+        }
+
+
  private final String path;
 
  private final int quant;
@@ -82,7 +80,7 @@ jLabel3.setHorizontalAlignment(SwingConstants.LEFT);
 
     private void initComponents() {
 
-        jLabel2 = ImageLabelFactory1.createImageLabel1(path);
+        jLabel2 = createImageLabel1(path);
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();

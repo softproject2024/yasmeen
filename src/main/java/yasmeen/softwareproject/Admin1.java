@@ -47,11 +47,15 @@ String p19="p19.png";
             try {
                 image = new ImageIcon(imagepath).getImage();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, Application.getInvalidvalue());
+                JOptionPane.showMessageDialog(null,getInvalidvalue());
             }
 
 
 
+        }
+
+        private Object getInvalidvalue() {
+            return "invalid value";
         }
 
         @Override

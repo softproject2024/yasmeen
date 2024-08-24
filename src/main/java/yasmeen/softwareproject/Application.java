@@ -60,16 +60,12 @@ public class Application {
 
     private static int maxindex;
 
-    public static int getMaxindex() {
-        return maxindex;
-    }
+
 
 
     private static String invalidvalue ="invalid value";
 
-    public static String getInvalidvalue() {
-        return invalidvalue;
-    }
+
 
     private static String type2;
 
@@ -261,17 +257,6 @@ public class Application {
 
     }
 
-    public static String getallproducts(){
-        StringBuilder h= new StringBuilder("There is no products in the store");
-        if(!products.isEmpty()){
-            h = new StringBuilder("#. Product Name   Product price   Product discount\n");
-            for(int i=0;i<products.size();i++){
-                h.append((i + 1)).append(". ").append(products.get(i).getname()).append("   ").append(products.get(i).getprice()).append("   ").append(products.get(i).getdiscount()).append("\n");
-            }
-        }
-
-        return h.toString();
-    }
     public static void  addproduct(String name,int price,int quantity,String expire,int discount,String des){
         if(!isValidFutureDate(expire)){
             JOptionPane.showMessageDialog(null, "invalid expire date");
@@ -415,7 +400,7 @@ public class Application {
 
 
 
-    private static boolean validateUser(String email, String pass) {
+    public static boolean validateUser(String email, String pass) {
         Account user = getUserByEmail(email);
         if (user == null) {
             return false;
@@ -430,7 +415,7 @@ public class Application {
         return true;
     }
 
-    private static Account getUserByEmail(String email) {
+    public static Account getUserByEmail(String email) {
         switch (Application.type) {
             case OWNER_MSG:
                 return findUserInListofowners(Application.storeowners, email);
@@ -443,7 +428,7 @@ public class Application {
         }
     }
 
-    private static Owneraccount findUserInListofowners(List<Owneraccount> userList, String email) {
+    public static Owneraccount findUserInListofowners(List<Owneraccount> userList, String email) {
         for (Owneraccount user : userList) {
             if (email.equals(user.getemail())) {
                 return  user;
@@ -451,7 +436,7 @@ public class Application {
         }
         return null;
     }
-    private static Admin findUserInListofadmins(List<Admin> userList, String email) {
+    public static Admin findUserInListofadmins(List<Admin> userList, String email) {
         for (Admin user : userList) {
             if (email.equals(user.getemail())) {
                 return  user;
@@ -459,7 +444,7 @@ public class Application {
         }
         return null;
     }
-    private static Suppliers findUserInListofsupploers(List<Suppliers> userList, String email) {
+    public static Suppliers findUserInListofsupploers(List<Suppliers> userList, String email) {
         for (Suppliers user : userList) {
             if (email.equals(user.getemail())) {
                 return  user;
@@ -467,7 +452,7 @@ public class Application {
         }
         return null;
     }
-    private static User findUserInListofusers(List<User> userList, String email) {
+    public static User findUserInListofusers(List<User> userList, String email) {
         for (User user : userList) {
             if (email.equals(user.getemail())) {
                 return  user;
@@ -476,11 +461,11 @@ public class Application {
         return null;
     }
 
-    private static boolean isPasswordCorrect(Account user, String pass) {
+    public static boolean isPasswordCorrect(Account user, String pass) {
         return pass.equals(user.getpassword() + "");
     }
 
-    private static void showMessage(String message) {
+    public static void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
 
@@ -540,15 +525,15 @@ public class Application {
         }
     }
 
-    private static boolean issuppleir(String getemail) {
+    public static boolean issuppleir(String getemail) {
         return publicuser.getemail().equals(getemail);
     }
 
-    private static boolean isadmin(String getemail) {
+    public static boolean isadmin(String getemail) {
         return publicuser.getemail().equals(getemail);
     }
 
-    private static boolean isowner(String getemail) {
+    public static boolean isowner(String getemail) {
         return  publicuser.getemail().equals(getemail);
     }
 
@@ -625,7 +610,7 @@ public class Application {
                 }
             break;
             default :
-              JOptionPane.showMessageDialog(null,"Email; not fund");
+
             break;
         }
     }

@@ -8,16 +8,18 @@ import io.cucumber.java.en.Then;
 import yasmeen.softwareproject.*;
 
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 import static yasmeen.softwareproject.Application.*;
+import static yasmeen.softwareproject.Application.isNumber;
 
 public class
 Testing {
     Application a=new Application();
+
     boolean flag;
     private String oldName;
     private String olddate;
@@ -33,7 +35,8 @@ Testing {
     @Given("I am an {string} and I want to add new products")
     public void i_am_an_and_i_want_to_add_new_products(String string) {
         // Write code here that turns the phrase above into concrete actions
-
+         a=new Application();
+         someMethod();
         setPublicuser(new Owneraccount("Yasmeen",12,"a2@g.c",1231231231,0));
         assertEquals(string, getPublicuser().gettype());
 
@@ -66,6 +69,7 @@ Testing {
     public void i_am_an_and_i_want_to_add_a_new_quantity_to_the_product(String string, String string2) {
         // Write code here that turns the phrase above into concrete actions
        oldName=string2;
+       setType("kk");
     }
 
     @When("I add a new quantity with value {int}")
@@ -446,7 +450,11 @@ assertNotEquals(oldqua, getPublicuser().getage());
     @Then(": i must enter my email {string} and my password {int} as admin")
     public void i_must_enter_my_email_and_my_password_as_admin(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
+        setPublicuser(getUserByEmail(string));
       flag= login(string, int1 + "");
+      assertTrue(validateUser(string ,int1+""));
+       assertEquals(findUserInListofadmins(getAdmins(),string).getemail(),string);
+        assertTrue(isadmin(string));
     }
 
     @Then(": the system must pass me as admin")
@@ -469,6 +477,8 @@ assertNotEquals(oldqua, getPublicuser().getage());
     public void i_must_enter_my_email_and_my_password_as_owner(String string, Integer int1) {
         // Write code here that turns the phrase above into concrete actions
         flag= login(string, int1 + "");
+        assertEquals(findUserInListofowners(getStoreowners(),string).getemail(),string);
+        assertTrue(isowner(string));
     }
 
     @Then(": the system must pass me as Owner")
@@ -477,6 +487,7 @@ assertNotEquals(oldqua, getPublicuser().getage());
         assertTrue(flag);
 
         assertEquals(getPublicuser().gettype(),oldName);
+
     }
 
     @Given(": i am an {string} and i want to sign in to the system as supplier")
@@ -489,6 +500,8 @@ assertNotEquals(oldqua, getPublicuser().getage());
     @Then(": i must enter my email {string} and my password {int} as supplier")
     public void i_must_enter_my_email_and_my_password_as_supplier(String string, Integer int1) {
         flag= login(string, int1 + "");
+        assertEquals(findUserInListofsupploers(getSuppliers(),string).getemail(),string);
+        assertTrue(issuppleir(string));
     }
 
     @Then(": the system must pass me as supplier")
@@ -497,6 +510,7 @@ assertNotEquals(oldqua, getPublicuser().getage());
         assertTrue(flag);
 
         assertEquals(getPublicuser().gettype(),oldName);
+
     }
 
     @Given(": i am an {string} and i want to sign in to the system as user")
@@ -504,12 +518,17 @@ assertNotEquals(oldqua, getPublicuser().getage());
         // Write code here that turns the phrase above into concrete actions
         oldName=string;
         setType(string);
+
     }
 
+
     @Then(": i must enter my email {string} and my password {int} as user")
-    public void i_must_enter_my_email_and_my_password_as_user(String string, Integer int1) {
+    public void i_must_enter_my_email_and_my_password_as_user(String string, int int1) {
         // Write code here that turns the phrase above into concrete actions
         flag= login(string, int1 + "");
+        assertEquals(findUserInListofusers(getUsers(),string).getemail(),string);
+        assertTrue(isPasswordCorrect(getPublicuser(),int1+""));
+        showMessage("True password");
     }
 
     @Then(": the system must pass me as user")
@@ -582,6 +601,9 @@ assertNotEquals(oldqua, getPublicuser().getage());
     public void i_choose_the_report_name(String string) {
         // Write code here that turns the phrase above into concrete actions
    assertTrue(generatereport(getsalesmessage(),string));
+        sendEmail("s12112895@stu.najah.edu","odehyasmeen22@gmail.com","TEST","nhdo kelh sbgl qynb");
+        assertTrue(isNumber("12"));
+        assertFalse(isNumber(""));
     }
 
 
@@ -637,8 +659,13 @@ setType2(string);
     public void my_name_is_and_my_age_is_and_my_phone_number_is_and_password_is_and_email_as_admin(String string, Integer int1, Integer int2, Integer int3, String string2) {
         // Write code here that turns the phrase above into concrete actions
     oldvalue= getAdmins().size();
+    assertTrue(isValidEmail("yasmeen109@gmail.com"));
+    assertFalse(isValidEmail(string));
+    assertTrue(isValidFutureDate("1/2/2029"));
     logup(string2,string,int1,int2,int3);
     getLoginpage().setVisible(false);
+    assertTrue(isfoundmail(string2));
+    updatepassword(12);
     }
     @Then("the Admin users must be increased by {int}")
     public void the_admin_users_must_be_increased_by(Integer int1) {
@@ -660,6 +687,8 @@ setType2(string);
         oldvalue= getStoreowners().size();
         logup(string2,string,int1,int2,int3);
         getLoginpage().setVisible(false);
+        assertTrue(isfoundmail(string2));
+        updatepassword(12);
     }
     @Then("the Owner users must be increased by {int}")
     public void the_owner_users_must_be_increased_by(Integer int1) {
@@ -682,6 +711,8 @@ setType2(string);
         oldvalue= getSuppliers().size();
         logup(string2,string,int1,int2,int3);
         getLoginpage().setVisible(false);
+        assertTrue(isfoundmail(string2));
+        updatepassword(12);
     }
     @Then("the Suppliers users must be increased by {int}")
     public void the_suppliers_users_must_be_increased_by(Integer int1) {
@@ -703,11 +734,22 @@ setType2(string);
         oldvalue= getUsers().size();
         logup(string2,string,int1,int2,int3);
         getLoginpage().setVisible(false);
+        assertTrue(isfoundmail(string2));
+        assertFalse(isfoundmail("yasmeen1000@g.c"));
+        populateAndSetupList(new JList<>(),new ArrayList<>());
+        ArrayList<String>m=new ArrayList<>();
+        m.add("PP");
+        populateAndSetupList(new JList<>(),new ArrayList<>());
+        populateAndSetupList(new JList<>(),m);
+        updatepassword(12);
     }
     @Then("the User users must be increased by {int}")
     public void the_user_users_must_be_increased_by(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
         assertEquals(getUsers().size(),oldvalue+int1);
+        Card.createImageLabel1("man");
+        new Card(1,2,"","man");
+        new PostPanel("1","1","man",1);
     }
 
 
@@ -890,6 +932,7 @@ setType2(string);
     public void nothing_will_be_changed_for_it() {
         // Write code here that turns the phrase above into concrete actions
         assertNotEquals(getProducts().get(ind1).getquantity()+oldqua,oldvalue);
+
 
     }
 

@@ -1054,7 +1054,7 @@ jRadioButton3.setSelected(true);
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {
          
-       try{ JOptionPane.showMessageDialog(rootPane, "The Best Selling profit came from the Product : "+ Objects.requireNonNull(Objects.requireNonNull(Application.getmaxprofit())).getname().toUpperCase()+" with Profit : "+Application.getMaxindex());}
+       try{ JOptionPane.showMessageDialog(rootPane, "The Best Selling profit came from the Product : "+ Objects.requireNonNull(Objects.requireNonNull(Application.getmaxprofit())).getname().toUpperCase());}
        catch (Exception e){
            JOptionPane.showMessageDialog(rootPane, "There is no getSales() happened in this store");
        }

@@ -59,19 +59,20 @@ class TransparentRadioButton extends JRadioButton {
 
     @Override
     protected void paintBorder(Graphics g) {
-
+// This method is intentionally left empty because the default border painting
+        // is not needed for this component.
     }
 }
 
 public class Owner extends JFrame {
     public static class ImageButton extends JButton {
-    private Image image;
+    private transient Image image;
 
     public ImageButton(String imagePath) {
         try {
             image = new ImageIcon(imagePath).getImage();
         } catch (Exception e) {
-            e.printStackTrace();
+           JOptionPane.showMessageDialog(null,validator);
         }
 
 
@@ -127,13 +128,22 @@ public class Owner extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
 
-            label.setText("Image load error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,validator);
         }
 
         return label;
     }
 
-    private final String pass="nhdo kelh sbgl qynb";
+    private static final String pass="nhdo kelh sbgl qynb";
+    private static final String path="C:\\Users\\nd\\Desktop\\248\\New folder\\";
+    private static final String p19="p19.png";
+    private static final String validator ="Enter a valid value";
+
+    private static final String complete="Complete";
+    private static final String style="Stylus BT";
+    private static final String pending="Pending";
+    private static final String cash="Cash";
+    private static final String p16="p16.png";
     public Owner() {
 
         
@@ -188,14 +198,16 @@ if(!Application.getSales().isEmpty()){
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        JLabel jLabel4 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+       
+        JLabel jLabel4 = createImageLabel1(path+p19);
+
         JLabel jLabel6 = new JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        JButton jButton6 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton6 = new ImageButton(path+p16);
         JPanel jPanel5 = new JPanel();
         JLabel jLabel8 = new JLabel();
-        JLabel jLabel10 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
-        JButton jButton2 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JLabel jLabel10 = createImageLabel1(path+p19);
+        JButton jButton2 = new ImageButton(path+p16);
         JPanel jPanel1 = new JPanel();
         JLabel jLabel13 = new JLabel();
         JScrollPane jScrollPane5 = new JScrollPane();
@@ -203,9 +215,9 @@ if(!Application.getSales().isEmpty()){
         JLabel jLabel16 = new JLabel();
         JLabel jLabel17 = new JLabel();
         JLabel jLabel18 = new JLabel();
-        jRadioButton1 = new TransparentRadioButton("Complete");
-        jRadioButton2 = new TransparentRadioButton("Pending");
-        jRadioButton3 = new TransparentRadioButton("Cash");
+        jRadioButton1 = new TransparentRadioButton(complete);
+        jRadioButton2 = new TransparentRadioButton(pending);
+        jRadioButton3 = new TransparentRadioButton(cash);
         JPanel jPanel2 = new JPanel();
         JPanel jPanel7 = new JPanel();
         JScrollPane jScrollPane2 = new JScrollPane();
@@ -216,65 +228,65 @@ if(!Application.getSales().isEmpty()){
         jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane3 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
-        JButton jButton5 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton5 = new ImageButton(path+p16);
         JPanel jPanel6 = new Jpanelcolored(Color.white, Color.white);
         JLabel jLabel7 = new JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         JLabel jLabel9 = new JLabel();
         jPasswordField3 = new javax.swing.JPasswordField();
-        JLabel jLabel14 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
+        JLabel jLabel14 = createImageLabel1(path+p19);
         JLabel jLabel15 = new JLabel();
-        JButton jButton3 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p16.png");
+        JButton jButton3 = new ImageButton(path+p16);
         JPanel jPanel3 = new JPanel();
-        JButton jButton7 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p1.png");
-        JButton jButton8 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p4.png");
-        JButton jButton9 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p5.png");
-        JButton jButton10 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p2.png");
-        JButton jButton11 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p6.png");
-        JButton jButton12 = new ImageButton("C:\\Users\\nd\\Desktop\\248\\New folder\\p3.png");
+        JButton jButton7 = new ImageButton(path+"p1.png");
+        JButton jButton8 = new ImageButton(path+"p4.png");
+        JButton jButton9 = new ImageButton(path+"p5.png");
+        JButton jButton10 = new ImageButton(path+"p2.png");
+        JButton jButton11 = new ImageButton(path+"p6.png");
+        JButton jButton12 = new ImageButton(path+"p3.png");
         JLabel jLabel19 = new JLabel();
         JLabel jLabel20 = new JLabel();
         JLabel jLabel21 = new JLabel();
         JLabel jLabel22 = new JLabel();
         JLabel jLabel23 = new JLabel();
         JLabel jLabel24 = new JLabel();
-        JLabel jLabel25 = createImageLabel1("C:\\Users\\nd\\Desktop\\248\\New folder\\p19.png");
-        JButton jButton4 = new ImageButton("C:\\\\Users\\\\nd\\\\Desktop\\\\248\\\\New folder\\\\p7.png");
+        JLabel jLabel25 = createImageLabel1(path+p16);
+        JButton jButton4 = new ImageButton(path+"p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel13.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jLabel2.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jLabel2.setText("Welcome Back Yasmeen");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel1.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel1.setText("Change the Phone Number");
 
-        jLabel3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel3.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel3.setText("Change the Name ");
 
-        jLabel5.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel5.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel5.setText("Change the Age");
 
-        jTextField1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField1.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
 
-        jTextField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
 
-        jTextField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jTextField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel6.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 20));  
+        jLabel6.setFont(new java.awt.Font(style, Font.PLAIN, 20));  
         jLabel6.setText("Confirm the password");
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton6.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Confirm");
+
 
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
@@ -333,18 +345,18 @@ if(!Application.getSales().isEmpty()){
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel8.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel8.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel8.setText("Change the Status of items ");
 
-        jButton2.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton2.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Confirm");
+
 
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel13.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
+        jLabel13.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
         jLabel13.setText("Items that have been sold");
 
         jScrollPane5.setViewportView(jlist3);
@@ -388,16 +400,16 @@ if(!Application.getSales().isEmpty()){
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jRadioButton1.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
-        jRadioButton1.setText("Complete");
+        jRadioButton1.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
+        jRadioButton1.setText(complete);
         jRadioButton1.addActionListener(this::jRadioButton1ActionPerformed);
 
-        jRadioButton2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
-        jRadioButton2.setText("Pending");
+        jRadioButton2.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
+        jRadioButton2.setText(pending);
         jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
 
-        jRadioButton3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
-        jRadioButton3.setText("Cash");
+        jRadioButton3.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
+        jRadioButton3.setText(cash);
         jRadioButton3.addActionListener(this::jRadioButton3ActionPerformed);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -470,7 +482,7 @@ if(!Application.getSales().isEmpty()){
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 18));  
+        jLabel12.setFont(new java.awt.Font(style, Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -497,9 +509,9 @@ if(!Application.getSales().isEmpty()){
 
         jScrollPane3.setViewportView(jlist1);
 
-        jButton5.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton5.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Confirm");
+
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -542,22 +554,22 @@ if(!Application.getSales().isEmpty()){
 
         jTabbedPane11.addTab("getSuppliers()", jPanel2);
 
-        jLabel7.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel7.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel7.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField2.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel9.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel9.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jPasswordField3.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
 
-        jLabel15.setFont(new java.awt.Font("Stylus BT", Font.PLAIN, 24));  
+        jLabel15.setFont(new java.awt.Font(style, Font.PLAIN, 24));  
         jLabel15.setText("change password");
 
-        jButton3.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton3.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Confirm");
+
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -612,37 +624,37 @@ if(!Application.getSales().isEmpty()){
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton7.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton7.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Add Product");
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
-        jButton8.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton8.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Update Product");
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
-        jButton9.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton9.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Monitor getSales() and profits");
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
 
-        jButton10.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton10.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Remove Product");
 
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
-        jButton11.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton11.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Implement discount");
 
         jButton11.addActionListener(this::jButton11ActionPerformed);
 
-        jButton12.setFont(new java.awt.Font("Stylus BT", Font.BOLD, 24));  
+        jButton12.setFont(new java.awt.Font(style, Font.BOLD, 24));  
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("best-selling product");
 
@@ -787,7 +799,7 @@ if(!Application.getSales().isEmpty()){
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
          
-         Application.setStatus("Pending");
+         Application.setStatus(pending);
          jRadioButton3.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton2.setSelected(true);
@@ -800,7 +812,7 @@ jRadioButton2.setSelected(true);
   
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        Application.setStatus("Complete");
+        Application.setStatus(complete);
         jRadioButton3.setSelected(false);
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(true);
@@ -811,7 +823,7 @@ jRadioButton1.setSelected(true);
 jRadioButton2.setSelected(false);
 jRadioButton1.setSelected(false);
 jRadioButton3.setSelected(true);
-         Application.setStatus("Cash");
+         Application.setStatus(cash);
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -855,7 +867,11 @@ jRadioButton3.setSelected(true);
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
          
-        String name,price,quantity,date,discount;
+        String name;
+        String price;
+        String quantity;
+        String date;
+        String discount;
         boolean flag=true;
         name=JOptionPane.showInputDialog("What is the name of the new product ?");
         for(int i=0;i<Application.getProducts().size();i++){
@@ -910,7 +926,7 @@ jRadioButton3.setSelected(true);
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
             if(x<0||x>Application.getProducts().size()){
-                JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+                JOptionPane.showMessageDialog(rootPane, validator);
             }else{
                 String str1=JOptionPane.showInputDialog("What is the new Price of the product ?");
                 if(Application.isNumber(str1)){
@@ -925,7 +941,7 @@ jRadioButton3.setSelected(true);
                 }
             }
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, validator);
         }
 
     }
@@ -941,12 +957,12 @@ jRadioButton3.setSelected(true);
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
             if(x<0||x>Application.getProducts().size()){
-                JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+                JOptionPane.showMessageDialog(rootPane, validator);
             }else{
                 Application.removeproduct(Application.getProducts().get(x-1).getname());
             }
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, validator);
         }
 
     }
@@ -959,7 +975,7 @@ jRadioButton3.setSelected(true);
         if(Application.isNumber(index)){
             int x=Integer.parseInt(index);
             if(x<0||x>Application.getProducts().size()){
-                JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+                JOptionPane.showMessageDialog(rootPane, validator);
             }else{
                 String discount=JOptionPane.showInputDialog("How much is the new Discount for the Product ?");
                 if(discount.isEmpty()){
@@ -979,7 +995,7 @@ jRadioButton3.setSelected(true);
 
             }
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Enter a valid value");
+            JOptionPane.showMessageDialog(rootPane, validator);
         }
     }
 

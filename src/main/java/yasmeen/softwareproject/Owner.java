@@ -202,11 +202,11 @@ if(!Application.getSales().isEmpty()){
 
         JLabel jLabel6 = makeJlabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        JButton jButton6 = makeJbutton(PATH + P16);
+        JButton jButton6 = new ImageButton(PATH + P16);
         JPanel jPanel5 = makePanel();
         JLabel jLabel8 = makeJlabel();
         JLabel jLabel10 = createImageLabel1(PATH + P19);
-        JButton jButton2 = makeJbutton(PATH + P16);
+        JButton jButton2 = new ImageButton(PATH + P16);
         JPanel jPanel1 = makePanel();
         JLabel jLabel13 = makeJlabel();
         JScrollPane jScrollPane5 = makeJscrollPane();
@@ -227,7 +227,7 @@ if(!Application.getSales().isEmpty()){
         jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane3 = makeJscrollPane();
         jlist1 = new javax.swing.JList<>();
-        JButton jButton5 = makeJbutton(PATH + P16);
+        JButton jButton5 = new ImageButton(PATH + P16);
         JPanel jPanel6 = makePanel();
         JLabel jLabel7 = makeJlabel();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -235,14 +235,14 @@ if(!Application.getSales().isEmpty()){
         jPasswordField3 = new javax.swing.JPasswordField();
         JLabel jLabel14 = createImageLabel1(PATH + P19);
         JLabel jLabel15 = makeJlabel();
-        JButton jButton3 = makeJbutton(PATH + P16);
+        JButton jButton3 = new ImageButton(PATH + P16);
         JPanel jPanel3 = makePanel();
-        JButton jButton7 = makeJbutton(PATH +"p1.png");
-        JButton jButton8 = makeJbutton(PATH +"p4.png");
-        JButton jButton9 = makeJbutton(PATH +"p5.png");
-        JButton jButton10 = makeJbutton(PATH +"p2.png");
-        JButton jButton11 = makeJbutton(PATH +"p6.png");
-        JButton jButton12 = makeJbutton(PATH +"p3.png");
+        JButton jButton7 = new ImageButton(PATH +"p1.png");
+        JButton jButton8 = new ImageButton(PATH +"p4.png");
+        JButton jButton9 = new ImageButton(PATH +"p5.png");
+        JButton jButton10 = new ImageButton(PATH +"p2.png");
+        JButton jButton11 = new ImageButton(PATH +"p6.png");
+        JButton jButton12 = new ImageButton(PATH +"p3.png");
         JLabel jLabel19 = makeJlabel();
         JLabel jLabel20 = makeJlabel();
         JLabel jLabel21 = makeJlabel();
@@ -250,7 +250,7 @@ if(!Application.getSales().isEmpty()){
         JLabel jLabel23 = makeJlabel();
         JLabel jLabel24 = makeJlabel();
         JLabel jLabel25 = createImageLabel1(PATH + P16);
-        JButton jButton4 = makeJbutton(PATH +"p7.png");
+        JButton jButton4 = new ImageButton(PATH +"p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 

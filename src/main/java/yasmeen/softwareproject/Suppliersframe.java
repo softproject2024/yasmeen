@@ -60,7 +60,7 @@ private JPasswordField makeJpaswwordfield(){
         return new JTextArea();
     }
     private JButton makeJbutton(String path){
-        return makeJbutton(path);
+        return new Owner.ImageButton(path);
     }
 private GroupLayout makeGroup(JPanel j){
         return new GroupLayout(j);

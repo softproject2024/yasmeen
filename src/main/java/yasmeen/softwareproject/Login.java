@@ -11,9 +11,6 @@ import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
 public class Login extends javax.swing.JFrame {
-private String welcome="Welcome back ";
-private String nomessage="There is no messages to this account";
-private String invalidpass="Please enter a valid password";
 
     public Login() {
         initComponents();
@@ -228,8 +225,11 @@ private String invalidpass="Please enter a valid password";
             
         if (isValidEmail(jTextField1.getText())) {
     boolean isValidUser = false;
-    
-    if (jTextField3.getText().equals("Owner")) {
+
+            String welcome = "Welcome back ";
+            String nomessage = "There is no messages to this account";
+            String invalidpass = "Please enter a valid password";
+            if (jTextField3.getText().equals("Owner")) {
         
         for (int i = 0; i < Application.getStoreowners().size(); i++) {
             if (jTextField1.getText().equals(Application.getStoreowners().get(i).getemail())) {
@@ -237,7 +237,7 @@ private String invalidpass="Please enter a valid password";
 
                     Application.getOwnerpage().setVisible(true);
                     Application.setPublicuser(Application.getStoreowners().get(i));
-                    Application.getOwnerpage().getjLabel2().setText(welcome+ Application.getStoreowners().get(i).getname());
+                    Application.getOwnerpage().getjLabel2().setText(welcome + Application.getStoreowners().get(i).getname());
                     Application.getOwnerpage().getjTextField1().setText(Application.getStoreowners().get(i).getname());
                      Application.getOwnerpage().getjTextField2().setText(Application.getStoreowners().get(i).getphone()+"");
                       Application.getOwnerpage().getjTextField3().setText(Application.getStoreowners().get(i).getage()+"");
@@ -268,7 +268,7 @@ private String invalidpass="Please enter a valid password";
         for (int i = 0; i < Application.getAdmins().size(); i++) {
             if (jTextField1.getText().equals(Application.getAdmins().get(i).getemail())) {
                 if (getPasswordAsString(jPasswordField1).equals(Application.getAdmins().get(i).getpassword()+"")) {
-                    Application.getAdminpage().getl2().setText(welcome+ Application.getAdmins().get(i).getname());
+                    Application.getAdminpage().getl2().setText(welcome + Application.getAdmins().get(i).getname());
                     Application.getAdminpage().setVisible(true);
                     Application.getLoginpage().setVisible(false);
                          Application.getAdminpage().getjTextField7().setText(Application.getAdmins().get(i).getname());
@@ -300,7 +300,7 @@ private String invalidpass="Please enter a valid password";
                      Application.getSupplierspage().getjTextField2().setText(Application.getSuppliers().get(i).getphone()+"");
                       Application.getSupplierspage().getjTextField3().setText(Application.getSuppliers().get(i).getage()+"");
                       Application.getSupplierspage().getjPasswordField1().setText("");
-                    Application.getSupplierspage().getjLabel2().setText(welcome+ Application.getSuppliers().get(i).getname());
+                    Application.getSupplierspage().getjLabel2().setText(welcome + Application.getSuppliers().get(i).getname());
                        StringBuilder h= new StringBuilder(nomessage);
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
@@ -331,7 +331,7 @@ private String invalidpass="Please enter a valid password";
                      Application.getUserspage().getjTextField3().setText(Application.getUsers().get(i).getphone()+"");
                       Application.getUserspage().getjTextField4().setText(Application.getUsers().get(i).getage()+"");
                       Application.getUserspage().getjPasswordField1().setText("");
-                    Application.getUserspage().getl3().setText(welcome+ Application.getUsers().get(i).getname());
+                    Application.getUserspage().getl3().setText(welcome + Application.getUsers().get(i).getname());
                        StringBuilder h= new StringBuilder(nomessage);
             for(int ip=0;ip<Application.getPublicuser().messages.size();ip++){
                 if(ip==0) h = new StringBuilder();
@@ -341,11 +341,10 @@ private String invalidpass="Please enter a valid password";
          Application.getUserspage().getjTextArea2().setText(h.toString());
          Application.getUserspage().getjTextArea2().setEditable(false);
                     isValidUser = true;
-                    break;
                 } else {
                     JOptionPane.showMessageDialog(null, invalidpass);
-                    break;
                 }
+                break;
             }
         }
     }else{

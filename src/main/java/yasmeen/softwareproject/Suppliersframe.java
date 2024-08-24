@@ -1,7 +1,7 @@
 
 package yasmeen.softwareproject;
 
-import yasmeen.softwareproject.Owner.ImageButton;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,44 +44,64 @@ if(!Application. getStoreowners().isEmpty()){
 private JPanel makePanel(){
      return new JPanel();   
 }
-
+private JLabel makeJlabel(){
+        return new JLabel();
+}
+private JScrollPane makeJscrollPane(){
+        return new JScrollPane();
+}
+private JPasswordField makeJpaswwordfield(){
+        return new JPasswordField();
+}
+    private JTextField makeJtextfield(){
+        return new JTextField();
+    }
+    private JTextArea makeJtextarea(){
+        return new JTextArea();
+    }
+    private JButton makeJbutton(String path){
+        return makeJbutton(path);
+    }
+private GroupLayout makeGroup(JPanel j){
+        return new GroupLayout(j);
+}
        private void initComponents() {
 
         JPanel jPanel1 =makePanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel2 = makeJlabel();
         JTabbedPane jTabbedPane1 = new JTabbedPane();
         JPanel jPanel4 =makePanel();
-        JLabel jLabel1 = new JLabel();
-        JLabel jLabel3 = new JLabel();
-        JLabel jLabel5 = new JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        JLabel jLabel1 =makeJlabel();
+        JLabel jLabel3 =makeJlabel();
+        JLabel jLabel5 =makeJlabel();
+        jTextField1 = makeJtextfield();
+        jTextField2 = makeJtextfield();
+        jTextField3 = makeJtextfield();
         JLabel jLabel4 = createImageLabel1(PATH+P19);
-        JLabel jLabel6 = new JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        JButton jButton6 = new ImageButton(PATH+P16);
-        JPanel jPanel6 = new Jpanelcolored(Color.white, Color.white);
-        JLabel jLabel7 = new JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        JLabel jLabel9 = new JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        JLabel jLabel6 =makeJlabel();
+        jPasswordField1 = makeJpaswwordfield();
+        JButton jButton6 = makeJbutton(PATH+P16);
+        JPanel jPanel6 = makePanel();
+        JLabel jLabel7 =makeJlabel();
+        jPasswordField2 = makeJpaswwordfield();
+        JLabel jLabel9 =makeJlabel();
+        jPasswordField3 =makeJpaswwordfield();
         JLabel jLabel14 = createImageLabel1(PATH+P19);
-        JLabel jLabel15 = new JLabel();
-        JButton jButton3 = new ImageButton(PATH+P16);
+        JLabel jLabel15 =makeJlabel();
+        JButton jButton3 = makeJbutton(PATH+P16);
         JPanel jPanel2 =makePanel();
         JPanel jPanel7 =makePanel();
-        JScrollPane jScrollPane2 = new JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        JScrollPane jScrollPane2 = makeJscrollPane();
+        jTextArea2 = makeJtextarea();
         JPanel jPanel8 =makePanel();
-        JLabel jLabel12 = new JLabel();
-        JScrollPane jScrollPane1 = new JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        JScrollPane jScrollPane3 = new JScrollPane();
+        JLabel jLabel12 =makeJlabel();
+        JScrollPane jScrollPane1 =makeJscrollPane();
+        jTextArea1 = makeJtextarea();
+        JScrollPane jScrollPane3 = makeJscrollPane();
         jlist1 = new javax.swing.JList<>();
-        JButton jButton5 = new ImageButton(PATH+P16);
+        JButton jButton5 = makeJbutton(PATH+P16);
 
-        JButton jButton14 = new ImageButton(PATH+"p7.png");
+        JButton jButton14 = makeJbutton(PATH+"p7.png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,7 +142,7 @@ private JPanel makePanel(){
 
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        javax.swing.GroupLayout jPanel4Layout =makeGroup(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +213,7 @@ private JPanel makePanel(){
         jButton3.setText(CONFIRM);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        javax.swing.GroupLayout jPanel6Layout =makeGroup(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +269,7 @@ private JPanel makePanel(){
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        javax.swing.GroupLayout jPanel7Layout =makeGroup(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +285,7 @@ private JPanel makePanel(){
         jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        javax.swing.GroupLayout jPanel8Layout =makeGroup(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,7 +314,7 @@ private JPanel makePanel(){
         jButton5.setText(CONFIRM);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        javax.swing.GroupLayout jPanel2Layout =makeGroup(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +356,7 @@ private JPanel makePanel(){
 
         jButton14.addActionListener(this::jButton14ActionPerformed);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout =makeGroup(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,7 +380,7 @@ private JPanel makePanel(){
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout =makeGroup((JPanel) getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

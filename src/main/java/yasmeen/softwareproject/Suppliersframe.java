@@ -13,7 +13,7 @@ import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
 public class Suppliersframe extends javax.swing.JFrame {
-    private static final String any ="nhdo kelh sbgl qynb";
+    private static final String ANY ="nhdo kelh sbgl qynb";
     private static final String P19 ="p19.png";
     private static final String P16 ="p16.png";
     private static final String CONFIRM ="Confirm";
@@ -404,7 +404,7 @@ if(!Application. getStoreowners().isEmpty()){
             for(int i = 0; i<Application. getStoreowners().size(); i++){
                 if(Application. getStoreowners().get(i).getname().equals(Application.getSuppliername())){
                     String h="From "+Application.getPublicuser().getname()+" : "+jTextArea1.getText();
-                              Application.sendEmail("s12112895@stu.najah.edu", Application. getStoreowners().get(UserPage.getIndex1()).getemail(), h, any);
+                              Application.sendEmail("s12112895@stu.najah.edu", Application. getStoreowners().get(UserPage.getIndex1()).getemail(), h, ANY);
                     
                     Application. getStoreowners().get(i).messages.add(h);
                     JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.getOwnername());
@@ -420,7 +420,7 @@ if(!Application. getStoreowners().isEmpty()){
           if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
         int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", any);
+                Application.sendEmail("s12112895@stu.najah.edu", Application.getPublicuser().getemail(), "Your code is "+verificationCode +"\n"+"Please don't share this code with anyone", ANY);
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){

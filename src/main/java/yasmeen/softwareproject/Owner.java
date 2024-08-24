@@ -126,7 +126,7 @@ public class Owner extends JFrame {
 
             label.setIcon(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+
 
             JOptionPane.showMessageDialog(null, VALIDATOR);
         }

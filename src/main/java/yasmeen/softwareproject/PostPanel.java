@@ -51,7 +51,7 @@ public class PostPanel extends javax.swing.JPanel {
            
             label.setIcon(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+          
          
             label.setText("Image load error: " + e.getMessage());
         }

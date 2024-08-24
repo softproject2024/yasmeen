@@ -41,14 +41,16 @@ if(!Application. getStoreowners().isEmpty()){
          
        
     }
-
+private JPanel makePanel(){
+     return new JPanel();   
+}
 
        private void initComponents() {
 
-        JPanel jPanel1 = new JPanel();
+        JPanel jPanel1 =makePanel();
         jLabel2 = new javax.swing.JLabel();
         JTabbedPane jTabbedPane1 = new JTabbedPane();
-        JPanel jPanel4 = new JPanel();
+        JPanel jPanel4 =makePanel();
         JLabel jLabel1 = new JLabel();
         JLabel jLabel3 = new JLabel();
         JLabel jLabel5 = new JLabel();
@@ -67,11 +69,11 @@ if(!Application. getStoreowners().isEmpty()){
         JLabel jLabel14 = createImageLabel1(PATH+P19);
         JLabel jLabel15 = new JLabel();
         JButton jButton3 = new ImageButton(PATH+P16);
-        JPanel jPanel2 = new JPanel();
-        JPanel jPanel7 = new JPanel();
+        JPanel jPanel2 =makePanel();
+        JPanel jPanel7 =makePanel();
         JScrollPane jScrollPane2 = new JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        JPanel jPanel8 = new JPanel();
+        JPanel jPanel8 =makePanel();
         JLabel jLabel12 = new JLabel();
         JScrollPane jScrollPane1 = new JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();

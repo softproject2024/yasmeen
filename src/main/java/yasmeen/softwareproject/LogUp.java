@@ -260,39 +260,47 @@ public class LogUp extends javax.swing.JFrame {
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (Application.isValidEmail(jTextField2.getText()) &&
-                Application.isNumber(getPasswordAsString(jPasswordField1)) &&
-                Application.isNumber(jTextField4.getText()) &&
-                Application.isNumber(jTextField5.getText())) {
-
-            if (jTextField5.getText().length() != 10) {
-                JOptionPane.showMessageDialog(rootPane, "Please enter a valid phone");
-            } else if (jTextField4.getText().length() >= 3) {
-                JOptionPane.showMessageDialog(rootPane, "Please enter a valid age");
-            } else if (getPasswordAsString(jPasswordField1).length() < 8) {
-                JOptionPane.showMessageDialog(rootPane, "Please enter a password to be maore that 7 numbers");
-            } else {
-                Application.setType2(jTextField3.getText());
-                SecureRandom random = new SecureRandom();
-                int verificationCode = 10000 + random.nextInt(90000);
-                Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(),
-                        "Your code is " + verificationCode + "\n" + "Please don't share this code with anyone",
-                        "nhdo kelh sbgl qynb");
-                String b = JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
-                if (Application.isNumber(b)) {
-                    if (Integer.parseInt(b) == verificationCode) {
-                        Application.logup(jTextField2.getText(), jTextField1.getText(),
-                                Integer.parseInt(jTextField4.getText()),
-                                Integer.parseInt(jTextField5.getText()),
-                                Integer.parseInt(getPasswordAsString(jPasswordField1)));
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Wrong verificatio code");
-                    }
-                }
-            }
-        } else {
+        if (!Application.isValidEmail(jTextField2.getText()) ||
+                !Application.isNumber(getPasswordAsString(jPasswordField1)) ||
+                !Application.isNumber(jTextField4.getText()) ||
+                !Application.isNumber(jTextField5.getText())) {
             JOptionPane.showMessageDialog(rootPane, "Please Enter Valid informations");
+            return;
         }
+
+        if (jTextField5.getText().length() != 10) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter a valid phone");
+            return;
+        }
+
+        if (jTextField4.getText().length() >= 3) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter a valid age");
+            return;
+        }
+
+        if (getPasswordAsString(jPasswordField1).length() < 8) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter a password to be more than 7 numbers");
+            return;
+        }
+
+        Application.setType2(jTextField3.getText());
+        SecureRandom random = new SecureRandom();
+        int verificationCode = 10000 + random.nextInt(90000);
+        Application.sendEmail("s12112895@stu.najah.edu", jTextField2.getText(),
+                "Your code is " + verificationCode + "\n" + "Please don't share this code with anyone",
+                "nhdo kelh sbgl qynb");
+
+        String b = JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
+
+        if (!Application.isNumber(b) || Integer.parseInt(b) != verificationCode) {
+            JOptionPane.showMessageDialog(null, "Wrong verification code");
+            return;
+        }
+
+        Application.logup(jTextField2.getText(), jTextField1.getText(),
+                Integer.parseInt(jTextField4.getText()),
+                Integer.parseInt(jTextField5.getText()),
+                Integer.parseInt(getPasswordAsString(jPasswordField1)));
     }
 
 

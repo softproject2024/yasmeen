@@ -27,7 +27,7 @@ public class Application {
         status="Complete";
 
         publicuser=new Account("",1,"",1,"",1);
-        Posts = new ArrayList<>();
+        posts = new ArrayList<>();
         Application.adminpage = new Admin1();
         products=new ArrayList<>();
 
@@ -155,10 +155,10 @@ public class Application {
         return sales;
     }
 
-    private static List<Post> Posts;
+    private static List<Post> posts;
 
     public static List<Post> getPosts() {
-        return Posts;
+        return posts;
     }
 
     private static LogUp loguppage;
@@ -256,7 +256,7 @@ public class Application {
 
 
 
-        Posts.add(new Post(path,"1","1",0 ));
+        posts.add(new Post(path,"1","1",0 ));
 
 
     }
@@ -338,14 +338,14 @@ public class Application {
         }
     }
     public static void ratePost(int r, Post m){
-        for (Post post : Posts) {
+        for (Post post : posts) {
             if (m.id == post.id) {
                 post.rates.add(r);
             }
         }
     }
     public  static void addpost(String path,String des,String prd){
-        Posts.add(new Post(path,prd,des,0));
+        posts.add(new Post(path,prd,des,0));
     }
     public static void implementdiscount(int discount,Product p){
         if(discount<0||discount>=100){
@@ -599,37 +599,37 @@ public class Application {
     public static void updatepassword(int newpassword){
         publicuser.setpassword(newpassword);
         switch (type) {
-            case OWNER_MSG -> {
+            case OWNER_MSG :
                 for (Owneraccount owner : storeowners) {
                     if (publicuser.getemail().equals(owner.getemail())) {
                         owner.setpassword(newpassword);
                     }
                 }
-            }
-            case ADMIN_MSG -> {
+            break;
+            case ADMIN_MSG :
                 for (Admin admin : admins) {
                     if (publicuser.getemail().equals(admin.getemail())) {
                         admin.setpassword(newpassword);
                     }
                 }
-            }
-            case SUPPLIER_MSG -> {
+            break;
+            case SUPPLIER_MSG :
                 for (Suppliers supplier : suppliers) {
                     if (publicuser.getemail().equals(supplier.getemail())) {
                         supplier.setpassword(newpassword);
                     }
                 }
-            }
-            case USER_MSG -> {
+            break;
+            case USER_MSG :
                 for (User user : users) {
                     if (publicuser.getemail().equals(user.getemail())) {
                         user.setpassword(newpassword);
                     }
                 }
-            }
-            default ->{
+            break;
+            default :
               JOptionPane.showMessageDialog(null,"Email; not fund");
-            }
+            break;
         }
     }
 

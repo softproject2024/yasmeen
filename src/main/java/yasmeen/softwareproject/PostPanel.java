@@ -89,7 +89,7 @@ public class PostPanel extends javax.swing.JPanel {
         return "<html>"+String.join("<br>", lines)+"</html>";
     }
 private final String path;
-private static final String RatingThank ="Thanks for rating the post";
+private static final String RATING_THANK ="Thanks for rating the post";
 
   
 int id;
@@ -125,7 +125,7 @@ jLabel3.setText(divideText(jLabel3,des));
                r4.setSelected(false);
                 r5.setSelected(false);
                 Application.getPosts().get(id).getRates().add(1);
-                JOptionPane.showMessageDialog(null, RatingThank);
+                JOptionPane.showMessageDialog(null, RATING_THANK);
 
 
               });
@@ -137,7 +137,7 @@ jLabel3.setText(divideText(jLabel3,des));
                  r4.setSelected(false);
                   r5.setSelected(false);
                Application.getPosts().get(id).getRates().add(2);
-                  JOptionPane.showMessageDialog(null, RatingThank);
+                  JOptionPane.showMessageDialog(null, RATING_THANK);
 
                 });
             r3.addActionListener(e -> {
@@ -148,7 +148,7 @@ jLabel3.setText(divideText(jLabel3,des));
                    r4.setSelected(false);
                     r5.setSelected(false);
                  Application.getPosts().get(id).getRates().add(3);
-                    JOptionPane.showMessageDialog(null, RatingThank);
+                    JOptionPane.showMessageDialog(null, RATING_THANK);
 
                   });
               r4.addActionListener(e -> {
@@ -159,7 +159,7 @@ jLabel3.setText(divideText(jLabel3,des));
                      r4.setSelected(true);
                       r5.setSelected(false);
                    Application.getPosts().get(id).getRates().add(4);
-                      JOptionPane.showMessageDialog(null, RatingThank);
+                      JOptionPane.showMessageDialog(null, RATING_THANK);
 
                     });
                 r5.addActionListener(e -> {
@@ -170,7 +170,7 @@ jLabel3.setText(divideText(jLabel3,des));
                        r4.setSelected(true);
                         r5.setSelected(true);
                      Application.getPosts().get(id).getRates().add(5);
-                        JOptionPane.showMessageDialog(null, RatingThank);
+                        JOptionPane.showMessageDialog(null, RATING_THANK);
 
                       });
         

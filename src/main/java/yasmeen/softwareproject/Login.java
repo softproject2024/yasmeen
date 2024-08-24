@@ -94,7 +94,7 @@ public class Login extends javax.swing.JFrame {
 
         jTextField3.setText("your type");
 
-        jTextField3.addActionListener(this::jTextField3ActionPerformed);
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -361,9 +361,7 @@ public class Login extends javax.swing.JFrame {
 }
     }
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
-         
-    }
+
 
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

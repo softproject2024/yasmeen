@@ -1041,7 +1041,7 @@ jRadioButton3.setSelected(true);
                  String b=JOptionPane.showInputDialog("We have sent a verification Code to your email\nPlease write it here");
                  if(Application.isNumber(b)){
                   if(Integer.parseInt(b)==verificationCode){
-                      Application.updatepassword(Integer.parseInt(jPasswordField3.getText()));
+                      Application.updatepassword(Integer.parseInt(getPasswordAsString(jPasswordField3)));
                        }else{
                  JOptionPane.showMessageDialog(null, "Wrong verificatio code");
                  }

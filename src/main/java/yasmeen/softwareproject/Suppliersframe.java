@@ -13,11 +13,11 @@ import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
 
 public class Suppliersframe extends javax.swing.JFrame {
-    private final String pass="nhdo kelh sbgl qynb";
+    private static final String pass="nhdo kelh sbgl qynb";
     private static final String P19 ="p19.png";
     private static final String P16 ="p16.png";
     private static final String CONFIRM ="Confirm";
-   private static final String STYLE ="Stylus BT";;
+   private static final String STYLE ="Stylus BT";
     private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
 
     public Suppliersframe() {

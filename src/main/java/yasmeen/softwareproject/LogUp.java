@@ -67,7 +67,7 @@ public class LogUp extends javax.swing.JFrame {
 
         jTextField1.setText("Type your name");
         jTextField1.setToolTipText("Type your name");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+
 
         jTextField2.setText("Type your e-mail");
 
@@ -257,9 +257,7 @@ public class LogUp extends javax.swing.JFrame {
           Application.getLoguppage().setVisible(false);
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-         
-    }
+
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
          

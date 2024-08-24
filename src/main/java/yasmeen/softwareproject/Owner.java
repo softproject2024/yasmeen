@@ -194,9 +194,9 @@ if(!Application.getSales().isEmpty()){
         JLabel jLabel1 = makeJlabel();
         JLabel jLabel3 = makeJlabel();
         JLabel jLabel5 = makeJlabel();
-        jTextField1 = makeJtextfield();
-        jTextField2 = makeJtextfield();
-        jTextField3 = makeJtextfield();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
        
         JLabel jLabel4 = createImageLabel1(PATH + P19);
 

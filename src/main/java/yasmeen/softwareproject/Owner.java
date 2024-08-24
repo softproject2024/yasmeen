@@ -29,6 +29,7 @@ import java.security.SecureRandom;
 import java.util.Objects;
 import javax.imageio.ImageIO;
 
+import static yasmeen.softwareproject.Suppliersframe.makeJlabel;
 import static yasmeen.softwareproject.Suppliersframe.makePanel;
 
 
@@ -91,7 +92,7 @@ public class Owner extends JFrame {
   
 }
      public static JLabel createImageLabel1(String imagePath) {
-        JLabel label = new JLabel();
+        JLabel label = makeJlabel();
 
         try {
 
@@ -188,32 +189,32 @@ if(!Application.getSales().isEmpty()){
     private void initComponents() {
 
         JPanel jPanel13 = makePanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel2 = makeJlabel();
         JTabbedPane jTabbedPane11 = new JTabbedPane();
         JPanel jPanel4 = makePanel();
-        JLabel jLabel1 = new JLabel();
-        JLabel jLabel3 = new JLabel();
-        JLabel jLabel5 = new JLabel();
+        JLabel jLabel1 = makeJlabel();
+        JLabel jLabel3 = makeJlabel();
+        JLabel jLabel5 = makeJlabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
        
         JLabel jLabel4 = createImageLabel1(PATH + P19);
 
-        JLabel jLabel6 = new JLabel();
+        JLabel jLabel6 = makeJlabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         JButton jButton6 = new ImageButton(PATH + P16);
         JPanel jPanel5 = makePanel();
-        JLabel jLabel8 = new JLabel();
+        JLabel jLabel8 = makeJlabel();
         JLabel jLabel10 = createImageLabel1(PATH + P19);
         JButton jButton2 = new ImageButton(PATH + P16);
         JPanel jPanel1 = makePanel();
-        JLabel jLabel13 = new JLabel();
+        JLabel jLabel13 = makeJlabel();
         JScrollPane jScrollPane5 = new JScrollPane();
         jlist3 = new javax.swing.JList<>();
-        JLabel jLabel16 = new JLabel();
-        JLabel jLabel17 = new JLabel();
-        JLabel jLabel18 = new JLabel();
+        JLabel jLabel16 = makeJlabel();
+        JLabel jLabel17 = makeJlabel();
+        JLabel jLabel18 = makeJlabel();
         jRadioButton1 = new TransparentRadioButton(COMPLETE);
         jRadioButton2 = new TransparentRadioButton(PENDING);
         jRadioButton3 = new TransparentRadioButton(CASH);
@@ -222,19 +223,19 @@ if(!Application.getSales().isEmpty()){
         JScrollPane jScrollPane2 = new JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         JPanel jPanel8 = makePanel();
-        JLabel jLabel12 = new JLabel();
+        JLabel jLabel12 = makeJlabel();
         JScrollPane jScrollPane1 = new JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         JScrollPane jScrollPane3 = new JScrollPane();
         jlist1 = new javax.swing.JList<>();
         JButton jButton5 = new ImageButton(PATH + P16);
         JPanel jPanel6 = makePanel();
-        JLabel jLabel7 = new JLabel();
+        JLabel jLabel7 = makeJlabel();
         jPasswordField2 = new javax.swing.JPasswordField();
-        JLabel jLabel9 = new JLabel();
+        JLabel jLabel9 = makeJlabel();
         jPasswordField3 = new javax.swing.JPasswordField();
         JLabel jLabel14 = createImageLabel1(PATH + P19);
-        JLabel jLabel15 = new JLabel();
+        JLabel jLabel15 = makeJlabel();
         JButton jButton3 = new ImageButton(PATH + P16);
         JPanel jPanel3 = makePanel();
         JButton jButton7 = new ImageButton(PATH +"p1.png");
@@ -243,12 +244,12 @@ if(!Application.getSales().isEmpty()){
         JButton jButton10 = new ImageButton(PATH +"p2.png");
         JButton jButton11 = new ImageButton(PATH +"p6.png");
         JButton jButton12 = new ImageButton(PATH +"p3.png");
-        JLabel jLabel19 = new JLabel();
-        JLabel jLabel20 = new JLabel();
-        JLabel jLabel21 = new JLabel();
-        JLabel jLabel22 = new JLabel();
-        JLabel jLabel23 = new JLabel();
-        JLabel jLabel24 = new JLabel();
+        JLabel jLabel19 = makeJlabel();
+        JLabel jLabel20 = makeJlabel();
+        JLabel jLabel21 = makeJlabel();
+        JLabel jLabel22 = makeJlabel();
+        JLabel jLabel23 = makeJlabel();
+        JLabel jLabel24 = makeJlabel();
         JLabel jLabel25 = createImageLabel1(PATH + P16);
         JButton jButton4 = new ImageButton(PATH +"p7.png");
 

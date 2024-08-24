@@ -47,19 +47,19 @@ public static JPanel makePanel(){
 public static JLabel makeJlabel(){
         return new JLabel();
 }
-private JScrollPane makeJscrollPane(){
+    public static JScrollPane makeJscrollPane(){
         return new JScrollPane();
 }
-private JPasswordField makeJpaswwordfield(){
+public static JPasswordField makeJpaswwordfield(){
         return new JPasswordField();
 }
-    private JTextField makeJtextfield(){
+    public static JTextField makeJtextfield(){
         return new JTextField();
     }
-    private JTextArea makeJtextarea(){
+    public static JTextArea makeJtextarea(){
         return new JTextArea();
     }
-    private JButton makeJbutton(String path){
+    public static JButton makeJbutton(String path){
         return new Owner.ImageButton(path);
     }
 private GroupLayout makeGroup(JPanel j){

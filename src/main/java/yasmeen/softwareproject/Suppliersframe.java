@@ -221,8 +221,8 @@ private GroupLayout makeGroup(JPanel j){
         jLabel15.setFont(new Font(STYLE, FONT_STYLE, 24));
         String h6="change password";
         jLabel15.setText(h6);
-
-        jButton3.setFont(new Font(STYLE, Font.BOLD, 24));  
+int u= Font.BOLD;
+        jButton3.setFont(new Font(STYLE,u, 24));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText(CONFIRM);
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -322,7 +322,7 @@ private GroupLayout makeGroup(JPanel j){
 
 
         jScrollPane3.setViewportView(jlist1);
-int u=Font.BOLD;
+
         jButton5.setFont(new Font(STYLE, u, 24));
         jButton5.setForeground(BACKGROUND_COLOR);
         jButton5.setText(CONFIRM);

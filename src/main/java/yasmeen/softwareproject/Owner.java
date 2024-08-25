@@ -254,20 +254,20 @@ if(!Application.getSales().isEmpty()){
         JLabel jLabel24 = makeJlabel();
         JLabel jLabel25 = createImageLabel1(PATH + P16);
         JButton jButton4 = makeJbutton(PATH +"p7.png");
-
+        int u=Font.BOLD;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel13.setBackground(new java.awt.Color(227, 240, 231));
 
-        jLabel2.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jLabel2.setFont(new java.awt.Font(STYLE, u, 24));
 
         settextforlabel(jLabel2,"Welcome Back Yasmeen");
 
          Color PANEL_BACKGROUND_COLOR = new Color(255, 255, 255);  // White
 
-// Set the background color of jPanel4
+
         jPanel4.setBackground(PANEL_BACKGROUND_COLOR);
-    // or Font.BOLD, Font.ITALIC, etc.
+
         int FONT_SIZE = 20;
         jLabel1.setFont(new Font("SansSerif", Font.PLAIN, FONT_SIZE));
         settextforlabel(jLabel1,"Change the Phone Number");
@@ -291,7 +291,7 @@ if(!Application.getSales().isEmpty()){
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton6.setFont(new java.awt.Font(STYLE, u, 24));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
 
 
@@ -355,7 +355,7 @@ if(!Application.getSales().isEmpty()){
         jLabel8.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
         jLabel8.setText("Change the Status of items ");
 
-        jButton2.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton2.setFont(new java.awt.Font(STYLE, u, 24));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
 
 
@@ -520,7 +520,7 @@ if(!Application.getSales().isEmpty()){
 
         jScrollPane3.setViewportView(jlist1);
 
-        jButton5.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton5.setFont(new java.awt.Font(STYLE, u, 24));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton5.addActionListener(this::jButton5ActionPerformed);
@@ -578,7 +578,7 @@ int y=24;
         jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
         jLabel15.setText("change password");
 
-        jButton3.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton3.setFont(new java.awt.Font(STYLE,u , 24));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -635,37 +635,37 @@ int y=24;
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton7.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton7.setFont(new java.awt.Font(STYLE, u, 24));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Add Product");
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
-        jButton8.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton8.setFont(new java.awt.Font(STYLE, u, 24));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Update Product");
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
-        jButton9.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton9.setFont(new java.awt.Font(STYLE, u, 24));
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Monitor getSales() and profits");
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
 
-        jButton10.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton10.setFont(new java.awt.Font(STYLE, u, 24));
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Remove Product");
 
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
-        jButton11.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton11.setFont(new java.awt.Font(STYLE, u, 24));
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Implement discount");
 
         jButton11.addActionListener(this::jButton11ActionPerformed);
 
-        jButton12.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
+        jButton12.setFont(new java.awt.Font(STYLE, u, 24));
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("best-selling product");
 

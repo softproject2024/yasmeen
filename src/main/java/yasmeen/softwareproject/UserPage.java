@@ -358,33 +358,39 @@ Application.populateAndSetupList(jlist1, items);
         jPanel22.setBackground(new java.awt.Color(255, 246, 255));
 
         jPanel23.setBackground(new java.awt.Color(255, 246, 255));
-
-        jLabel1.setText("Search");
+String h4="Search";
+        jLabel1.setText(h4);
 
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
         jButton1.setBackground(new java.awt.Color(227, 240, 231));
-        jButton1.setText("dunat");
+        String h5="dunat";
+        jButton1.setText(h5);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setBackground(new java.awt.Color(227, 240, 231));
-        jButton2.setText("cheescake");
+        String h6="cheescake";
+        jButton2.setText(h6);
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setBackground(new java.awt.Color(227, 240, 231));
-        jButton3.setText("cookies");
+        String h7="cookies";
+        jButton3.setText(h7);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setBackground(new java.awt.Color(227, 240, 231));
-        jButton4.setText("crepe");
+        String h8="crepe";
+        jButton4.setText(h8);
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
         jButton5.setBackground(new java.awt.Color(227, 240, 231));
-        jButton5.setText("cake");
+        String h9="cake";
+        jButton5.setText(h9);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         jButton6.setBackground(new java.awt.Color(227, 240, 231));
-        jButton6.setText("drinks");
+        String h10="drinks";
+        jButton6.setText(h10);
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
         GroupLayout jPanel23Layout = new GroupLayout(jPanel23);
@@ -518,7 +524,8 @@ Application.populateAndSetupList(jlist1, items);
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));
-        jLabel12.setText("Choose a Supplier or Owner");
+        String h11="Choose a Supplier or Owner";
+        jLabel12.setText(h11);
 
         GroupLayout jPanel16Layout = new GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -538,7 +545,8 @@ Application.populateAndSetupList(jlist1, items);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Enter the message here");
+        String h12="Enter the message here";
+        jTextArea1.setText(h12);
         jScrollPane5.setViewportView(jTextArea1);
 
 
@@ -590,18 +598,21 @@ Application.populateAndSetupList(jlist1, items);
         jTabbedPane12.addTab("Feedback", jPanel5);
 
         jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
-
-        jLabel7.setText("Enter the old Password");
+String h14="Enter the old Password";
+        jLabel7.setText(h14);
 
         jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
         jLabel9.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
-        jLabel9.setText("Enter the new Password");
+        String h15="Enter the new Password";
+        jLabel9.setText(h15);
 
         jPasswordField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
         jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
-        jLabel15.setText("change password");
+        String h16="change password";
+        jLabel15.setText(h16);
+
 
         jButton7.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
@@ -661,13 +672,16 @@ Application.populateAndSetupList(jlist1, items);
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
-        jLabel2.setText("Change the Phone Number");
+        String h17="Change the Phone Number";
+        jLabel2.setText(h17);
 
         jLabel4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
-        jLabel4.setText("Change the Name ");
+        String h18="Change the Name ";
+        jLabel4.setText(h18);
 
         jLabel6.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
-        jLabel6.setText("Change the Age");
+        String h19="Change the Age";
+        jLabel6.setText(h19);
 
         jTextField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
@@ -678,7 +692,8 @@ Application.populateAndSetupList(jlist1, items);
         jTextField4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
 
         jLabel10.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
-        jLabel10.setText("Confirm the password");
+        String h20="Confirm the password";
+        jLabel10.setText(h20);
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
 
@@ -813,7 +828,7 @@ Application.populateAndSetupList(jlist1, items);
           Application.sendEmail(EMAIL_FROM, Application.getStoreowners().get(index1).getemail(), h, ANY);
               Application.getStoreowners().get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the owner "+Application.getOwnername());
-              jTextArea1.setText("");
+
             
        
               }
@@ -824,8 +839,8 @@ Application.populateAndSetupList(jlist1, items);
                  Application.sendEmail(EMAIL_FROM, Application.getSuppliers().get(index1).getemail(), h, ANY);
                     Application.getSuppliers().get(index1).messages.add(h);
               JOptionPane.showMessageDialog(rootPane, "The message is sent to the supplier "+Application.getSuppliername());
-              jTextArea1.setText("");
-              }
+
+              }   jTextArea1.setText("");
          
        }
     }

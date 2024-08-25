@@ -132,15 +132,15 @@ String p19="p19.png";
         javax.swing.JButton jButton6 = new ImageButton(path +p16);
         javax.swing.JButton jButton14 = new ImageButton(path +"p7.png");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel13.setBackground(new java.awt.Color(227, 240, 231));
+        jPanel13.setBackground(new Color(227, 240, 231));
 
-        jLabel2.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new Font(typee, Font.BOLD, 24));
+        jLabel2.setForeground(new Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new Color(255, 255, 255));
 
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
@@ -170,16 +170,16 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("User Management ", jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new Color(255, 255, 255));
 
-        jButton10.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setFont(new Font(typee, Font.BOLD, 24));
+        jButton10.setForeground(new Color(255, 255, 255));
         jButton10.setText("Add Product");
 
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
-        jButton11.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setFont(new Font(typee, Font.BOLD, 24));
+        jButton11.setForeground(new Color(255, 255, 255));
         jButton11.setText("Update Product");
 
         jButton11.addActionListener(this::jButton11ActionPerformed);
@@ -217,22 +217,22 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Content Management", jPanel4);
 
-        jPanel24.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel24.setBackground(new Color(255, 255, 255));
 
-        jButton7.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setFont(new Font(typee, Font.BOLD, 24));
+        jButton7.setForeground(new Color(255, 255, 255));
         jButton7.setText("Add Product");
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
-        jButton8.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setFont(new Font(typee, Font.BOLD, 24));
+        jButton8.setForeground(new Color(255, 255, 255));
         jButton8.setText("Update Product");
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
-        jButton9.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setFont(new Font(typee, Font.BOLD, 24));
+        jButton9.setForeground(new Color(255, 255, 255));
         jButton9.setText("Monitor sales and profits");
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
@@ -270,17 +270,17 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Monitoring and Reporting", jPanel24);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new Color(255, 255, 255));
 
         jLabel3.setText("The Name of the product");
 
         jLabel4.setText("The discription of the product");
 
-        jButton1.setBackground(new java.awt.Color(227, 240, 231));
+        jButton1.setBackground(new Color(227, 240, 231));
         jButton1.setText("path of the picture");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton3.setFont(new java.awt.Font(typee, Font.BOLD, 24));
+        jButton3.setFont(new Font(typee, Font.BOLD, 24));
         jButton3.setText("akm");
         jButton3.addActionListener(evt -> jButton3ActionPerformed());
 
@@ -345,21 +345,21 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Add Post", jPanel1);
 
-        jLabel13.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jLabel13.setFont(new Font(typee, Font.PLAIN, 24));
         jLabel13.setText("Enter the old Password");
 
-        jPasswordField2.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jPasswordField2.setFont(new Font(typee, Font.PLAIN, 24));
 
-        jLabel21.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jLabel21.setFont(new Font(typee, Font.PLAIN, 24));
         jLabel21.setText("Enter the new Password");
 
-        jPasswordField3.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jPasswordField3.setFont(new Font(typee, Font.PLAIN, 24));
 
-        jLabel15.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jLabel15.setFont(new Font(typee, Font.PLAIN, 24));
         jLabel15.setText("change password");
 
-        jButton5.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new Font(typee, Font.BOLD, 24));
+        jButton5.setForeground(new Color(255, 255, 255));
         jButton5.setText("Confirm");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
@@ -413,32 +413,32 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Change Password", jPanel6);
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBackground(new Color(255, 255, 255));
 
-        jLabel5.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
+        jLabel5.setFont(new Font(typee, Font.PLAIN, 20));
         jLabel5.setText("Change the Phone Number");
 
-        jLabel6.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
+        jLabel6.setFont(new Font(typee, Font.PLAIN, 20));
         jLabel6.setText("Change the Name ");
 
-        jLabel22.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
+        jLabel22.setFont(new Font(typee, Font.PLAIN, 20));
         jLabel22.setText("Change the Age");
 
-        jTextField7.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jTextField7.setFont(new Font(typee, Font.PLAIN, 24));
 
 
-        jTextField8.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jTextField8.setFont(new Font(typee, Font.PLAIN, 24));
 
 
-        jTextField9.setFont(new java.awt.Font(typee, Font.PLAIN, 24));
+        jTextField9.setFont(new Font(typee, Font.PLAIN, 24));
 
-        jLabel24.setFont(new java.awt.Font(typee, Font.PLAIN, 20));
+        jLabel24.setFont(new Font(typee, Font.PLAIN, 20));
         jLabel24.setText("Confirm the password");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));
+        jPasswordField1.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 
-        jButton6.setFont(new java.awt.Font(typee, Font.BOLD, 24));
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setFont(new Font(typee, Font.BOLD, 24));
+        jButton6.setForeground(new Color(255, 255, 255));
         jButton6.setText("Confirm");
 
         jButton6.addActionListener(this::jButton6ActionPerformed);

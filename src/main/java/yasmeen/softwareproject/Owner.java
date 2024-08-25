@@ -61,6 +61,9 @@ class TransparentRadioButton extends JRadioButton {
 }
 
 public class Owner extends JFrame {
+    private static void settextforlabel(JLabel m,String k){
+        m.setText(k);
+    }
     public static class ImageButton extends JButton {
     private transient Image image;
 
@@ -257,14 +260,19 @@ if(!Application.getSales().isEmpty()){
         jPanel13.setBackground(new java.awt.Color(227, 240, 231));
 
         jLabel2.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
-        jLabel2.setText("Welcome Back Yasmeen");
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        settextforlabel(jLabel2,"Welcome Back Yasmeen");
 
-        jLabel1.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
-        jLabel1.setText("Change the Phone Number");
+         Color PANEL_BACKGROUND_COLOR = new Color(255, 255, 255);  // White
 
-        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
+// Set the background color of jPanel4
+        jPanel4.setBackground(PANEL_BACKGROUND_COLOR);
+    // or Font.BOLD, Font.ITALIC, etc.
+        int FONT_SIZE = 20;
+        jLabel1.setFont(new Font("SansSerif", Font.PLAIN, FONT_SIZE));
+        settextforlabel(jLabel1,"Change the Phone Number");
+
+        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, FONT_SIZE));
         jLabel3.setText("Change the Name ");
 
         jLabel5.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
@@ -474,9 +482,13 @@ if(!Application.getSales().isEmpty()){
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
         );
+        GroupLayout.SequentialGroup verticalGroup = jPanel7Layout.createSequentialGroup()
+                .addComponent(jScrollPane2);  // Add jScrollPane2 to the vertical group
+
+
         jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+                jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(verticalGroup)
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -552,8 +564,8 @@ if(!Application.getSales().isEmpty()){
         );
 
         jTabbedPane11.addTab("getSuppliers()", jPanel2);
-
-        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+int y=24;
+        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, y));
         jLabel7.setText("Enter the old Password");
 
         jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));

@@ -58,12 +58,8 @@ public class Application {
         Application.type = type;
     }
 
-    private static int maxindex;
 
-
-
-
-    private static String invalidvalue ="invalid value";
+    private static final String invalidvalue ="invalid value";
 
 
 
@@ -350,7 +346,7 @@ public class Application {
         }
 
         String productname="";
-        maxindex=0;
+        int maxindex = 0;
         for (Orders sale : sales) {
 
             if (maxindex < sale.getprofit()) {

@@ -125,7 +125,7 @@ Application.getPosts().add(new Post("","","",1));
         Application.getLoginpage().jButton1ActionPerformed();
         Application.getUserspage().setVisible(false);
         Application.getLoginpage().getjTextField1().setText("yasmeen4@gmail.com");
-      
+
         Application.getLoginpage().getjTextField3().setText("User");
         Application.getLoginpage().jButton1ActionPerformed();
         Application.getOwnerpage().setVisible(false);

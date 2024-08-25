@@ -150,17 +150,17 @@ jLabel3.setHorizontalAlignment(SwingConstants.LEFT);
            }else{
                       JOptionPane.showMessageDialog(null, "Your fee for this product is "+(price*x));
           Application.purchase(name, x);
-           Application.getUserspage(). getjPanel21().removeAll();
+           UserPage. getjPanel21().removeAll();
              for(int i=0;i<Application.getProducts().size();i++){
-           Application.getUserspage(). getjPanel21().add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
+           UserPage. getjPanel21().add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
      
      
        }
-            Application.getUserspage(). getjPanel29().removeAll();
-             Application.getUserspage(). getjPanel29().revalidate();  
-                 Application.getUserspage(). getjPanel29().repaint();
-                  Application.getUserspage(). getjPanel21().revalidate();  
-                 Application.getUserspage(). getjPanel21().repaint();
+            UserPage. getjPanel29().removeAll();
+             UserPage. getjPanel29().revalidate();
+                 UserPage. getjPanel29().repaint();
+                  UserPage. getjPanel21().revalidate();
+                 UserPage. getjPanel21().repaint();
            }
         }
        

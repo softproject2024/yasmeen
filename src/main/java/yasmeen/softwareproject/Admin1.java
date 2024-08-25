@@ -3,8 +3,6 @@ package yasmeen.softwareproject;
 
 import java.awt.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.security.SecureRandom;
 import javax.swing.*;
@@ -41,24 +39,24 @@ public class Admin1 extends javax.swing.JFrame {
 String path ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
 
 String typee="Stylus BT";
+static String invalid="invalid value";
 String p19="p19.png";
-    public static class ImageButto extends JLabel {
+     static class ImageButto extends JLabel {
+
         private transient Image image;
 
         public ImageButto(String imagepath) {
             try {
                 image = new ImageIcon(imagepath).getImage();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,getInvalidvalue());
+                JOptionPane.showMessageDialog(null,invalid);
             }
 
 
 
         }
 
-        private Object getInvalidvalue() {
-            return "invalid value";
-        }
+
 
         @Override
         protected void paintComponent(Graphics g) {
@@ -498,12 +496,7 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Account Management ", jPanel7);
 
-        jButton14.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                jButton14ActionPerformed();
-            }
-        });
+        jButton14.addActionListener(e -> jButton14ActionPerformed());
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);

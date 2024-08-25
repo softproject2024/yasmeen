@@ -263,16 +263,16 @@ if(!Application.getSales().isEmpty()){
 
         settextforlabel(jLabel2,"Welcome Back Yasmeen");
 
-         Color PANEL_BACKGROUND_COLOR = new Color(255, 255, 255);  // White
+         Color panelBackgroundColor = new Color(255, 255, 255);  // White
 
 
-        jPanel4.setBackground(PANEL_BACKGROUND_COLOR);
+        jPanel4.setBackground(panelBackgroundColor);
 
-        int FONT_SIZE = 20;
-        jLabel1.setFont(new Font("SansSerif", Font.PLAIN, FONT_SIZE));
+        int fontSize = 20;
+        jLabel1.setFont(new Font("SansSerif", Font.PLAIN, fontSize));
         settextforlabel(jLabel1,"Change the Phone Number");
 
-        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, FONT_SIZE));
+        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, fontSize));
         jLabel3.setText("Change the Name ");
 
         jLabel5.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));

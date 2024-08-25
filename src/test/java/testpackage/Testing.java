@@ -85,12 +85,12 @@ Application.getPosts().add(new Post("","","",1));
         Suppliersframe.makeJbutton("m");
         UserPage.getIndex1();
         UserPage.setIndex1(1);
-        UserPage.getl3();
+
         UserPage.getjTextArea2();
         UserPage.getjPasswordField1();
         UserPage.getjPanel29();
         UserPage.getjPanel21();
-        UserPage.getjTextField1();
+
         Admin1.jButton14ActionPerformed();
         Application.getLoginpage().setVisible(false);
 

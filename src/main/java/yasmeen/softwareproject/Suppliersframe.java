@@ -112,36 +112,36 @@ private GroupLayout makeGroup(JPanel j){
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
-           Color BACKGROUND_COLOR = new Color(255, 255, 255);
+           Color panelBackgroundColor = new Color(255, 255, 255);
 
 
-           jPanel4.setBackground(BACKGROUND_COLOR);
+           jPanel4.setBackground(panelBackgroundColor);
 
-           int FONT_STYLE = Font.PLAIN;  // You can use Font.BOLD, Font.ITALIC, etc.
-           int FONT_SIZE = 20;
+           int fontStyle = Font.PLAIN;  // You can use Font.BOLD, Font.ITALIC, etc.
+           int fontSize = 20;
 
 // Somewhere in your code, e.g., in the initialization method
-           jLabel1.setFont(new Font("SansSerif", FONT_STYLE, FONT_SIZE));
+           jLabel1.setFont(new Font("SansSerif", fontStyle, fontSize));
            String h="Change the Phone Number";
         jLabel1.setText(h);
 
-        jLabel3.setFont(new Font(STYLE, FONT_STYLE, 20));  
+        jLabel3.setFont(new Font(STYLE, fontStyle, 20));
         String h2="Change the Name ";
         jLabel3.setText(h2);
 
-        jLabel5.setFont(new Font(STYLE, FONT_STYLE, FONT_SIZE));  
+        jLabel5.setFont(new Font(STYLE, fontStyle, fontSize));
         String h3="Change the Age";
         jLabel5.setText(h3);
 
         jTextField1.setFont(new Font(STYLE, Font.PLAIN, 24));  
 
 
-        jTextField2.setFont(new Font(STYLE, FONT_STYLE, 24));  
+        jTextField2.setFont(new Font(STYLE, fontStyle, 24));
 
 
-        jTextField3.setFont(new Font(STYLE,FONT_STYLE, 24));  
+        jTextField3.setFont(new Font(STYLE,fontStyle, 24));
 
-        jLabel6.setFont(new Font(STYLE, FONT_STYLE, 20));  
+        jLabel6.setFont(new Font(STYLE, fontStyle, 20));
         jLabel6.setText("Confirm the password");
 
         jPasswordField1.setFont(new Font("Segoe UI", Font.PLAIN, 18));  
@@ -205,20 +205,20 @@ private GroupLayout makeGroup(JPanel j){
 
         jTabbedPane1.addTab("Account Management ", jPanel4);
 
-        jLabel7.setFont(new Font(STYLE, FONT_STYLE, 24));
+        jLabel7.setFont(new Font(STYLE, fontStyle, 24));
         String h4="Enter the old Password";
         jLabel7.setText(h4);
 
 
-        jPasswordField2.setFont(new Font(STYLE, FONT_STYLE, 24));
+        jPasswordField2.setFont(new Font(STYLE, fontStyle, 24));
 
-        jLabel9.setFont(new Font(STYLE, FONT_STYLE, 24));
+        jLabel9.setFont(new Font(STYLE, fontStyle, 24));
         String h5="Enter the new Password";
         jLabel9.setText(h5);
 
-        jPasswordField3.setFont(new Font(STYLE, FONT_STYLE, 24));
+        jPasswordField3.setFont(new Font(STYLE, fontStyle, 24));
 
-        jLabel15.setFont(new Font(STYLE, FONT_STYLE, 24));
+        jLabel15.setFont(new Font(STYLE, fontStyle, 24));
         String h6="change password";
         jLabel15.setText(h6);
 int u= Font.BOLD;
@@ -324,7 +324,7 @@ int u= Font.BOLD;
         jScrollPane3.setViewportView(jlist1);
 
         jButton5.setFont(new Font(STYLE, u, 24));
-        jButton5.setForeground(BACKGROUND_COLOR);
+        jButton5.setForeground(panelBackgroundColor);
         jButton5.setText(CONFIRM);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 

@@ -59,7 +59,7 @@ public class Application {
     }
 
 
-    private static final String invalidvalue ="invalid value";
+    private static final String INVALID_VALUE ="invalid value";
 
 
 
@@ -260,7 +260,7 @@ public class Application {
             return;
         }
         if(price<0||quantity<0){
-            JOptionPane.showMessageDialog(null, invalidvalue);
+            JOptionPane.showMessageDialog(null, INVALID_VALUE);
 
             return;
         }
@@ -535,12 +535,12 @@ public class Application {
 
     public static void purchase(String prodname,int qua){
         if(qua<0){
-            JOptionPane.showMessageDialog(null, invalidvalue);
+            JOptionPane.showMessageDialog(null, INVALID_VALUE);
         }
         for (Product product : products) {
             if (product.getname().equals(prodname)) {
                 if (product.getquantity() < qua) {
-                    JOptionPane.showMessageDialog(null, invalidvalue);
+                    JOptionPane.showMessageDialog(null, INVALID_VALUE);
                 } else {
 
                     int x = product.getquantity();
@@ -715,7 +715,7 @@ public class Application {
             Transport.send(message);
 
         } catch (MessagingException e) {
-            JOptionPane.showMessageDialog(null, invalidvalue);
+            JOptionPane.showMessageDialog(null, INVALID_VALUE);
         }
     }
     public static boolean isNumber(String str) {

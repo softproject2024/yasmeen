@@ -150,7 +150,7 @@ jLabel3.setHorizontalAlignment(SwingConstants.LEFT);
            }else{
                       JOptionPane.showMessageDialog(null, "Your fee for this product is "+(price*x));
           Application.purchase(name, x);
-           UserPage. getjPanel21().removeAll();
+           UserPage.getjPanel21().removeAll();
              for(int i=0;i<Application.getProducts().size();i++){
            UserPage. getjPanel21().add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
      

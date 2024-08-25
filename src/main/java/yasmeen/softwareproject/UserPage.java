@@ -5,6 +5,7 @@ import yasmeen.softwareproject.Owner.ImageButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,13 @@ class ImagePanel extends JPanel {
    
 }
 
-public class UserPage extends javax.swing.JFrame {
+public class UserPage extends JFrame {
+    JTextArea jTextArea1;
+    static JTextArea jTextArea2 ;
+    static JPanel jPanel21;
+    JTextField jTextField1;
+    JPasswordField jPasswordField2 ;
+    JPasswordField jPasswordField3 ;
     private static final String ANY ="nhdo kelh sbgl qynb";
     private static final String PATH ="C:\\Users\\nd\\Desktop\\248\\New folder\\";
     private static final String P19 ="p19.png";
@@ -53,52 +60,16 @@ public static int getIndex1(){
 
     private static final String EMAIL_FROM ="s12112895@stu.najah.edu";
     private static final String STYLE ="Stylus BT";
-    
+
     public UserPage() {
+        jTextArea1 = new JTextArea();
+        jTextArea2 = new JTextArea();
+        jPanel21 = new JPanel();
+         jTextField1= new JTextField();
+        jPasswordField2 = new JPasswordField();
+        jPasswordField3 = new JPasswordField();
         initComponents();
-        jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        setSize(this.getWidth()-10, this.getHeight());
-        jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-       for(int i=0;i<Application.getPosts().size();i++){
-            jPanel7.add(new PostPanel(Application.getPosts().get(i).prd,Application.getPosts().get(i).des,Application.getPosts().get(i).path,i));
-       }
-       jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-             jPanel21.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-            for(int i=0;i<Application.getProducts().size();i++){
-            jPanel21.add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
-       }
-          jPanel29.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-          jlist1.setEnabled(false);
-         jTextArea1.setLineWrap(true);
-         jScrollPane5.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-            jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        ArrayList<String> items=new ArrayList<>();
-          for(int i = 0; i<Application.getStoreowners().size(); i++){
-          items.add(Application.getStoreowners().get(i).getname());
-            jlist1.setEnabled(true);
-       }
-       for(int i=0;i<Application.getSuppliers().size();i++){
-          items.add(Application.getSuppliers().get(i).getname());
-            jlist1.setEnabled(true);
-       }
-      
-Application.populateAndSetupList(jlist1, items);
-       jScrollPane8.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-            
-            
-            jScrollPane8.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                 jScrollPane1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-
-        jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-              jScrollPane7.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-            
-            
-            jScrollPane7.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int centerX = screenSize.width / 2;
-        int centerY = screenSize.height / 2;
-        this.setLocation(centerX - this.getWidth() / 2, centerY - this.getHeight() / 2);
     }
 
 
@@ -106,27 +77,28 @@ Application.populateAndSetupList(jlist1, items);
     private void initComponents() {
 
         JPanel jPanel14 = new JPanel();
-        jLabel3 = new javax.swing.JLabel();
+
+        jLabel3 = new JLabel();
         JTabbedPane jTabbedPane12 = new JTabbedPane();
         JPanel jPanel24 = new JPanel();
         JPanel jPanel1 = new JPanel();
-        jPanel2 = new ImagePanel("man");
+        JPanel jPanel2 = new ImagePanel("man");
         JLabel jLabel19 = new JLabel();
         JPanel jPanel6 = new JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel7 = new javax.swing.JPanel();
+        JScrollPane jScrollPane1 = new JScrollPane();
+        JPanel jPanel7 = new JPanel();
         JPanel jPanel26 = new JPanel();
         JPanel jPanel18 = new JPanel();
         JPanel jPanel19 = new JPanel();
         JLabel jLabel18 = new JLabel();
         JPanel jPanel20 = new JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jPanel21 = new JPanel();
+        JScrollPane jScrollPane7 = new JScrollPane();
+
         JPanel jPanel27 = new JPanel();
         JPanel jPanel22 = new JPanel();
         JPanel jPanel23 = new JPanel();
         JLabel jLabel1 = new JLabel();
-        jTextField1 = new javax.swing.JTextField();
+
         JButton jButton1 = new JButton();
         JButton jButton2 = new JButton();
         JButton jButton3 = new JButton();
@@ -134,24 +106,24 @@ Application.populateAndSetupList(jlist1, items);
         JButton jButton5 = new JButton();
         JButton jButton6 = new JButton();
         JPanel jPanel28 = new JPanel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jPanel29 = new javax.swing.JPanel();
+
+        jPanel29 = new JPanel();
         JPanel jPanel5 = new JPanel();
         JPanel jPanel15 = new JPanel();
         JScrollPane jScrollPane4 = new JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+
         JPanel jPanel16 = new JPanel();
         JLabel jLabel12 = new JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        JScrollPane jScrollPane5 = new JScrollPane();
+
         JScrollPane jScrollPane6 = new JScrollPane();
-        jlist1 = new javax.swing.JList<>();
+        JList<String> jlist1 = new JList<>();
         JButton jButton8 = new ImageButton(PATH+P16);
         JPanel jPanel8 = new JPanel();
         JLabel jLabel7 = new JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+
         JLabel jLabel9 = new JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        JPasswordField jPasswordField3 = new JPasswordField();
         JLabel jLabel14 = createImageLabel1(PATH+P19);
         JLabel jLabel15 = new JLabel();
         JButton jButton7 = new ImageButton(PATH+P16);
@@ -159,29 +131,29 @@ Application.populateAndSetupList(jlist1, items);
         JLabel jLabel2 = new JLabel();
         JLabel jLabel4 = new JLabel();
         JLabel jLabel6 = new JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jTextField2 = new JTextField();
+        jTextField3 = new JTextField();
+        jTextField4 = new JTextField();
         JLabel jLabel8 = createImageLabel1(PATH+P19);
         JLabel jLabel10 = new JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordField1 = new JPasswordField();
         JButton jButton9 = new ImageButton(PATH+P16);
         JButton jButton14 = new ImageButton(PATH+"p7.png");
-
+        JScrollPane jScrollPane8 = new JScrollPane();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel14.setBackground(new java.awt.Color(227, 240, 231));
+        jPanel14.setBackground(new Color(227, 240, 231));
 
-        jLabel3.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new Font(STYLE, Font.BOLD, 24));
+        jLabel3.setForeground(new Color(255, 255, 255));
         String h1="Welcome Back Yasmeen";
         jLabel3.setText(h1);
 
-        jPanel1.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel1.setBackground(new Color(255, 246, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel2.setBackground(new Color(255, 246, 255));
 
-        jLabel19.setFont(new java.awt.Font("Blackadder ITC", Font.PLAIN, 48));  
+        jLabel19.setFont(new Font("Blackadder ITC", Font.PLAIN, 48));
        String h2="SWEETS";
                jLabel19.setText(h2);
 
@@ -202,7 +174,7 @@ Application.populateAndSetupList(jlist1, items);
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel7.setBackground(new Color(255, 246, 255));
 
         GroupLayout jPanel7Layout = new GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -266,11 +238,11 @@ Application.populateAndSetupList(jlist1, items);
 
         jTabbedPane12.addTab("Posts", jPanel24);
 
-        jPanel18.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel18.setBackground(new Color(255, 246, 255));
 
-        jPanel19.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel19.setBackground(new Color(255, 246, 255));
 
-        jLabel18.setFont(new java.awt.Font("Blackadder ITC", Font.PLAIN, 48));
+        jLabel18.setFont(new Font("Blackadder ITC", Font.PLAIN, 48));
         String h3="Menu";
         jLabel18.setText(h3);
 
@@ -291,7 +263,7 @@ Application.populateAndSetupList(jlist1, items);
                 .addContainerGap())
         );
 
-        jPanel21.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel21.setBackground(new Color(255, 246, 255));
 
         GroupLayout jPanel21Layout = new GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -355,40 +327,40 @@ Application.populateAndSetupList(jlist1, items);
 
         jTabbedPane12.addTab("Purchase desserts", jPanel26);
 
-        jPanel22.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel22.setBackground(new Color(255, 246, 255));
 
-        jPanel23.setBackground(new java.awt.Color(255, 246, 255));
+        jPanel23.setBackground(new Color(255, 246, 255));
 String h4="Search";
         jLabel1.setText(h4);
 
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
-        jButton1.setBackground(new java.awt.Color(227, 240, 231));
+        jButton1.setBackground(new Color(227, 240, 231));
         String h5="dunat";
         jButton1.setText(h5);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton2.setBackground(new java.awt.Color(227, 240, 231));
+        jButton2.setBackground(new Color(227, 240, 231));
         String h6="cheescake";
         jButton2.setText(h6);
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
-        jButton3.setBackground(new java.awt.Color(227, 240, 231));
+        jButton3.setBackground(new Color(227, 240, 231));
         String h7="cookies";
         jButton3.setText(h7);
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
-        jButton4.setBackground(new java.awt.Color(227, 240, 231));
+        jButton4.setBackground(new Color(227, 240, 231));
         String h8="crepe";
         jButton4.setText(h8);
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
-        jButton5.setBackground(new java.awt.Color(227, 240, 231));
+        jButton5.setBackground(new Color(227, 240, 231));
         String h9="cake";
         jButton5.setText(h9);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
-        jButton6.setBackground(new java.awt.Color(227, 240, 231));
+        jButton6.setBackground(new Color(227, 240, 231));
         String h10="drinks";
         jButton6.setText(h10);
         jButton6.addActionListener(this::jButton6ActionPerformed);
@@ -402,7 +374,7 @@ String h4="Search";
                 .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton6, GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                     .addComponent(jButton5, GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
@@ -425,7 +397,7 @@ String h4="Search";
                         .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton5)
                             .addComponent(jButton3)))
@@ -433,7 +405,7 @@ String h4="Search";
                         .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jButton4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2))))
@@ -452,6 +424,8 @@ String h4="Search";
             jPanel29Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGap(0, 246, Short.MAX_VALUE)
         );
+
+
 
         jScrollPane8.setViewportView(jPanel29);
 
@@ -504,7 +478,7 @@ String h4="Search";
 
         jTabbedPane12.addTab("search and filter", jPanel27);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new Color(255, 255, 255));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -521,9 +495,9 @@ String h4="Search";
             .addComponent(jScrollPane4)
         );
 
-        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBackground(new Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));
+        jLabel12.setFont(new Font(STYLE, Font.PLAIN, 18));
         String h11="Choose a Supplier or Owner";
         jLabel12.setText(h11);
 
@@ -552,8 +526,8 @@ String h4="Search";
 
         jScrollPane6.setViewportView(jlist1);
 
-        jButton8.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setFont(new Font(STYLE, Font.BOLD, 24));
+        jButton8.setForeground(new Color(255, 255, 255));
 
         jButton8.addActionListener(this::jButton8ActionPerformed);
 
@@ -568,13 +542,13 @@ String h4="Search";
                     .addComponent(jScrollPane5))
                 .addGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel16, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane6, GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton8, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
                         .addGap(80, 80, 80))))
         );
@@ -585,10 +559,10 @@ String h4="Search";
                 .addGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel15, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton8, GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(jScrollPane5, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -597,25 +571,25 @@ String h4="Search";
 
         jTabbedPane12.addTab("Feedback", jPanel5);
 
-        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jLabel7.setFont(new Font(STYLE, Font.PLAIN, 24));
 String h14="Enter the old Password";
         jLabel7.setText(h14);
 
-        jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jPasswordField2.setFont(new Font(STYLE, Font.PLAIN, 24));
 
-        jLabel9.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jLabel9.setFont(new Font(STYLE, Font.PLAIN, 24));
         String h15="Enter the new Password";
         jLabel9.setText(h15);
 
-        jPasswordField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jPasswordField3.setFont(new Font(STYLE, Font.PLAIN, 24));
 
-        jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jLabel15.setFont(new Font(STYLE, Font.PLAIN, 24));
         String h16="change password";
         jLabel15.setText(h16);
 
 
-        jButton7.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setFont(new Font(STYLE, Font.BOLD, 24));
+        jButton7.setForeground(new Color(255, 255, 255));
 
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
@@ -635,7 +609,7 @@ String h14="Enter the old Password";
                         .addComponent(jPasswordField2, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel9, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPasswordField3, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, GroupLayout.PREFERRED_SIZE, 333, GroupLayout.PREFERRED_SIZE)
                     .addGroup(GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
@@ -649,56 +623,56 @@ String h14="Enter the old Password";
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPasswordField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPasswordField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel14, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton7, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
         );
 
         jTabbedPane12.addTab("Change Password", jPanel8);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
+        jLabel2.setFont(new Font(STYLE, Font.PLAIN, 20));
         String h17="Change the Phone Number";
         jLabel2.setText(h17);
 
-        jLabel4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
+        jLabel4.setFont(new Font(STYLE, Font.PLAIN, 20));
         String h18="Change the Name ";
         jLabel4.setText(h18);
 
-        jLabel6.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
+        jLabel6.setFont(new Font(STYLE, Font.PLAIN, 20));
         String h19="Change the Age";
         jLabel6.setText(h19);
 
-        jTextField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jTextField2.setFont(new Font(STYLE, Font.PLAIN, 24));
 
 
-        jTextField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jTextField3.setFont(new Font(STYLE, Font.PLAIN, 24));
 
 
-        jTextField4.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));
+        jTextField4.setFont(new Font(STYLE, Font.PLAIN, 24));
 
-        jLabel10.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));
+        jLabel10.setFont(new Font(STYLE, Font.PLAIN, 20));
         String h20="Confirm the password";
         jLabel10.setText(h20);
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
+        jPasswordField1.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 
-        jButton9.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setFont(new Font(STYLE, Font.BOLD, 24));
+        jButton9.setForeground(new Color(255, 255, 255));
      
 
         jButton9.addActionListener(this::jButton9ActionPerformed);
@@ -734,20 +708,20 @@ String h14="Enter the old Password";
                 .addGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10))
                     .addComponent(jLabel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(jPasswordField1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
@@ -765,7 +739,7 @@ String h14="Enter the old Password";
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(259, 259, 259)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton14, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
             .addComponent(jTabbedPane12)
@@ -776,7 +750,7 @@ String h14="Enter the old Password";
                 .addGroup(jPanel14Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addComponent(jButton14, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane12, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -791,13 +765,56 @@ String h14="Enter the old Password";
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(jPanel14, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)
         );
+        jPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        setSize(this.getWidth()-10, this.getHeight());
+        jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        for(int i=0;i<Application.getPosts().size();i++){
+            jPanel7.add(new PostPanel(Application.getPosts().get(i).prd,Application.getPosts().get(i).des,Application.getPosts().get(i).path,i));
+        }
+        jPanel7.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        jPanel21.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        for(int i=0;i<Application.getProducts().size();i++){
+            jPanel21.add(new Card(Application.getProducts().get(i).getprice(),Application.getProducts().get(i).getquantity(),Application.getProducts().get(i).getname(),Application.getProducts().get(i).getpath()));
+        }
+        jPanel29.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        jlist1.setEnabled(false);
+        jTextArea1.setLineWrap(true);
+        jScrollPane5.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane5.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ArrayList<String> items=new ArrayList<>();
+        for(int i = 0; i<Application.getStoreowners().size(); i++){
+            items.add(Application.getStoreowners().get(i).getname());
+            jlist1.setEnabled(true);
+        }
+        for(int i=0;i<Application.getSuppliers().size();i++){
+            items.add(Application.getSuppliers().get(i).getname());
+            jlist1.setEnabled(true);
+        }
+
+        Application.populateAndSetupList(jlist1, items);
+        jScrollPane8.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+
+        jScrollPane8.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        jScrollPane1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+
+        jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        jScrollPane7.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+
+        jScrollPane7.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int centerX = screenSize.width / 2;
+        int centerY = screenSize.height / 2;
+        this.setLocation(centerX - this.getWidth() / 2, centerY - this.getHeight() / 2);
 
         pack();
     }
 
 
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton14ActionPerformed(ActionEvent evt) {
          
         Application.getUserspage().setVisible(false);
         Application.setUserspage(new UserPage());
@@ -808,7 +825,7 @@ String h14="Enter the old Password";
 
 
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton9ActionPerformed(ActionEvent evt) {
          
         if(!Application.isNumber(jTextField4.getText())||jTextField4.getText().length()>=3){
             JOptionPane.showMessageDialog(rootPane, "Enter a valid age");}
@@ -818,7 +835,7 @@ String h14="Enter the old Password";
         }
     }
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton8ActionPerformed(ActionEvent evt) {
          
           if(Application.getSuppliers().isEmpty()&&Application.getStoreowners().isEmpty()){
           JOptionPane.showMessageDialog(rootPane, "There are no owners or suppliers to send messages");
@@ -850,7 +867,7 @@ String h14="Enter the old Password";
 
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jTextField1ActionPerformed(ActionEvent evt) {
 
 List<Product> m = Application.findProductsByName(Application.getProducts(), jTextField1.getText());
      jPanel29.removeAll();
@@ -861,7 +878,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton6ActionPerformed(ActionEvent evt) {
          
         List<Product> m = Application.findProductsByDescription(Application.getProducts(), "drink");
      jPanel29.removeAll();
@@ -872,7 +889,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton1ActionPerformed(ActionEvent evt) {
          
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "dunat");
      jPanel29.removeAll();
@@ -883,7 +900,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton4ActionPerformed(ActionEvent evt) {
          
        List<Product> m = Application.findProductsByDescription(Application.getProducts(), "crepe");
      jPanel29.removeAll();
@@ -894,7 +911,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton5ActionPerformed(ActionEvent evt) {
          
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cake");
            
@@ -906,7 +923,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton3ActionPerformed(ActionEvent evt) {
          
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cookie");
      jPanel29.removeAll();
@@ -917,7 +934,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton2ActionPerformed(ActionEvent evt) {
          
            List<Product> m = Application.findProductsByDescription(Application.getProducts(), "cheescake");
      jPanel29.removeAll();
@@ -928,7 +945,7 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
                  jPanel29.repaint();
     }
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton7ActionPerformed(ActionEvent evt) {
          
           if(getPasswordAsString(jPasswordField2).equals(Application.getPublicuser().getpassword()+"")){
          SecureRandom random = new SecureRandom();
@@ -948,62 +965,52 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
     }
 
 
-    private static javax.swing.JLabel jLabel3;
+    private static JLabel jLabel3;
     public static JLabel getl3(){
         return  jLabel3;
     }
-    private javax.swing.JPanel jPanel2;
-    private static javax.swing.JPanel jPanel21;
+
 
     public static JPanel getjPanel21() {
         return jPanel21;
     }
 
-    private static javax.swing.JPanel jPanel29;
+    private static JPanel jPanel29;
 
     public static JPanel getjPanel29() {
         return jPanel29;
     }
 
-    private javax.swing.JPanel jPanel7;
-    private static javax.swing.JPasswordField jPasswordField1;
+    private static JPasswordField jPasswordField1;
 
     public static JPasswordField getjPasswordField1() {
         return jPasswordField1;
     }
 
-    private javax.swing.JPasswordField jPasswordField2;
 
 
 
-    private javax.swing.JPasswordField jPasswordField3;
 
 
 
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTextArea jTextArea1;
-    private static javax.swing.JTextArea jTextArea2;
+
+
 
     public static JTextArea getjTextArea2() {
         return jTextArea2;
     }
 
-    private static javax.swing.JTextField jTextField1;
 
-    public  static JTextField getjTextField1() {
-        return jTextField1;
-    }
 
-    private javax.swing.JTextField jTextField2;
+
+
+    private JTextField jTextField2;
 
     public JTextField getjTextField2() {
         return jTextField2;
     }
 
-    private javax.swing.JTextField jTextField3;
+    private JTextField jTextField3;
 
     public JTextField getjTextField3() {
         return jTextField3;
@@ -1013,7 +1020,6 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
         return jTextField4;
     }
 
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JList<String> jlist1;
+    private JTextField jTextField4;
 
 }

@@ -251,7 +251,7 @@ public class LogUp extends javax.swing.JFrame {
         pack();
     }
 
-    private void jLabel9MouseClicked() {
+    public void jLabel9MouseClicked() {
          
         Application.getLoginpage().setVisible(true);
           Application.getLoguppage().setVisible(false);
@@ -259,7 +259,7 @@ public class LogUp extends javax.swing.JFrame {
 
 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         if (!Application.isValidEmail(jTextField2.getText()) ||
                 !Application.isNumber(getPasswordAsString(jPasswordField1)) ||
                 !Application.isNumber(jTextField4.getText()) ||

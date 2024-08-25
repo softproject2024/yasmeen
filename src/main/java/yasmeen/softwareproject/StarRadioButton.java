@@ -24,7 +24,7 @@ public class StarRadioButton extends JRadioButton {
     }
 
 
-        private record StarIcon(int size, Color color) implements Icon {
+        public record StarIcon(int size, Color color) implements Icon {
 
         @Override
             public void paintIcon(Component c, Graphics g, int x, int y) {

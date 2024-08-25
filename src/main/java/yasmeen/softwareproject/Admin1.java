@@ -3,6 +3,8 @@ package yasmeen.softwareproject;
 
 import java.awt.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.security.SecureRandom;
 import javax.swing.*;
@@ -496,7 +498,12 @@ String p19="p19.png";
 
         jTabbedPane11.addTab("Account Management ", jPanel7);
 
-        jButton14.addActionListener(this::jButton14ActionPerformed);
+        jButton14.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton14ActionPerformed();
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -627,7 +634,7 @@ String p19="p19.png";
         JOptionPane.showMessageDialog(null, h.toString());
     }
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {
+    public static void jButton14ActionPerformed() {
 
         Application.getAdminpage().setVisible(false);
        someMethod2();

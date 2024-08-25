@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class Product {
 
-    private Date stringToDate(String dateString) {
+    public static Date stringToDate(String dateString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
             return dateFormat.parse(dateString);
@@ -19,13 +19,16 @@ public class Product {
         }
     }
 
-    public String dateToString(Date date) {
+    public static String dateToString(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         return dateFormat.format(date);
     }
 
     private int price;
     private final String name;
+    public String getname(){
+        return name;
+    }
     private Date expire;
     private int quantity;
     int discount;
@@ -43,9 +46,7 @@ String path;
 public String getpath(){
     return path;
 }
-    public String getname() {
-        return name;
-    }
+
 
     public int getquantity() {
         return quantity;

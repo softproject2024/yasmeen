@@ -805,5 +805,11 @@ public class Application {
         }
     }
 
+    public static void setPosts(List<Post> posts) {
+        Application.posts = posts;
+    }
 
+    public static void setProducts(List<Product> products) {
+        Application.products = products;
+    }
 }

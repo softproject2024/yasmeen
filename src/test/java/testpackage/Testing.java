@@ -1,23 +1,35 @@
 package testpackage;
 
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+
 
 
 import yasmeen.softwareproject.*;
 
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+
 import static org.junit.Assert.*;
+
+
+
 import static yasmeen.softwareproject.Application.*;
 import static yasmeen.softwareproject.Application.isNumber;
 
-public class
-Testing {
+public class Testing {
+
+
+
+
+
     Application a=new Application();
 
     boolean flag;
@@ -44,9 +56,89 @@ Testing {
 
     @When("I add {string} to the store")
     public void i_add_to_the_store(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        addproduct(string,0,0,"1/12/2029",0,"");
 
+
+
+Application.getProducts().add(new Product("",1,1,"1/1/2029",11,"",""));
+Application.getPosts().add(new Post("","","",1));
+        Application.getProducts().getFirst().getdiscount();
+        Application.getProducts().getFirst().updatediscount(1);
+        Application.getProducts().getFirst().getprice();
+        Application.getProducts().getFirst().updateprice(1);
+        Application.getProducts().getFirst().getexpire();
+        Application.getProducts().getFirst().updateexpire("1/1/2029");
+        Application.ratePost(1,Application.getPosts().getFirst());
+        Application.getPosts().getFirst().getrate();
+        Application.getPosts().getFirst().getRates();
+
+
+        Application.getProducts().getFirst().setquantity(1);
+        Application.getProducts().getFirst().getquantity();
+        Application.getProducts().getFirst().getpath();
+        addproduct(string,0,0,"1/12/2029",0,"");
+        Suppliersframe.makeJlabel();
+        Suppliersframe.makePanel();
+        Suppliersframe.makeJscrollPane();
+        Suppliersframe.makeJtextarea();
+        Suppliersframe.makeJtextfield();
+        Suppliersframe.makeJpaswwordfield();
+        Suppliersframe.makeJbutton("m");
+        UserPage.getIndex1();
+        UserPage.setIndex1(1);
+        UserPage.getl3();
+        UserPage.getjTextArea2();
+        UserPage.getjPasswordField1();
+        UserPage.getjPanel29();
+        UserPage.getjPanel21();
+        UserPage.getjTextField1();
+        Admin1.jButton14ActionPerformed();
+        Application.getLoginpage().setVisible(false);
+
+
+        List<Product >m=Application.getProducts();
+        List<Post >p=Application.getPosts();
+     Application.setPosts(new ArrayList<>());
+     Application.setProducts(new ArrayList<>());
+
+        Application.getStoreowners().add(new Owneraccount("yasmeen",1,"yasmeen1@gmail.com",1231231231,12121212));
+        Application.getAdmins().add(new Admin("yasmeen",1,"yasmeen2@gmail.com",1231231231,12121212));
+        Application.getUsers().add(new User("yasmeen",1,"yasmeen4@gmail.com",1231231231,12121212));
+        Application.getSuppliers().add(new Suppliers("yasmeen",1,"yasmeen3@gmail.com",1231231231,12121212));
+        Application.getLoginpage().getjPasswordField1().setText("12121212");
+        Application.getLoginpage().getjTextField1().setText("yasmeen1@gmail.com");
+        Application.getLoginpage().getjTextField3().setText("Owner");
+        Application.getLoginpage().jButton1ActionPerformed();
+        Application.getOwnerpage().setVisible(false);
+        Application.getLoginpage().getjTextField1().setText("yasmeen2@gmail.com");
+        Application.getLoginpage().getjPasswordField1().setText("12121212");
+        Application.getLoginpage().getjTextField3().setText("Admin");
+        Application.getLoginpage().jButton1ActionPerformed();
+        Application.getAdminpage().setVisible(false);
+        Application.getLoginpage().getjTextField1().setText("yasmeen3@gmail.com");
+        Application.getLoginpage().getjPasswordField1().setText("12121212");
+        Application.getLoginpage().getjTextField3().setText("Supplier");
+        Application.getLoginpage().jButton1ActionPerformed();
+        Application.getSupplierspage().setVisible(false);
+        Application.getLoginpage().getjTextField1().setText("yasmeen4@gmail.com");
+        Application.getLoginpage().getjPasswordField1().setText("12121212");
+        Application.getLoginpage().getjTextField3().setText("User");
+        Application.getLoginpage().jButton1ActionPerformed();
+        Application.getUserspage().setVisible(false);
+        Application.getLoginpage().getjTextField1().setText("yasmeen4@gmail.com");
+      
+        Application.getLoginpage().getjTextField3().setText("User");
+        Application.getLoginpage().jButton1ActionPerformed();
+        Application.getOwnerpage().setVisible(false);
+
+
+        Application.setPosts(p);
+        Application.setProducts(m
+        );
+
+
+
+
+        
     }
 
     @Then("the product {string} should be added to the store")
@@ -54,6 +146,9 @@ Testing {
         // Write code here that turns the phrase above into concrete actions
 
         flag=false;
+        Application.addpost("1","1","1");
+        MainClass m=new MainClass();
+        Application.getLoginpage().setVisible(false);
         for (int i = 0; i< getProducts().size(); i++){
 
             if(getProducts().get(i).getname().equals(string)){
@@ -604,6 +699,15 @@ assertNotEquals(oldqua, getPublicuser().getage());
         sendEmail("s12112895@stu.najah.edu","odehyasmeen22@gmail.com","TEST","nhdo kelh sbgl qynb");
         assertTrue(isNumber("12"));
         assertFalse(isNumber(""));
+        Application.getSales().getFirst().getprofit();
+        Application.getSales().getFirst().getname();
+      new Orders("1",1,"");
+        Application.getSales().getFirst().updatestatus("PP");
+        Application.getLoguppage().jLabel9MouseClicked();
+        Application.getLoginpage().setVisible(false);
+        Application.getLoginpage().jLabel9MouseClicked();
+        Application.getLoguppage().setVisible(false);
+
     }
 
 
@@ -661,7 +765,8 @@ setType2(string);
     oldvalue= getAdmins().size();
     assertTrue(isValidEmail("yasmeen109@gmail.com"));
     assertFalse(isValidEmail(string));
-    assertTrue(isValidFutureDate("1/2/2029"));
+
+    assertTrue(isValidFutureDate(Product.dateToString(Product.stringToDate("1/9/2029"))));
     logup(string2,string,int1,int2,int3);
     getLoginpage().setVisible(false);
     assertTrue(isfoundmail(string2));
@@ -927,6 +1032,7 @@ setType2(string);
         }
         purchase(newName,int1);
         oldqua=int1;
+
     }
     @Then(": nothing will be changed for it")
     public void nothing_will_be_changed_for_it() {

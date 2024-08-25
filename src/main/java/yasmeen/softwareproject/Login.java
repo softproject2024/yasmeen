@@ -4,8 +4,11 @@ package yasmeen.softwareproject;
 import java.awt.Dimension;
 
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
 import static yasmeen.softwareproject.Application.isValidEmail;
 import static yasmeen.softwareproject.Owner.getPasswordAsString;
 
@@ -74,7 +77,12 @@ public class Login extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(205, 160, 167));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SIGN IN");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton1ActionPerformed();
+            }
+        });
 
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("___________________________________________");
@@ -209,13 +217,13 @@ public class Login extends javax.swing.JFrame {
     }
 
 
-    private void jLabel9MouseClicked() {
+    public void jLabel9MouseClicked() {
          
        Application.getLoginpage().setVisible(false);
        Application.getLoguppage().setVisible(true);
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    public void jButton1ActionPerformed() {
          
         Application.setAdminpage(new Admin1());
         Application.setUserspage(new UserPage());
@@ -367,6 +375,17 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
 
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
 
     void removecontents() {
         jTextField1.setText("");

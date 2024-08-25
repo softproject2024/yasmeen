@@ -929,27 +929,27 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
     }
 
 
-    private javax.swing.JLabel jLabel3;
-    public JLabel getl3(){
+    private static javax.swing.JLabel jLabel3;
+    public static JLabel getl3(){
         return  jLabel3;
     }
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel21;
+    private static javax.swing.JPanel jPanel21;
 
-    public JPanel getjPanel21() {
+    public static JPanel getjPanel21() {
         return jPanel21;
     }
 
-    private javax.swing.JPanel jPanel29;
+    private static javax.swing.JPanel jPanel29;
 
-    public JPanel getjPanel29() {
+    public static JPanel getjPanel29() {
         return jPanel29;
     }
 
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPasswordField jPasswordField1;
+    private static javax.swing.JPasswordField jPasswordField1;
 
-    public JPasswordField getjPasswordField1() {
+    public static JPasswordField getjPasswordField1() {
         return jPasswordField1;
     }
 
@@ -966,15 +966,15 @@ List<Product> m = Application.findProductsByName(Application.getProducts(), jTex
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private static javax.swing.JTextArea jTextArea2;
 
-    public JTextArea getjTextArea2() {
+    public static JTextArea getjTextArea2() {
         return jTextArea2;
     }
 
-    private javax.swing.JTextField jTextField1;
+    private static javax.swing.JTextField jTextField1;
 
-    public JTextField getjTextField1() {
+    public  static JTextField getjTextField1() {
         return jTextField1;
     }
 

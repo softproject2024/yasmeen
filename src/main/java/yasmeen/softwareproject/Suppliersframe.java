@@ -108,35 +108,45 @@ private GroupLayout makeGroup(JPanel j){
         jPanel1.setBackground(new java.awt.Color(227, 240, 231));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        jLabel2.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
+        jLabel2.setFont(new Font(STYLE, Font.BOLD, 24));  
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Welcome Back Yasmeen");
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
-        jLabel1.setText("Change the Phone Number");
-
-        jLabel3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
-        jLabel3.setText("Change the Name ");
-
-        jLabel5.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
-        jLabel5.setText("Change the Age");
-
-        jTextField1.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
+           Color BACKGROUND_COLOR = new Color(255, 255, 255);
 
 
-        jTextField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
+           jPanel4.setBackground(BACKGROUND_COLOR);
+
+           int FONT_STYLE = Font.PLAIN;  // You can use Font.BOLD, Font.ITALIC, etc.
+           int FONT_SIZE = 20;
+
+// Somewhere in your code, e.g., in the initialization method
+           jLabel1.setFont(new Font("SansSerif", FONT_STYLE, FONT_SIZE));
+           String h="Change the Phone Number";
+        jLabel1.setText(h);
+
+        jLabel3.setFont(new Font(STYLE, FONT_STYLE, 20));  
+        String h2="Change the Name ";
+        jLabel3.setText(h2);
+
+        jLabel5.setFont(new Font(STYLE, FONT_STYLE, FONT_SIZE));  
+        String h3="Change the Age";
+        jLabel5.setText(h3);
+
+        jTextField1.setFont(new Font(STYLE, Font.PLAIN, 24));  
 
 
-        jTextField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
+        jTextField2.setFont(new Font(STYLE, FONT_STYLE, 24));  
 
-        jLabel6.setFont(new java.awt.Font(STYLE, Font.PLAIN, 20));  
+
+        jTextField3.setFont(new Font(STYLE,FONT_STYLE, 24));  
+
+        jLabel6.setFont(new Font(STYLE, FONT_STYLE, 20));  
         jLabel6.setText("Confirm the password");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));  
+        jPasswordField1.setFont(new Font("Segoe UI", Font.PLAIN, 18));  
 
-        jButton6.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
+        jButton6.setFont(new Font(STYLE, Font.BOLD, 24));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText(CONFIRM);
 
@@ -195,20 +205,24 @@ private GroupLayout makeGroup(JPanel j){
 
         jTabbedPane1.addTab("Account Management ", jPanel4);
 
-        jLabel7.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
-        jLabel7.setText("Enter the old Password");
+        jLabel7.setFont(new Font(STYLE, FONT_STYLE, 24));
+        String h4="Enter the old Password";
+        jLabel7.setText(h4);
 
-        jPasswordField2.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
 
-        jLabel9.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
-        jLabel9.setText("Enter the new Password");
+        jPasswordField2.setFont(new Font(STYLE, FONT_STYLE, 24));
 
-        jPasswordField3.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
+        jLabel9.setFont(new Font(STYLE, FONT_STYLE, 24));
+        String h5="Enter the new Password";
+        jLabel9.setText(h5);
 
-        jLabel15.setFont(new java.awt.Font(STYLE, Font.PLAIN, 24));  
-        jLabel15.setText("change password");
+        jPasswordField3.setFont(new Font(STYLE, FONT_STYLE, 24));
 
-        jButton3.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
+        jLabel15.setFont(new Font(STYLE, FONT_STYLE, 24));
+        String h6="change password";
+        jLabel15.setText(h6);
+
+        jButton3.setFont(new Font(STYLE, Font.BOLD, 24));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText(CONFIRM);
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -282,7 +296,7 @@ private GroupLayout makeGroup(JPanel j){
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setFont(new java.awt.Font(STYLE, Font.PLAIN, 18));  
+        jLabel12.setFont(new Font(STYLE, Font.PLAIN, 18));  
         jLabel12.setText("Choose a Supplier");
 
         javax.swing.GroupLayout jPanel8Layout =makeGroup(jPanel8);
@@ -308,9 +322,9 @@ private GroupLayout makeGroup(JPanel j){
 
 
         jScrollPane3.setViewportView(jlist1);
-
-        jButton5.setFont(new java.awt.Font(STYLE, Font.BOLD, 24));  
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+int u=Font.BOLD;
+        jButton5.setFont(new Font(STYLE, u, 24));
+        jButton5.setForeground(BACKGROUND_COLOR);
         jButton5.setText(CONFIRM);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 

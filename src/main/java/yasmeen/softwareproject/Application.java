@@ -85,8 +85,8 @@ public class Application {
      users.add(new User("ause",1,"us1@g.c",2112121212,12121212));
      sales=new ArrayList<>();
      sales.add(new orders(products.get(1).getname(), 12, 12, status));
-      sales.add(new orders(products.get(1).getname(), 14, 14, status));
-       sales.add(new orders(products.get(1).getname(), 13, 13, status));
+      sales.add(new orders(products.get(1).getname(), 14, 12, status));
+       sales.add(new orders(products.get(1).getname(), 13,2,  status));
      loguppage=new logup();
      loginpage=new Login();
      ownerpage=new Owner();
@@ -408,7 +408,7 @@ public static void purchase(String prodname,int qua){
      
                   int x=products.get(i).getquantity();          
                  products.get(i).setquantity(x-qua);
-                 sales.add(new orders(products.get(i).getname(), qua, (x*qua), "Pending"));
+                 sales.add(new orders(products.get(i).getname(), qua,  1,"Pending"));
       
              }
          }
@@ -479,7 +479,7 @@ public void Purchase(String n,int q){
              }else{
                 products.get(i).setquantity(products.get(i).getquantity()-q);
                 int y=q*products.get(i).getprice();
-                sales.add(new orders(products.get(i).getname(),q,y,"Pending"));
+                sales.add(new orders(products.get(i).getname(),q,1,"Pending"));
                  return;
              }
          }

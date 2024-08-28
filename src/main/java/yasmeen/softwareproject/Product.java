@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package yasmeen.softwareproject;
 
 import java.text.ParseException;
@@ -6,29 +9,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-
+/**
+ *
+ * @author Hp
+ */
 public class Product {
 
-    public static Date stringToDate(String dateString) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private Date stringToDate(String dateString) {
+        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            return dateFormat.parse(dateString);
+            return DATE_FORMAT.parse(dateString);
         } catch (ParseException e) {
-
-            return null;
+            e.printStackTrace();  // Handle the exception as needed
+            return null;  // Return null or throw a custom exception based on your needs
         }
     }
 
-    public static String dateToString(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return dateFormat.format(date);
+    public String dateToString(Date date) {
+        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+        return DATE_FORMAT.format(date);
     }
 
     private int price;
-    private final String name;
-    public String getname(){
-        return name;
-    }
+    private String name;
     private Date expire;
     private int quantity;
     int discount;
@@ -46,7 +49,9 @@ String path;
 public String getpath(){
     return path;
 }
-
+    public String getname() {
+        return name;
+    }
 
     public int getquantity() {
         return quantity;

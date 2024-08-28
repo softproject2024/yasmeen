@@ -8,10 +8,11 @@ package yasmeen.softwareproject;
  *
  * @author Hp
  */
-public class Admin extends Account{
-    
-    public Admin(String name, int age, String email, int phone,int password) {
-        super(name, age, email, phone,"Admin",password);
-    }
-    
+public class Store {
+  private String storename;
+  private String city;
+  public Store(String name,String city){
+      this.city=new String(city);
+      this.storename=new String(name);
+  }
 }

@@ -1,15 +1,14 @@
 package yasmeen.softwareproject;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Post {
+public class post {
     String path;
-    List<Integer>rates;
+    ArrayList<Integer>rates;
     String des;
     String prd;
     int id;
-    public Post(String pa, String prdname, String de, int id){
+    public post(String pa,String prdname,String de,int id){
         path=pa;
         des=de;
         prd=prdname;
@@ -27,7 +26,7 @@ public class Post {
         return y;
     }
 
-    public List<Integer> getRates() {
+    public ArrayList<Integer> getRates() {
         return rates;
     }
 }

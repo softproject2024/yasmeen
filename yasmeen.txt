@@ -1,0 +1,2 @@
+#. produc name   sale profit   sale status
+1. sweet1                        188                        Pending

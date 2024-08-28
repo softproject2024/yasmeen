@@ -1,10 +1,15 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package yasmeen.softwareproject;
 
 import java.util.ArrayList;
-import java.util.List;
 
-
+/**
+ *
+ * @author Hp
+ */
 public class Account {
 protected int age;
 protected int password;
@@ -12,13 +17,13 @@ protected String name;
 protected String email;
 protected int phone;
 protected String type;
-protected List<String>messages;
+protected ArrayList<String>messages;
 public Account(String name,int age,String email,int phone,String type,int password){
  this.age=age;
- this.email= email;
+ this.email=new String(email);
  this.phone=phone;
- this.name= name;
- this.type= type;
+ this.name=new String (name);
+ this.type=new String(type);
  messages=new ArrayList<>();
  this.password=password;
 
@@ -38,7 +43,7 @@ public void setpassword(int password){
 public int getpassword(){
    return password; 
 }
-public List<String> messages(){
+public ArrayList messages(){
     return messages;
 }
 
